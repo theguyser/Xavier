@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class Grabber : MonoBehaviour {
 
     private GameObject selectedObject;
-
+    private Boolean canSnapTo = false;
+    private Vector3 positionToSnapTo;
     private void Update() {
         if (Input.GetMouseButtonDown(0)) {
             if(selectedObject == null) {
@@ -16,6 +18,7 @@ public class Grabber : MonoBehaviour {
 
                     selectedObject = hit.collider.gameObject;
                     Cursor.visible = false;
+                    
                 }
             } else {
                 Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
@@ -24,6 +27,14 @@ public class Grabber : MonoBehaviour {
 
                 selectedObject = null;
                 Cursor.visible = true;
+                if (canSnapTo == true)
+                {
+                    
+                    transform.position = positionToSnapTo;
+                    canSnapTo = false;
+                    positionToSnapTo = worldPosition;
+                    
+                }
             }
         }
 
@@ -37,6 +48,7 @@ public class Grabber : MonoBehaviour {
                     selectedObject.transform.rotation.eulerAngles.x,
                     selectedObject.transform.rotation.eulerAngles.y + 90f,
                     selectedObject.transform.rotation.eulerAngles.z));
+                
             }
         }
     }
@@ -56,5 +68,23 @@ public class Grabber : MonoBehaviour {
         Physics.Raycast(worldMousePosNear, worldMousePosFar - worldMousePosNear, out hit);
 
         return hit;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("snap"))
+        {
+            
+            positionToSnapTo = other.transform.position;
+            canSnapTo = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("snap"))
+        {
+            
+            canSnapTo = false;
+        }
     }
 }
