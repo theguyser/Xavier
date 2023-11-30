@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class Grabber : MonoBehaviour {
 
     private GameObject selectedObject;
-
+    private Boolean isSnapped = false;
+    private Vector3 snapPosition;
     private void Update() {
         if (Input.GetMouseButtonDown(0)) {
             if(selectedObject == null) {
@@ -24,6 +26,11 @@ public class Grabber : MonoBehaviour {
 
                 selectedObject = null;
                 Cursor.visible = true;
+                if(isSnapped)
+                {
+                    transform.position = snapPosition;
+
+                }
             }
         }
 
@@ -56,5 +63,21 @@ public class Grabber : MonoBehaviour {
         Physics.Raycast(worldMousePosNear, worldMousePosFar - worldMousePosNear, out hit);
 
         return hit;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("snap"))
+        {
+            isSnapped = true;
+            snapPosition = other.transform.position;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("snap"))
+        {
+            isSnapped = false;
+        }
     }
 }
