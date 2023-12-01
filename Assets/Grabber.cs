@@ -4,13 +4,15 @@ using UnityEngine;
 public class Grabber : MonoBehaviour {
 
     private GameObject selectedObject;
+    
     private Boolean canSnap = false;
     private Vector3 snapPosition;
-    [SerializeField] private float offset;
+    private float offset;
+    [SerializeField] private GameManager gameManager;
 
     private void Start()
     {
-        Debug.Log(this.offset+this.name);
+        
     }
     private void Update() {
         if (Input.GetMouseButtonDown(0)) {
@@ -24,30 +26,39 @@ public class Grabber : MonoBehaviour {
 
                     selectedObject = hit.collider.gameObject;
                     Cursor.visible = false;
+                    for (int i = 0; i < gameManager.grabObject.Length; i++)
+                    {
+                        if (selectedObject == gameManager.grabObject[i])
+                        {
+                            offset = gameManager.grabObjectOffset[i];
+                        }
+                    }
                 }
             } else {
                 Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
                 
-                selectedObject.transform.position = new Vector3(worldPosition.x, this.offset, worldPosition.z);
-                Debug.Log("after setting position " + this.offset+this.name);
-                Debug.Log("after setting position " + offset + this.name);
+                selectedObject.transform.position = new Vector3(worldPosition.x, offset, worldPosition.z);
+                
+
                 selectedObject = null;
                 Cursor.visible = true;
-                if(canSnap)
+                if (canSnap)
                 {
+
                     transform.position = snapPosition;
+                    Debug.Log(this.name + " Snapped to " + snapPosition);
 
                 }
             }
         }
 
         if(selectedObject != null) {
-            Debug.Log("before settings position " + this.offset + this.name);
+            
             Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-            float what = this.offset+1f;
-            Debug.Log(what+this.name);
+            float what = 0.25f;
+            what+=offset;
             selectedObject.transform.position = new Vector3(worldPosition.x, what, worldPosition.z);
 
             if (Input.GetMouseButtonDown(1)) {
@@ -80,14 +91,17 @@ public class Grabber : MonoBehaviour {
     {
         if (other.CompareTag("snap"))
         {
+            Debug.Log(other.name + " and " + this.name + " collided");
             canSnap = true;
             snapPosition = other.transform.position;
+            Debug.Log("Snap position is " + snapPosition);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("snap"))
         {
+            Debug.Log(other.name + " and " + this.name + " no longer colliding");
             canSnap = false;
         }
     }
