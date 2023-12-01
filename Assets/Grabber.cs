@@ -31,6 +31,7 @@ public class Grabber : MonoBehaviour {
                 
                 selectedObject.transform.position = new Vector3(worldPosition.x, this.offset, worldPosition.z);
                 Debug.Log("after setting position " + this.offset+this.name);
+                Debug.Log("after setting position " + offset + this.name);
                 selectedObject = null;
                 Cursor.visible = true;
                 if(canSnap)

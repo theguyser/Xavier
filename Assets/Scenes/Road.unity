@@ -495,8 +495,8 @@ GameObject:
   - component: {fileID: 679482403}
   - component: {fileID: 679482402}
   - component: {fileID: 679482401}
-  - component: {fileID: 679482400}
   - component: {fileID: 679482405}
+  - component: {fileID: 679482400}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: drag
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def9da0d0d798e04b831d33b94e66d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
+  offset: 0.56
 --- !u!136 &679482401
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -560,7 +560,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: adf4c8419e345274db7e05fa5b7fc398, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -770,7 +770,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1547cf48bc350ce4bbef4b5c7bbecee2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def9da0d0d798e04b831d33b94e66d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 1
+  offset: 0
 --- !u!1 &1368641363
 GameObject:
   m_ObjectHideFlags: 0
