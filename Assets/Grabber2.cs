@@ -94,7 +94,7 @@ public class Grabber2 : MonoBehaviour
     }
 }
 
-public static class GrabManager
+public static class GrabManager1
 {
     public static GameObject CurrentlySelectedObject { get; private set; }
 

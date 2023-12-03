@@ -1,89 +1,97 @@
 using System;
 using UnityEngine;
 
-public class Grabber : MonoBehaviour {
-
-    private GameObject selectedObject;
-    
-    private Boolean canSnap = false;
+public class Grabber : MonoBehaviour
+{
+    private bool isDragging = false;
+    private bool canSnap = false;
+    private GameObject snapTarget = null;
     private Vector3 snapPosition;
-    private float offset;
-    [SerializeField] private GameManager gameManager;
+    private Collider snapTargetCollider = null;
+    private float originalYPosition; // To store the original Y position
 
     private void Start()
     {
-        
+        originalYPosition = transform.position.y; // Store the original Y position on start
+        Debug.Log("originalYPosition is " + originalYPosition);
     }
-    private void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            if(selectedObject == null) {
-                RaycastHit hit = CastRay();
 
-                if(hit.collider != null) {
-                    if (!hit.collider.CompareTag("drag")) {
-                        return;
-                    }
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit = CastRay();
 
-                    selectedObject = hit.collider.gameObject;
-                    Cursor.visible = false;
-                    for (int i = 0; i < gameManager.grabObject.Length; i++)
-                    {
-                        if (selectedObject == gameManager.grabObject[i])
-                        {
-                            offset = gameManager.grabObjectOffset[i];
-                        }
-                    }
-                }
-            } else {
-                Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-                
-                selectedObject.transform.position = new Vector3(worldPosition.x, offset, worldPosition.z);
-                
-
-                selectedObject = null;
-                Cursor.visible = true;
-                if (canSnap)
-                {
-
-                    transform.position = snapPosition;
-                    Debug.Log(this.name + " Snapped to " + snapPosition);
-
-                }
+            if (hit.collider != null && hit.collider.gameObject == gameObject && !isDragging)
+            {
+                StartDragging();
+            }
+            else if (isDragging)
+            {
+                StopDragging();
             }
         }
 
-        if(selectedObject != null) {
-            
-            Vector3 position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(selectedObject.transform.position).z);
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
-            float what = 0.25f;
-            what+=offset;
-            selectedObject.transform.position = new Vector3(worldPosition.x, what, worldPosition.z);
+        if (isDragging)
+        {
+            DragObject();
+        }
 
-            if (Input.GetMouseButtonDown(1)) {
-                selectedObject.transform.rotation = Quaternion.Euler(new Vector3(
-                    selectedObject.transform.rotation.eulerAngles.x,
-                    selectedObject.transform.rotation.eulerAngles.y + 90f,
-                    selectedObject.transform.rotation.eulerAngles.z));
-            }
+        if (Input.GetMouseButtonDown(1) && isDragging)
+        {
+            RotateObject();
         }
     }
 
-    private RaycastHit CastRay() {
-        Vector3 screenMousePosFar = new Vector3(
-            Input.mousePosition.x,
-            Input.mousePosition.y,
-            Camera.main.farClipPlane);
-        Vector3 screenMousePosNear = new Vector3(
-            Input.mousePosition.x,
-            Input.mousePosition.y,
-            Camera.main.nearClipPlane);
-        Vector3 worldMousePosFar = Camera.main.ScreenToWorldPoint(screenMousePosFar);
-        Vector3 worldMousePosNear = Camera.main.ScreenToWorldPoint(screenMousePosNear);
-        RaycastHit hit;
-        Physics.Raycast(worldMousePosNear, worldMousePosFar - worldMousePosNear, out hit);
+    private void StartDragging()
+    {
+        isDragging = true;
+        GrabManager1.SelectObject(gameObject);
+        if (snapTargetCollider != null)
+        {
+            snapTargetCollider.enabled = true;
+            snapTargetCollider = null;
+        }
+    }
 
+    private void StopDragging()
+    {
+        if (canSnap && snapTarget != null)
+        {
+            SnapObject();
+        }
+        isDragging = false;
+        GrabManager.DeselectObject();
+    }
+
+    private void DragObject()
+    {
+        Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(transform.position).z);
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        transform.position = new Vector3(worldPosition.x, originalYPosition, worldPosition.z); // Keep the Y position constant
+    }
+
+    private void SnapObject()
+    {
+        transform.position = snapPosition;
+        canSnap = false;
+        snapTargetCollider = snapTarget.GetComponent<Collider>();
+        if (snapTargetCollider != null)
+        {
+            snapTargetCollider.enabled = false;
+        }
+        snapTarget = null;
+    }
+
+    private void RotateObject()
+    {
+        transform.Rotate(0, 90f, 0);
+    }
+
+    private RaycastHit CastRay()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(ray, out RaycastHit hit);
         return hit;
     }
 
@@ -91,18 +99,37 @@ public class Grabber : MonoBehaviour {
     {
         if (other.CompareTag("snap"))
         {
-            Debug.Log(other.name + " and " + this.name + " collided");
             canSnap = true;
+            snapTarget = other.gameObject;
             snapPosition = other.transform.position;
-            Debug.Log("Snap position is " + snapPosition);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("snap"))
         {
-            Debug.Log(other.name + " and " + this.name + " no longer colliding");
             canSnap = false;
+            snapTarget = null;
         }
+    }
+}
+
+public static class GrabManager
+{
+    public static GameObject CurrentlySelectedObject { get; private set; }
+
+    public static void SelectObject(GameObject obj)
+    {
+        if (CurrentlySelectedObject != obj)
+        {
+            DeselectObject();
+            CurrentlySelectedObject = obj;
+        }
+    }
+
+    public static void DeselectObject()
+    {
+        CurrentlySelectedObject = null;
     }
 }
