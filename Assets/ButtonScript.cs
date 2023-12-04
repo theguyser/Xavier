@@ -10,16 +10,7 @@ public class ButtonScript : MonoBehaviour
     private float correctObjects = 0;
     [SerializeField] TextMeshProUGUI GoodJob;
     [SerializeField] TextMeshProUGUI TryAgain;
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
     public void Click()
     {
         GoodJob.gameObject.SetActive(false);
@@ -31,14 +22,13 @@ public class ButtonScript : MonoBehaviour
         {
             if (gameManager.grabObject[i].transform.position == gameManager.snapObject[i].transform.position)
             {
-                Debug.Log("correct");
+                //Debug.Log("correct");
                 correctObjects++;
-                //write a check to see if all objects in the list are in the correct position then activate Good Job Canvas
-
+                
             }
             else
             {
-                Debug.Log("incorrect");
+                //Debug.Log("incorrect");
             }
         }
         if (correctObjects == gameManager.grabObject.Length)
