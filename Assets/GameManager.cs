@@ -5,8 +5,10 @@ using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
-    
     public GameObject[] grabObject;
-    public float[] grabObjectOffset;
-
+    public GameObject[] snapObject;
+    private void Update()
+    {
+        
+    }
 }
