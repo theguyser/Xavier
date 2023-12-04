@@ -8,6 +8,7 @@ public class Grabber : MonoBehaviour
     private GameObject snapTarget = null;
     private Vector3 snapPosition;
     private Collider snapTargetCollider = null;
+    private MeshRenderer snapTargetMeshRenderer = null;
     private float originalYPosition; // To store the original Y position
 
     private void Start()
@@ -50,6 +51,8 @@ public class Grabber : MonoBehaviour
         if (snapTargetCollider != null)
         {
             snapTargetCollider.enabled = true;
+            //turn on mesh renderer
+            snapTargetMeshRenderer.enabled = true;
             snapTargetCollider = null;
         }
     }
@@ -76,9 +79,12 @@ public class Grabber : MonoBehaviour
         transform.position = snapPosition;
         canSnap = false;
         snapTargetCollider = snapTarget.GetComponent<Collider>();
+        snapTargetMeshRenderer = snapTarget.GetComponent<MeshRenderer>();
         if (snapTargetCollider != null)
         {
             snapTargetCollider.enabled = false;
+            //turn off mesh renderer
+            snapTargetMeshRenderer.enabled = false;
         }
         snapTarget = null;
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,6 +11,8 @@ public class ButtonScript : MonoBehaviour
     private float correctObjects = 0;
     [SerializeField] TextMeshProUGUI GoodJob;
     [SerializeField] TextMeshProUGUI TryAgain;
+    
+    public ResetButton resetButton;
     
     public void Click()
     {
@@ -35,7 +38,8 @@ public class ButtonScript : MonoBehaviour
         {
             //make GoodJob canvas appear
             GoodJob.gameObject.SetActive(true);
-
+            
+            resetButton.isTimerGoing = false;
         }
         else
         {
