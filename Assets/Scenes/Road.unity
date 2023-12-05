@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 339784585}
   - component: {fileID: 339784584}
   - component: {fileID: 339784583}
+  - component: {fileID: 339784587}
   m_Layer: 0
   m_Name: Snap Sphere
   m_TagString: snap
@@ -365,6 +366,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &339784587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339784581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a086d99bcc3584b49ae1b11da7b1d907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &366334824
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +390,7 @@ GameObject:
   - component: {fileID: 366334827}
   - component: {fileID: 366334826}
   - component: {fileID: 366334825}
+  - component: {fileID: 366334829}
   m_Layer: 0
   m_Name: Snap To Cube
   m_TagString: snap
@@ -464,12 +478,24 @@ Transform:
   m_GameObject: {fileID: 366334824}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.92, y: 0, z: -0.01}
+  m_LocalPosition: {x: 2.77, y: 0.03, z: -3.821}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &366334829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366334824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a086d99bcc3584b49ae1b11da7b1d907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,7 +763,6 @@ MonoBehaviour:
   gameManager: {fileID: 1730986905}
   GoodJob: {fileID: 1292180244}
   TryAgain: {fileID: 1824228944}
-  isCorrect: 0
   resetButton: {fileID: 1049231807}
 --- !u!1 &679482399
 GameObject:
@@ -753,6 +778,7 @@ GameObject:
   - component: {fileID: 679482401}
   - component: {fileID: 679482405}
   - component: {fileID: 679482400}
+  - component: {fileID: 679482406}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: drag
@@ -887,6 +913,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &679482406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679482399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a086d99bcc3584b49ae1b11da7b1d907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,6 +1405,7 @@ GameObject:
   - component: {fileID: 1354523971}
   - component: {fileID: 1354523970}
   - component: {fileID: 1354523975}
+  - component: {fileID: 1354523976}
   m_Layer: 0
   m_Name: Cube
   m_TagString: drag
@@ -1499,6 +1538,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def9da0d0d798e04b831d33b94e66d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1354523976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354523968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a086d99bcc3584b49ae1b11da7b1d907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1368641363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,6 +1669,7 @@ GameObject:
   - component: {fileID: 1539261879}
   - component: {fileID: 1539261882}
   - component: {fileID: 1539261883}
+  - component: {fileID: 1539261884}
   m_Layer: 0
   m_Name: Snap to Cylinder
   m_TagString: snap
@@ -1740,6 +1792,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &1539261884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539261877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a086d99bcc3584b49ae1b11da7b1d907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1548175121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,6 +2020,7 @@ GameObject:
   - component: {fileID: 1683869711}
   - component: {fileID: 1683869710}
   - component: {fileID: 1683869716}
+  - component: {fileID: 1683869717}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: drag
@@ -2086,6 +2151,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: def9da0d0d798e04b831d33b94e66d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1683869717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683869709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a086d99bcc3584b49ae1b11da7b1d907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1726939568
