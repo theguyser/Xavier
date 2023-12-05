@@ -2542,6 +2542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48eddeb071c3e74e8cea06c1387b571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 0}
+  selectionMaterial: {fileID: 0}
 --- !u!4 &2085228149
 Transform:
   m_ObjectHideFlags: 0
