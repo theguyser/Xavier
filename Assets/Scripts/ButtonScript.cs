@@ -47,6 +47,6 @@ public class ButtonScript : MonoBehaviour
             TryAgain.gameObject.SetActive(true);
         }
         correctObjects = 0;
-
+        
     }
 }
