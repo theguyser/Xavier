@@ -6,6 +6,7 @@ TagManager:
   tags:
   - drag
   - snap
+  - Selectable
   layers:
   - Default
   - TransparentFX
