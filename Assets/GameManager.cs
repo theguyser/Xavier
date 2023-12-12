@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] grabObject;
     public GameObject[] snapObject;
+    
     private void Update()
     {
         
