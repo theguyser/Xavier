@@ -10,14 +10,17 @@ public class Grabber : MonoBehaviour
     private Collider snapTargetCollider = null;
     private MeshRenderer snapTargetMeshRenderer = null;
     private float originalYPosition; // To store the original Y position
-    [SerializeField] GameObject allSnapableGameObject;
-    
+    [SerializeField]  GameObject allSnapableGameObject;
+    [SerializeField] private GameObject objectRemainsCounting;
+    private int snappedObjectCount = 0;
+    private int totalSnapableObjects;
 
     private void Start()
     {
         originalYPosition = transform.position.y; // Store the original Y position on start
         Debug.Log("originalYPosition is " + originalYPosition);
-
+        totalSnapableObjects = CountChildren(objectRemainsCounting.transform);
+        Debug.Log("total count " + totalSnapableObjects);
     }
 
     private void Update()
@@ -58,6 +61,11 @@ public class Grabber : MonoBehaviour
             snapTargetMeshRenderer.enabled = true;
             snapTargetCollider = null;
         }
+        if (snappedObjectCount > 0)
+        {
+            snappedObjectCount--;
+            Debug.Log("Snapped Object:" + snappedObjectCount);
+        }
     }
 
     private void StopDragging()
@@ -84,31 +92,34 @@ public class Grabber : MonoBehaviour
         snapTargetCollider = snapTarget.GetComponent<Collider>();
         snapTargetMeshRenderer = snapTarget.GetComponent<MeshRenderer>();
 
-        
-                
         if (snapTargetCollider != null)
         {
             snapTargetCollider.enabled = false;
-                snapTargetMeshRenderer.enabled = false;
+            snapTargetMeshRenderer.enabled = false;
 
-            // Turn off mesh renderer for all children of allSnapablePlace
-            DisableMeshRenderersRecursively(allSnapableGameObject.transform);
+            // Increment the snapped object count and check if all objects are placed
+            snappedObjectCount++;
+            Debug.Log("Snapped Count:" + snappedObjectCount);
+            if (snappedObjectCount == totalSnapableObjects)
+            {
+                // Disable leftover spots
+                DisableLeftoverSpots();
+            }
         }
-        
-
         snapTarget = null;
     }
-    private void DisableMeshRenderersRecursively(Transform parent)
+    private void DisableLeftoverSpots()
     {
-        foreach (Transform child in parent)
+        foreach (Transform child in allSnapableGameObject.transform)
         {
-            MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
-            if (meshRenderer != null)
-            {
-                meshRenderer.enabled = false;
-            }
+            Collider childCollider = child.GetComponent<Collider>();
+            MeshRenderer childMeshRenderer = child.GetComponent<MeshRenderer>();
 
-            DisableMeshRenderersRecursively(child);
+            if (childCollider != null && childMeshRenderer != null && childMeshRenderer.enabled)
+            {
+                childCollider.enabled = false;
+                childMeshRenderer.enabled = false;
+            }
         }
     }
     private void EnableMeshRenderersRecursively(Transform parent)
@@ -123,6 +134,15 @@ public class Grabber : MonoBehaviour
 
             EnableMeshRenderersRecursively(child);
         }
+    }
+    private int CountChildren(Transform parent)
+    {
+        int count = 0;
+        foreach (Transform child in parent)
+        {
+                count++;
+        }
+        return count;
     }
     private void RotateObject()
     {
