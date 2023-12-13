@@ -23,7 +23,7 @@ public class TalkToScript : MonoBehaviour
         {
             if(inConversation)
             {
-                FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue);
             }
             
             RaycastHit hit = CastRay();
