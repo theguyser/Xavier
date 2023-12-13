@@ -10,11 +10,14 @@ public class Grabber : MonoBehaviour
     private Collider snapTargetCollider = null;
     private MeshRenderer snapTargetMeshRenderer = null;
     private float originalYPosition; // To store the original Y position
+    [SerializeField] GameObject allSnapableGameObject;
+    
 
     private void Start()
     {
         originalYPosition = transform.position.y; // Store the original Y position on start
         Debug.Log("originalYPosition is " + originalYPosition);
+
     }
 
     private void Update()
@@ -80,18 +83,50 @@ public class Grabber : MonoBehaviour
         canSnap = false;
         snapTargetCollider = snapTarget.GetComponent<Collider>();
         snapTargetMeshRenderer = snapTarget.GetComponent<MeshRenderer>();
+
+        
+                
         if (snapTargetCollider != null)
         {
             snapTargetCollider.enabled = false;
-            //turn off mesh renderer
-            snapTargetMeshRenderer.enabled = false;
+                snapTargetMeshRenderer.enabled = false;
+
+            // Turn off mesh renderer for all children of allSnapablePlace
+            DisableMeshRenderersRecursively(allSnapableGameObject.transform);
         }
+        
+
         snapTarget = null;
     }
+    private void DisableMeshRenderersRecursively(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
+            if (meshRenderer != null)
+            {
+                meshRenderer.enabled = false;
+            }
 
+            DisableMeshRenderersRecursively(child);
+        }
+    }
+    private void EnableMeshRenderersRecursively(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
+            if (meshRenderer != null)
+            {
+                meshRenderer.enabled = true;
+            }
+
+            EnableMeshRenderersRecursively(child);
+        }
+    }
     private void RotateObject()
     {
-        transform.Rotate(0, 90f, 0);
+        transform.Rotate(0, 0, 90f);
     }
 
     private RaycastHit CastRay()
@@ -117,6 +152,7 @@ public class Grabber : MonoBehaviour
         {
             canSnap = false;
             snapTarget = null;
+            EnableMeshRenderersRecursively(allSnapableGameObject.transform);
         }
     }
 }
@@ -138,4 +174,5 @@ public static class GrabManager
     {
         CurrentlySelectedObject = null;
     }
+    
 }
