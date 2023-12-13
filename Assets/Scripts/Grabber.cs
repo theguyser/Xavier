@@ -14,6 +14,7 @@ public class Grabber : MonoBehaviour
     [SerializeField] private GameObject objectRemainsCounting;
     private int snappedObjectCount = 0;
     private int totalSnapableObjects;
+    private int meshOffCounting = 0;
 
     private void Start()
     {
@@ -60,11 +61,7 @@ public class Grabber : MonoBehaviour
             //turn on mesh renderer
             snapTargetMeshRenderer.enabled = true;
             snapTargetCollider = null;
-        }
-        if (snappedObjectCount > 0)
-        {
-            snappedObjectCount--;
-            Debug.Log("Snapped Object:" + snappedObjectCount);
+            meshOffCounting = 0;
         }
     }
 
@@ -75,6 +72,18 @@ public class Grabber : MonoBehaviour
             SnapObject();
         }
         isDragging = false;
+        // Decreasing the snap when select the same object
+        foreach (Transform child in allSnapableGameObject.transform)
+        {
+            MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
+            if (!meshRenderer.enabled)
+            {
+                meshOffCounting++;
+                snappedObjectCount = meshOffCounting;
+            }
+        }
+        Debug.Log("Mesh Off:" + meshOffCounting);
+        Debug.Log("Snapped Count:" + snappedObjectCount);
         GrabManager.DeselectObject();
     }
 
@@ -96,16 +105,14 @@ public class Grabber : MonoBehaviour
         {
             snapTargetCollider.enabled = false;
             snapTargetMeshRenderer.enabled = false;
-
-            // Increment the snapped object count and check if all objects are placed
-            snappedObjectCount++;
-            Debug.Log("Snapped Count:" + snappedObjectCount);
             if (snappedObjectCount == totalSnapableObjects)
             {
                 // Disable leftover spots
                 DisableLeftoverSpots();
+                Debug.Log("All objects snapped. Disabling leftover spots.");
             }
         }
+        
         snapTarget = null;
     }
     private void DisableLeftoverSpots()
