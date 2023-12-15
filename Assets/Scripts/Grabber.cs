@@ -1,6 +1,7 @@
 using System;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class Grabber : MonoBehaviour
 {
@@ -11,9 +12,8 @@ public class Grabber : MonoBehaviour
     private Collider snapTargetCollider = null;
     private MeshRenderer snapTargetMeshRenderer = null;
     private float originalYPosition; // To store the original Y position
-    [SerializeField]  GameObject allSnapableGameObject;
+    [SerializeField]  private GameObject allSnapableGameObject;
     [SerializeField] private GameObject objectRemainsCounting;
-    private int snappedObjectCount = 0;
     private int totalSnapableObjects;
     [SerializeField] private string assetType;
 
@@ -22,7 +22,7 @@ public class Grabber : MonoBehaviour
         originalYPosition = transform.position.y; // Store the original Y position on start
        // Debug.Log("originalYPosition is " + originalYPosition);
         totalSnapableObjects = CountChildren(objectRemainsCounting.transform);
-        Debug.Log("total count " + totalSnapableObjects);
+        //Debug.Log("total count " + totalSnapableObjects);
         SnappedObjectManager.RegisterAssetType(assetType);
     }
 
@@ -68,6 +68,7 @@ public class Grabber : MonoBehaviour
 
     private void StopDragging()
     {
+        Debug.Log("Can Snap: " + canSnap);
         if (canSnap && snapTarget != null)
         {
             SnapObject();
@@ -91,24 +92,24 @@ public class Grabber : MonoBehaviour
         snapTargetMeshRenderer = snapTarget.GetComponent<MeshRenderer>();
         if (snapTargetCollider != null && snapTargetMeshRenderer != null && snapTarget.CompareTag("snap"))
         {
-            gameObject.tag = "haveSnapped";
             snapTargetCollider.enabled = false;
             snapTargetMeshRenderer.enabled = false;
             snapTarget.tag = "haveSnapped";
-            Debug.Log("Tag:" + snapTarget.tag);
+            //Debug.Log("Tag:" + snapTarget.tag);
             SnappedObjectManager.IncrementCount(assetType);
             Debug.Log("Snapped Objects: " + SnappedObjectManager.snappedCounts[assetType]);
             CheckAndDisableLeftoverSpots();
-
-            if (snappedObjectCount >= totalSnapableObjects)
-            {
-                DisableLeftoverSpots();
-            }
         }
     
         snapTarget = null;
     }
-
+    private void CheckAndDisableLeftoverSpots()
+    {
+        if (SnappedObjectManager.GetCount(assetType) >= totalSnapableObjects)
+        {
+            DisableLeftoverSpots();
+        }
+    }
     private void DisableLeftoverSpots()
     {
         foreach (Transform child in allSnapableGameObject.transform)
@@ -122,18 +123,20 @@ public class Grabber : MonoBehaviour
                 childMeshRenderer.enabled = false;
             }
         }
+        
     }
     private void EnableMeshRenderersRecursively(Transform parent)
     {
         foreach (Transform child in parent)
         {
             MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
-            if (meshRenderer != null)
+            Collider childCollider = child.GetComponent<Collider>();
+            if (meshRenderer != null && child.gameObject.CompareTag("snap"))
             {
                 meshRenderer.enabled = true;
+                childCollider.enabled = true;
             }
-
-            EnableMeshRenderersRecursively(child);
+            
         }
     }
     private int CountChildren(Transform parent)
@@ -159,12 +162,15 @@ public class Grabber : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("snap"))
         {
             canSnap = true;
             snapTarget = other.gameObject;
             snapPosition = other.transform.position;
         }
+        Debug.Log("Trigger Enter " + canSnap );
+        Debug.Log("snap target" + snapTarget);
     }
 
     private void OnTriggerStay(Collider other)
@@ -172,7 +178,11 @@ public class Grabber : MonoBehaviour
         if (isDragging && other.gameObject.CompareTag("haveSnapped"))
         {
             other.gameObject.tag = "snap";
+            SnappedObjectManager.DecrementCount(assetType);
+            CheckAndDisableLeftoverSpots();
+            EnableMeshRenderersRecursively(allSnapableGameObject.transform);
         }
+        Debug.Log("Trigger stay " + snapTarget);
     }
 
     private void OnTriggerExit(Collider other)
@@ -183,15 +193,7 @@ public class Grabber : MonoBehaviour
             canSnap = false;
             snapTarget = null;
             EnableMeshRenderersRecursively(allSnapableGameObject.transform);
-            SnappedObjectManager.DecrementCount(assetType);
-            CheckAndDisableLeftoverSpots();
-        }
-    }
-    private void CheckAndDisableLeftoverSpots()
-    {
-        if (SnappedObjectManager.GetCount(assetType) >= totalSnapableObjects)
-        {
-            DisableLeftoverSpots();
+            
         }
     }
 }

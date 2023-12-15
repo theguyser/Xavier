@@ -274,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
+  assetType: 
 --- !u!1 &286820647
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
+  assetType: 
 --- !u!54 &286820649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1101,6 +1103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
+  assetType: 
 --- !u!54 &654665841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1253,6 +1256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
+  assetType: 
 --- !u!136 &679482401
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1415,6 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
+  assetType: 
 --- !u!54 &684701515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2007,7 +2012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1195405320
 Transform:
   m_ObjectHideFlags: 0
@@ -2415,6 +2420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
+  assetType: 
 --- !u!114 &1354523976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,6 +3246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
+  assetType: 
 --- !u!114 &1683869717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7278,6 +7285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1195405319}
   objectRemainsCounting: {fileID: 1575271987}
+  assetType: 
 --- !u!1 &7989328813609486526
 GameObject:
   m_ObjectHideFlags: 0
