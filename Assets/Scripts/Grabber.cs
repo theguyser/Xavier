@@ -179,7 +179,9 @@ public class Grabber : MonoBehaviour
     private RaycastHit CastRay()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out RaycastHit hit);
+        LayerMask layerMaskToIgnore = ~LayerMask.GetMask("Ignore Raycast");
+        Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, layerMaskToIgnore);
+        
         return hit;
     }
 
@@ -221,7 +223,14 @@ public class Grabber : MonoBehaviour
     {
         if (other.CompareTag("haveSnapped"))
         {
-            other.gameObject.tag = "snap";
+            if (assetType == "Speed Bump")
+            {
+                other.gameObject.tag = "Speed Bump Spot";
+            }
+            else if (assetType == "Traffic")
+            {
+                other.gameObject.tag = "Traffic Light Spot";
+            }
             canSnap = false;
             snapTarget = null;
             EnableMeshRenderersRecursively(allSnapableGameObject.transform);

@@ -8,6 +8,8 @@ TagManager:
   - snap
   - Selectable
   - haveSnapped
+  - Traffic Light Spot
+  - Speed Bump Spot
   layers:
   - Default
   - TransparentFX

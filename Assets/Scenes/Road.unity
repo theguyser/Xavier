@@ -275,6 +275,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
   assetType: Traffic
+  rightPosition: {fileID: 0}
 --- !u!1 &286820647
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +312,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
   assetType: Traffic
+  rightPosition: {fileID: 0}
 --- !u!54 &286820649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1104,6 +1106,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
   assetType: Traffic
+  rightPosition: {fileID: 0}
 --- !u!54 &654665841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1257,6 +1260,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
   assetType: 
+  rightPosition: {fileID: 0}
 --- !u!136 &679482401
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1420,6 +1424,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
   assetType: Traffic
+  rightPosition: {fileID: 0}
 --- !u!54 &684701515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1767,9 +1772,9 @@ GameObject:
   - component: {fileID: 1051818747}
   - component: {fileID: 1051818746}
   - component: {fileID: 1051818745}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TrafficLight.003 (1)
-  m_TagString: snap
+  m_TagString: Traffic Light Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2012,7 +2017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1195405320
 Transform:
   m_ObjectHideFlags: 0
@@ -2178,9 +2183,9 @@ GameObject:
   - component: {fileID: 1298040039}
   - component: {fileID: 1298040038}
   - component: {fileID: 1298040037}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: speed bump (1)
-  m_TagString: snap
+  m_TagString: Speed Bump Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2421,6 +2426,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
   assetType: 
+  rightPosition: {fileID: 0}
 --- !u!114 &1354523976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2551,9 +2557,9 @@ GameObject:
   - component: {fileID: 1487902430}
   - component: {fileID: 1487902429}
   - component: {fileID: 1487902428}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: speed bump (3)
-  m_TagString: snap
+  m_TagString: Speed Bump Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3247,6 +3253,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
   assetType: 
+  rightPosition: {fileID: 0}
 --- !u!114 &1683869717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3697,9 +3704,9 @@ GameObject:
   - component: {fileID: 1871286744}
   - component: {fileID: 1871286743}
   - component: {fileID: 1871286742}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: speed bump (2)
-  m_TagString: snap
+  m_TagString: Speed Bump Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4315,9 +4322,9 @@ GameObject:
   - component: {fileID: 3887255059286588247}
   - component: {fileID: 1476259944573142007}
   - component: {fileID: 3887255059286588248}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TrafficLight.003
-  m_TagString: snap
+  m_TagString: Traffic Light Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4647,9 +4654,9 @@ GameObject:
   - component: {fileID: 2369007469411336357}
   - component: {fileID: 7247118915006163933}
   - component: {fileID: 7247118915006163934}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TrafficLight
-  m_TagString: snap
+  m_TagString: Traffic Light Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5513,9 +5520,9 @@ GameObject:
   - component: {fileID: 2677076236934493419}
   - component: {fileID: 6942407591958282469}
   - component: {fileID: 6942407591958282470}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TrafficLight.002
-  m_TagString: snap
+  m_TagString: Traffic Light Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7034,9 +7041,9 @@ GameObject:
   - component: {fileID: 8337749978832010200}
   - component: {fileID: 781207213397216590}
   - component: {fileID: 1023050316}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: speed bump
-  m_TagString: snap
+  m_TagString: Speed Bump Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7286,6 +7293,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 1195405319}
   objectRemainsCounting: {fileID: 1575271987}
   assetType: Speed Bump
+  rightPosition: {fileID: 0}
 --- !u!1 &7989328813609486526
 GameObject:
   m_ObjectHideFlags: 0
@@ -7298,9 +7306,9 @@ GameObject:
   - component: {fileID: 7836856937349174436}
   - component: {fileID: 7110903735665619458}
   - component: {fileID: 7989328813609486527}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TrafficLight.001
-  m_TagString: snap
+  m_TagString: Traffic Light Spot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
