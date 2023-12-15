@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class Grabber : MonoBehaviour
@@ -14,14 +15,13 @@ public class Grabber : MonoBehaviour
     [SerializeField] private GameObject objectRemainsCounting;
     private int snappedObjectCount = 0;
     private int totalSnapableObjects;
-    private int meshOffCounting = 0;
 
     private void Start()
     {
         originalYPosition = transform.position.y; // Store the original Y position on start
-        Debug.Log("originalYPosition is " + originalYPosition);
+       // Debug.Log("originalYPosition is " + originalYPosition);
         totalSnapableObjects = CountChildren(objectRemainsCounting.transform);
-        Debug.Log("total count " + totalSnapableObjects);
+        //Debug.Log("total count " + totalSnapableObjects);
     }
 
     private void Update()
@@ -61,7 +61,6 @@ public class Grabber : MonoBehaviour
             //turn on mesh renderer
             snapTargetMeshRenderer.enabled = true;
             snapTargetCollider = null;
-            meshOffCounting = 0;
         }
     }
 
@@ -72,18 +71,6 @@ public class Grabber : MonoBehaviour
             SnapObject();
         }
         isDragging = false;
-        // Decreasing the snap when select the same object
-        foreach (Transform child in allSnapableGameObject.transform)
-        {
-            MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
-            if (!meshRenderer.enabled)
-            {
-                meshOffCounting++;
-                snappedObjectCount = meshOffCounting;
-            }
-        }
-        Debug.Log("Mesh Off:" + meshOffCounting);
-        Debug.Log("Snapped Count:" + snappedObjectCount);
         GrabManager.DeselectObject();
     }
 
@@ -93,28 +80,32 @@ public class Grabber : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         transform.position = new Vector3(worldPosition.x, originalYPosition, worldPosition.z); // Keep the Y position constant
     }
-
+    
     private void SnapObject()
     {
         transform.position = snapPosition;
         canSnap = false;
         snapTargetCollider = snapTarget.GetComponent<Collider>();
         snapTargetMeshRenderer = snapTarget.GetComponent<MeshRenderer>();
-
-        if (snapTargetCollider != null)
+        if (snapTargetCollider != null && snapTargetMeshRenderer != null && snapTarget.CompareTag("snap"))
         {
+            gameObject.tag = "haveSnapped";
             snapTargetCollider.enabled = false;
             snapTargetMeshRenderer.enabled = false;
-            if (snappedObjectCount == totalSnapableObjects)
+            snappedObjectCount++;
+            Debug.Log("Snapped Object: " + snappedObjectCount);
+            snapTarget.tag = "haveSnapped";
+            Debug.Log("Tag:" + snapTarget.tag);
+
+            if (snappedObjectCount >= totalSnapableObjects)
             {
-                // Disable leftover spots
                 DisableLeftoverSpots();
-                Debug.Log("All objects snapped. Disabling leftover spots.");
             }
         }
-        
+    
         snapTarget = null;
     }
+
     private void DisableLeftoverSpots()
     {
         foreach (Transform child in allSnapableGameObject.transform)
@@ -173,10 +164,19 @@ public class Grabber : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (isDragging && other.gameObject.CompareTag("haveSnapped"))
+        {
+            other.gameObject.tag = "snap";
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("snap"))
+        if (other.CompareTag("haveSnapped"))
         {
+            other.gameObject.tag = "snap";
             canSnap = false;
             snapTarget = null;
             EnableMeshRenderersRecursively(allSnapableGameObject.transform);
