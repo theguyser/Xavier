@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: 
+  assetType: Traffic
 --- !u!1 &286820647
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: 
+  assetType: Traffic
 --- !u!54 &286820649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: 
+  assetType: Traffic
 --- !u!54 &654665841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: 
+  assetType: Traffic
 --- !u!54 &684701515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7285,7 +7285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1195405319}
   objectRemainsCounting: {fileID: 1575271987}
-  assetType: 
+  assetType: Speed Bump
 --- !u!1 &7989328813609486526
 GameObject:
   m_ObjectHideFlags: 0

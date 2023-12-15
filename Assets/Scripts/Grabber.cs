@@ -1,7 +1,9 @@
 using System;
+using Unity.VisualScripting;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Rendering.Universal;
 
 public class Grabber : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class Grabber : MonoBehaviour
     [SerializeField] private GameObject objectRemainsCounting;
     private int totalSnapableObjects;
     [SerializeField] private string assetType;
+    [SerializeField] private GameObject rightPosition;
 
     private void Start()
     {
@@ -68,10 +71,9 @@ public class Grabber : MonoBehaviour
 
     private void StopDragging()
     {
-        Debug.Log("Can Snap: " + canSnap);
-        if (canSnap && snapTarget != null)
+        if (canSnap && snapTarget != null )
         {
-            SnapObject();
+           SnapObject();
         }
         isDragging = false;
         GrabManager.DeselectObject();
@@ -86,11 +88,12 @@ public class Grabber : MonoBehaviour
     
     private void SnapObject()
     {
+        if (!canSnap) return; // Do not proceed if canSnap is false
         transform.position = snapPosition;
         canSnap = false;
         snapTargetCollider = snapTarget.GetComponent<Collider>();
         snapTargetMeshRenderer = snapTarget.GetComponent<MeshRenderer>();
-        if (snapTargetCollider != null && snapTargetMeshRenderer != null && snapTarget.CompareTag("snap"))
+        if (snapTargetCollider != null && snapTargetMeshRenderer != null)
         {
             snapTargetCollider.enabled = false;
             snapTargetMeshRenderer.enabled = false;
@@ -99,10 +102,30 @@ public class Grabber : MonoBehaviour
             SnappedObjectManager.IncrementCount(assetType);
             Debug.Log("Snapped Objects: " + SnappedObjectManager.snappedCounts[assetType]);
             CheckAndDisableLeftoverSpots();
+           
         }
     
         snapTarget = null;
     }
+
+    private void CheckForTheRightSpot()
+    {
+        foreach (Transform child in allSnapableGameObject.transform)
+        {
+            GameObject childName = child.gameObject;
+            Collider ignoreCollider = snapTarget.GetComponent<Collider>();
+            //Debug.Log("Child Name: " + childName);
+            if (snapTarget == childName)
+            {
+                SnapObject();
+            }
+            else
+            {
+                Physics.IgnoreCollision(ignoreCollider, this.GetComponent<Collider>(),true);
+            }
+        }
+    }
+    
     private void CheckAndDisableLeftoverSpots()
     {
         if (SnappedObjectManager.GetCount(assetType) >= totalSnapableObjects)
@@ -131,7 +154,7 @@ public class Grabber : MonoBehaviour
         {
             MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
             Collider childCollider = child.GetComponent<Collider>();
-            if (meshRenderer != null && child.gameObject.CompareTag("snap"))
+            if (meshRenderer != null && (child.gameObject.CompareTag("Traffic Light Spot")||child.gameObject.CompareTag("Speed Bump Spot")))
             {
                 meshRenderer.enabled = true;
                 childCollider.enabled = true;
@@ -163,26 +186,35 @@ public class Grabber : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.CompareTag("snap"))
+        if (assetType == "Speed Bump" && other.CompareTag("Speed Bump Spot") ||
+            assetType == "Traffic" && other.CompareTag("Traffic Light Spot"))
         {
             canSnap = true;
             snapTarget = other.gameObject;
             snapPosition = other.transform.position;
         }
-        Debug.Log("Trigger Enter " + canSnap );
-        Debug.Log("snap target" + snapTarget);
+        //Debug.Log("Trigger Enter " + canSnap );
+        //Debug.Log("snap target" + snapTarget);
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (isDragging && other.gameObject.CompareTag("haveSnapped"))
         {
-            other.gameObject.tag = "snap";
+            if (assetType == "Speed Bump")
+            {
+                other.gameObject.tag = "Speed Bump Spot";
+            }
+            else if (assetType == "Traffic")
+            {
+                other.gameObject.tag = "Traffic Light Spot";
+            }
+            
             SnappedObjectManager.DecrementCount(assetType);
             CheckAndDisableLeftoverSpots();
             EnableMeshRenderersRecursively(allSnapableGameObject.transform);
         }
-        Debug.Log("Trigger stay " + snapTarget);
+        //Debug.Log("Trigger stay " + snapTarget);
     }
 
     private void OnTriggerExit(Collider other)
