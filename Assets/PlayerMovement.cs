@@ -31,15 +31,15 @@ public class PlayerMovement : MonoBehaviour
         moveSide = Input.GetAxis("Vertical") * playerMovespeed * Time.deltaTime;
         transform.Translate(moveStraight, 0f, moveSide);
         isMoving = moveStraight != 0 || moveSide != 0;
-        if (isMoving && !audioSource.isPlaying)
+        if (isMoving)//(isMoving && !audioSource.isPlaying)
         {
-            audioSource.clip = footstepSound;
-            audioSource.Play();
+            //audioSource.clip = footstepSound;
+            //audioSource.Play();
         }
         if (Input.GetKeyDown(KeyCode.Space) && playerongrnd)
         {
             playerRB.AddForce(0f, 1f * jumpValue, 0f, ForceMode.Impulse);
-            audioSource.PlayOneShot(jumpSound);
+            //audioSource.PlayOneShot(jumpSound);
         }
     }
 
