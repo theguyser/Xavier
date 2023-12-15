@@ -2183,7 +2183,7 @@ GameObject:
   - component: {fileID: 1298040039}
   - component: {fileID: 1298040038}
   - component: {fileID: 1298040037}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: speed bump (1)
   m_TagString: Speed Bump Spot
   m_Icon: {fileID: 0}
@@ -2557,7 +2557,7 @@ GameObject:
   - component: {fileID: 1487902430}
   - component: {fileID: 1487902429}
   - component: {fileID: 1487902428}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: speed bump (3)
   m_TagString: Speed Bump Spot
   m_Icon: {fileID: 0}
@@ -3704,7 +3704,7 @@ GameObject:
   - component: {fileID: 1871286744}
   - component: {fileID: 1871286743}
   - component: {fileID: 1871286742}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: speed bump (2)
   m_TagString: Speed Bump Spot
   m_Icon: {fileID: 0}
@@ -7041,7 +7041,7 @@ GameObject:
   - component: {fileID: 8337749978832010200}
   - component: {fileID: 781207213397216590}
   - component: {fileID: 1023050316}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: speed bump
   m_TagString: Speed Bump Spot
   m_Icon: {fileID: 0}
