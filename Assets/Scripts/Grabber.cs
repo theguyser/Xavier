@@ -15,13 +15,15 @@ public class Grabber : MonoBehaviour
     [SerializeField] private GameObject objectRemainsCounting;
     private int snappedObjectCount = 0;
     private int totalSnapableObjects;
+    [SerializeField] private string assetType;
 
     private void Start()
     {
         originalYPosition = transform.position.y; // Store the original Y position on start
        // Debug.Log("originalYPosition is " + originalYPosition);
         totalSnapableObjects = CountChildren(objectRemainsCounting.transform);
-        //Debug.Log("total count " + totalSnapableObjects);
+        Debug.Log("total count " + totalSnapableObjects);
+        SnappedObjectManager.RegisterAssetType(assetType);
     }
 
     private void Update()
@@ -92,10 +94,11 @@ public class Grabber : MonoBehaviour
             gameObject.tag = "haveSnapped";
             snapTargetCollider.enabled = false;
             snapTargetMeshRenderer.enabled = false;
-            snappedObjectCount++;
-            Debug.Log("Snapped Object: " + snappedObjectCount);
             snapTarget.tag = "haveSnapped";
             Debug.Log("Tag:" + snapTarget.tag);
+            SnappedObjectManager.IncrementCount(assetType);
+            Debug.Log("Snapped Objects: " + SnappedObjectManager.snappedCounts[assetType]);
+            CheckAndDisableLeftoverSpots();
 
             if (snappedObjectCount >= totalSnapableObjects)
             {
@@ -180,6 +183,15 @@ public class Grabber : MonoBehaviour
             canSnap = false;
             snapTarget = null;
             EnableMeshRenderersRecursively(allSnapableGameObject.transform);
+            SnappedObjectManager.DecrementCount(assetType);
+            CheckAndDisableLeftoverSpots();
+        }
+    }
+    private void CheckAndDisableLeftoverSpots()
+    {
+        if (SnappedObjectManager.GetCount(assetType) >= totalSnapableObjects)
+        {
+            DisableLeftoverSpots();
         }
     }
 }
