@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TalkToScript : MonoBehaviour
 {
-    public bool inConversation = false;
-    public bool canStartConversation = true;
-    private GameObject talkTarget = null;
+    
+    public static bool canStartConversation = true;
+    public static GameObject talkTarget = null;
+    public bool DialogueOptionsAvailable = false;
     public Dialogue dialogue;
     
 
@@ -21,7 +22,7 @@ public class TalkToScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(inConversation)
+            if(!canStartConversation)
             {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue);
             }
@@ -30,6 +31,7 @@ public class TalkToScript : MonoBehaviour
 
             if (hit.collider != null && hit.collider.gameObject == gameObject && canStartConversation)
             {
+                talkTarget = hit.collider.gameObject;
                 StartConversation();
             }
             
@@ -45,7 +47,7 @@ public class TalkToScript : MonoBehaviour
     }
     private void StartConversation()
     {
-        inConversation = true;
+        
         canStartConversation = false;
         TalkManager.SelectObject(gameObject);
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
