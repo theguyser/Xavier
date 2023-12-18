@@ -154,11 +154,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 486817585}
   dialogueText: {fileID: 814221583}
-  nameText: {fileID: 1606724095}
+  NameDisplayedOnDialogueBox: {fileID: 1606724095}
   DialogueOptions: {fileID: 217254987}
-  DialogueOption1: {fileID: 462496474}
-  DialogueOption2: {fileID: 1905608015}
-  DialogueOption3: {fileID: 1994180402}
+  DialogueOptionButtons:
+  - {fileID: 1810662928}
+  - {fileID: 191136195}
+  - {fileID: 1037675152}
+  StartingDialogue: {fileID: 951745181}
 --- !u!4 &67141286
 Transform:
   m_ObjectHideFlags: 0
@@ -430,7 +432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dialogue Option One
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -755,9 +757,13 @@ MonoBehaviour:
     names:
     - Rude Man
     - Rude Man
+    - Rude Man
+    - Rude Man
     sentences:
-    - Im not giving up my seat.
-    - Scram!
+    - 1st sentence
+    - 2nd sentence
+    - 3rd sentence
+    - 4th sentence
     DialogueOptions: []
 --- !u!1 &814221581
 GameObject:
@@ -1021,11 +1027,9 @@ GameObject:
   m_Component:
   - component: {fileID: 951745182}
   - component: {fileID: 951745183}
-  - component: {fileID: 951745185}
-  - component: {fileID: 951745184}
   m_Layer: 0
   m_Name: Starting Dialogue
-  m_TagString: drag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1067,56 +1071,6 @@ MonoBehaviour:
     - 'Yeah, that old lady by the pole looks uncomfortable. '
     - Why don't you check on her? And be polite!
     DialogueOptions: []
---- !u!23 &951745184
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951745181}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 712255de4e7a16343931ab8a6322e402, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &951745185
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951745181}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1037675152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1192,142 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037675152}
   m_CullTransparentMesh: 1
+--- !u!1 &1064542149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064542154}
+  - component: {fileID: 1064542153}
+  - component: {fileID: 1064542152}
+  - component: {fileID: 1064542151}
+  - component: {fileID: 1064542150}
+  m_Layer: 0
+  m_Name: Grandma (1)
+  m_TagString: drag
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &1064542150
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064542149}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1064542151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064542149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1598e88aee41c740ae9f22f18cbf6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueOptionsAvailable: 1
+  dialogue:
+    names:
+    - Name 1
+    - Name 2
+    - Name 3
+    - Name 4
+    sentences:
+    - 1ST SENTENCE
+    - 2ND SENTENCE
+    - 3RD SENTENCE
+    - 4TH SENTENCE
+    DialogueOptions:
+    - Too bad, grandma.
+    - Is there any way I can help?
+    - 
+--- !u!23 &1064542152
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064542149}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1547cf48bc350ce4bbef4b5c7bbecee2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1064542153
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064542149}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1064542154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064542149}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.726, y: 2.604, z: 5.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1246727943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,10 +1544,11 @@ GameObject:
   - component: {fileID: 1369731974}
   - component: {fileID: 1369731973}
   - component: {fileID: 1369731972}
+  - component: {fileID: 1369731975}
   - component: {fileID: 1369731971}
   m_Layer: 0
   m_Name: Grandma
-  m_TagString: Untagged
+  m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1550,6 +1641,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369731975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369731970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1598e88aee41c740ae9f22f18cbf6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueOptionsAvailable: 1
+  dialogue:
+    names:
+    - Elderly Woman
+    - Xavier
+    - Xavier
+    - Woman
+    sentences:
+    - These knees are killing me.
+    - (I hope she doesn't mind me asking how she's feeling.)
+    - Xavier is talking
+    - Lady is talking
+    DialogueOptions:
+    - Too bad, grandma.
+    - Is there any way I can help?
+    - 
 --- !u!1 &1504132746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,10 +1900,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2082,7 +2201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dialogue Option Two
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2216,7 +2335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dialogue Option Three
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2302,9 +2421,10 @@ SceneRoots:
   - {fileID: 1504132748}
   - {fileID: 1818169645}
   - {fileID: 666490582}
+  - {fileID: 1369731974}
+  - {fileID: 1064542154}
   - {fileID: 1246727946}
   - {fileID: 598862692}
   - {fileID: 1757714578}
   - {fileID: 67141286}
-  - {fileID: 1369731974}
   - {fileID: 951745182}

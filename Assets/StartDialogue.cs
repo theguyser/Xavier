@@ -11,33 +11,33 @@ public class StartDialogue : MonoBehaviour
     
     void Start()
     {
-        
         StartConversation();
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (startingDialougueComplete)
+        {
+            return;
+        }
+        else if (Input.GetMouseButtonDown(0))
         {
             if (!canStart)
             {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue);
-                return;
             }
         }
-        else if (startingDialougueComplete)
-        {
-            return;
-        }
+
     }
     private void StartConversation()
     {
         canStart = false;
         //TalkManager.SelectObject(gameObject);
-        FindObjectOfType<DialogueManager>().StartFirstConversation(dialogue);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 
     }
     public void StartingDialogueComplete()
     {
         startingDialougueComplete = true;
+        Destroy(this.gameObject);
     }
 }

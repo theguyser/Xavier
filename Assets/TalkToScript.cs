@@ -25,19 +25,20 @@ public class TalkToScript : MonoBehaviour
             if(!canStartConversation)
             {
                 FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue);
+                Debug.Log("Displaying Next Sentence");
+                return;
             }
-            
-            RaycastHit hit = CastRay();
-
-            if (hit.collider != null && hit.collider.gameObject == gameObject && canStartConversation)
+            else
             {
-                talkTarget = hit.collider.gameObject;
-                StartConversation();
+                RaycastHit hit = CastRay();
+
+                if (hit.collider != null && hit.collider.gameObject == gameObject && canStartConversation)
+                {
+                    talkTarget = hit.collider.gameObject;
+                    StartConversation();
+                }
             }
-            
         }
-        
-        
     }
     private RaycastHit CastRay()
     {
@@ -47,28 +48,10 @@ public class TalkToScript : MonoBehaviour
     }
     private void StartConversation()
     {
-        
         canStartConversation = false;
-        TalkManager.SelectObject(gameObject);
+        //TalkManager.SelectObject(gameObject);
+        Debug.Log("Starting Conversation");
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 
-    }
-    public static class TalkManager
-    {
-        public static GameObject CurrentlyTalkingToObject { get; private set; }
-
-        public static void SelectObject(GameObject obj)
-        {
-            if (CurrentlyTalkingToObject != obj)
-            {
-                DeselectObject();
-                CurrentlyTalkingToObject = obj;
-            }
-        }
-
-        public static void DeselectObject()
-        {
-            CurrentlyTalkingToObject = null;
-        }
     }
 }

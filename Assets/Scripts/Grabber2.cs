@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grabber2 : MonoBehaviour
 {
-    [SerializeField] private float offset;
+    /*[SerializeField] private float offset;
 
     private bool canSnap = false;
     private Vector3 snapPosition;
@@ -91,9 +91,9 @@ public class Grabber2 : MonoBehaviour
         {
             canSnap = false;
         }
-    }
+    }*/
 }
-
+/*
 public static class GrabManager1
 {
     public static GameObject CurrentlySelectedObject { get; private set; }
@@ -107,4 +107,4 @@ public static class GrabManager1
     {
         CurrentlySelectedObject = null;
     }
-}
+}*/

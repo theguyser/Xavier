@@ -47,7 +47,7 @@ public class Grabber : MonoBehaviour
     private void StartDragging()
     {
         isDragging = true;
-        GrabManager1.SelectObject(gameObject);
+        //GrabManager.SelectObject(gameObject);
         if (snapTargetCollider != null)
         {
             snapTargetCollider.enabled = true;
@@ -64,7 +64,7 @@ public class Grabber : MonoBehaviour
             SnapObject();
         }
         isDragging = false;
-        GrabManager.DeselectObject();
+        //GrabManager.DeselectObject();
     }
 
     private void DragObject()
@@ -121,7 +121,7 @@ public class Grabber : MonoBehaviour
     }
 }
 
-public static class GrabManager
+/*public static class GrabManager
 {
     public static GameObject CurrentlySelectedObject { get; private set; }
 
@@ -138,4 +138,4 @@ public static class GrabManager
     {
         CurrentlySelectedObject = null;
     }
-}
+}*/
