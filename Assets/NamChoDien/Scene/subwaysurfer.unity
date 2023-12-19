@@ -257,8 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce6274f0f8d00649a3500755378da89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  internalLeft: 3
-  internalRight: 3
+  internalLeft: 0
+  internalRight: 0
 --- !u!4 &654234040
 Transform:
   m_ObjectHideFlags: 0
@@ -511,7 +511,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 15.77}
-  m_LocalScale: {x: 5, y: 1, z: 20}
+  m_LocalScale: {x: 8, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -734,7 +734,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 20}
+  m_LocalScale: {x: 8, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -13,7 +13,7 @@ public class movement : MonoBehaviour
         //Move left 
       if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) 
       {
-          if (transform.position.x > LevelBoundary.leftSide)
+          if (this.gameObject.transform.position.x > LevelBoundary.leftSide)
           {
               transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed);
           }
@@ -21,7 +21,7 @@ public class movement : MonoBehaviour
         //Move right
       if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
       {
-          if (transform.position.x < LevelBoundary.rightSide)
+          if (this.gameObject.transform.position.x < LevelBoundary.rightSide)
           {
               transform.Translate(Vector3.right * Time.deltaTime * leftRightSpeed);
           }
