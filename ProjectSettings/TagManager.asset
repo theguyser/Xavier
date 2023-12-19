@@ -7,6 +7,8 @@ TagManager:
   - drag
   - snap
   - Selectable
+  - route
+  - option
   layers:
   - Default
   - TransparentFX
