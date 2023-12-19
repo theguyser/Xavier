@@ -61,6 +61,7 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         string name = names.Dequeue();
         //dialogueText.text = sentence; (Before Typing Effect)
+        Debug.Log("Count" + ": " + sentences.Count);
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         NameDisplayedOnDialogueBox.text = name;
