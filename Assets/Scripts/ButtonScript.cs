@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+public enum ObjectType
+{
+    TrafficLight,
+    SpeedBump
+}
 public class ButtonScript : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,40 +18,65 @@ public class ButtonScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI TryAgain;
     
     public ResetButton resetButton;
+    private Dictionary<ObjectType, HashSet<Vector3>> correctSpotPositions;
     
-    public void Click()
+    void Start()
+    {
+        correctSpotPositions = new Dictionary<ObjectType, HashSet<Vector3>>();
+
+        // Initialize correct spots for each type
+        InitializeCorrectSpots(ObjectType.TrafficLight, 4); // 4 correct spots for traffic lights
+        InitializeCorrectSpots(ObjectType.SpeedBump, 1);    // 3 correct spots for speed bumps
+    }
+
+    private void InitializeCorrectSpots(ObjectType type, int numberOfSpots)
+    {
+        HashSet<Vector3> spots = new HashSet<Vector3>();
+        for (int i = 0; i < numberOfSpots; i++)
+        {
+            spots.Add(gameManager.GetSnapObjectPosition(type, i));
+        }
+        correctSpotPositions[type] = spots;
+    }
+   
+    public void OnButtonClick()
+    {
+        // Call Click with a specific ObjectType
+        // Example: ObjectType.TrafficLight or ObjectType.SpeedBump
+        Click(ObjectType.TrafficLight); 
+        Click(ObjectType.SpeedBump);
+    }
+
+    public void Click(ObjectType type)
     {
         GoodJob.gameObject.SetActive(false);
         TryAgain.gameObject.SetActive(false);
-        //write a for loop that checks if the index of grabObject is the same as snapObject
-        //if it is, then print "correct"
-        //if it is not, then print "incorrect"
-        for (int i = 0; i < gameManager.grabObject.Length; i++)
+        correctObjects = 0;
+
+        foreach (var obj in gameManager.GetGrabObjects(type))
         {
-            if (gameManager.grabObject[i].transform.position == gameManager.snapObject[i].transform.position)
+            if (correctSpotPositions[type].Contains(obj.transform.position))
             {
-                //Debug.Log("correct");
+                Debug.Log("correct");
                 correctObjects++;
-                
             }
             else
             {
-                //Debug.Log("incorrect");
+                Debug.Log("incorrect");
             }
         }
-        if (correctObjects == gameManager.grabObject.Length)
+
+        if (correctObjects == gameManager.GetNumberOfObjects(type))
         {
-            //make GoodJob canvas appear
             GoodJob.gameObject.SetActive(true);
-            
             resetButton.isTimerGoing = false;
         }
         else
         {
-            //make TryAgain canvas appear
             TryAgain.gameObject.SetActive(true);
         }
-        correctObjects = 0;
-        
     }
 }
+
+
+
