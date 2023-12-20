@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TalkToScript : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TalkToScript : MonoBehaviour
     public static GameObject talkTarget = null;
     public bool DialogueOptionsAvailable = false;
     public Dialogue dialogue;
+    public DialogueTrigger dialogueTrigger;
     
 
     // Start is called before the first frame update
@@ -20,24 +22,12 @@ public class TalkToScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        RaycastHit hit = CastRay();
+        if (hit.collider != null && hit.collider.gameObject == gameObject && canStartConversation)
         {
-            if(!canStartConversation)
-            {
-                FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue);
-                Debug.Log("Displaying Next Sentence");
-                return;
-            }
-            else
-            {
-                RaycastHit hit = CastRay();
-
-                if (hit.collider != null && hit.collider.gameObject == gameObject && canStartConversation)
-                {
-                    talkTarget = hit.collider.gameObject;
-                    StartConversation();
-                }
-            }
+            talkTarget = hit.collider.gameObject;
+            dialogueTrigger.ReceiveDialogueFromScript(dialogue);
+            //StartConversation();
         }
     }
     private RaycastHit CastRay()
@@ -46,12 +36,5 @@ public class TalkToScript : MonoBehaviour
         Physics.Raycast(ray, out RaycastHit hit);
         return hit;
     }
-    private void StartConversation()
-    {
-        canStartConversation = false;
-        //TalkManager.SelectObject(gameObject);
-        Debug.Log("Starting Conversation");
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 
-    }
 }

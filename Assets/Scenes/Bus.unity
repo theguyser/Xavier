@@ -645,6 +645,7 @@ GameObject:
   - component: {fileID: 666490580}
   - component: {fileID: 666490579}
   - component: {fileID: 666490583}
+  - component: {fileID: 666490584}
   m_Layer: 0
   m_Name: Rude Man
   m_TagString: drag
@@ -765,6 +766,19 @@ MonoBehaviour:
     - 3rd sentence
     - 4th sentence
     DialogueOptions: []
+  dialogueTrigger: {fileID: 666490584}
+--- !u!114 &666490584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666490577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf4c79a61a633a45934c0218a847b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &814221581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1218,7 @@ GameObject:
   - component: {fileID: 1064542153}
   - component: {fileID: 1064542152}
   - component: {fileID: 1064542151}
+  - component: {fileID: 1064542155}
   - component: {fileID: 1064542150}
   m_Layer: 0
   m_Name: Grandma (1)
@@ -1263,6 +1278,7 @@ MonoBehaviour:
     - Too bad, grandma.
     - Is there any way I can help?
     - 
+  dialogueTrigger: {fileID: 1064542155}
 --- !u!23 &1064542152
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1328,6 +1344,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064542155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064542149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf4c79a61a633a45934c0218a847b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1246727943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1573,7 @@ GameObject:
   - component: {fileID: 1369731973}
   - component: {fileID: 1369731972}
   - component: {fileID: 1369731975}
+  - component: {fileID: 1369731976}
   - component: {fileID: 1369731971}
   m_Layer: 0
   m_Name: Grandma
@@ -1648,7 +1677,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369731970}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1598e88aee41c740ae9f22f18cbf6ac, type: 3}
   m_Name: 
@@ -1669,6 +1698,19 @@ MonoBehaviour:
     - Too bad, grandma.
     - Is there any way I can help?
     - 
+  dialogueTrigger: {fileID: 1369731976}
+--- !u!114 &1369731976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369731970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf4c79a61a633a45934c0218a847b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1504132746
 GameObject:
   m_ObjectHideFlags: 0
