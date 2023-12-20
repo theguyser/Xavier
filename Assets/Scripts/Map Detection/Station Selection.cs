@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class StationSelection : MonoBehaviour
 {
@@ -30,7 +31,9 @@ public class StationSelection : MonoBehaviour
             backgroundImage.enabled = false;
         }
 
-        routeOptions = GameObject.FindGameObjectsWithTag("option");
+        GameObject[] unsortedOptions = GameObject.FindGameObjectsWithTag("option");
+        routeOptions = unsortedOptions.OrderBy(go => go.name).ToArray();
+        //routeOptions = GameObject.FindGameObjectsWithTag("option");
         if (routeOptions == null || routeOptions.Length == 0)
         {
             Debug.LogError("Route options not found");
