@@ -70,12 +70,23 @@ public class StationSelection : MonoBehaviour
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
                 ShowOptions();
+                Debug.Log("Hit: " + hit.collider.gameObject);
+            }
+        }
+
+        if (TravelTimeManager.onRoute5 = true && Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit = CastRay();
+            if (hit.collider != null && hit.collider.gameObject == gameObject && hit.collider.tag == "Station Route 5min");
+            {
+                Debug.Log("Hit station in route 5min");
             }
         }
     }
 
     private void ShowOptions()
     {
+        
         // Activate background and deactivate all route options initially
         backgroundImage.enabled = true;
            
