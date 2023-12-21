@@ -40,7 +40,6 @@ public class TextManager : MonoBehaviour
     public void Waiting5()
     {
         waitingTimeTotal = waitingTimeTotal + 5f;
-        TravelTimeManager.OnRoute5();
         UpdateTextUI();
         Debug.Log("Waiting Time Total: " +  waitingTimeTotal);
     }

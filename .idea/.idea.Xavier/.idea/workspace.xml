@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="651eb683-c56b-4432-b354-75c0aa2e08ac" name="Changes" comment="" />
+    <list default="true" id="651eb683-c56b-4432-b354-75c0aa2e08ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Xavier/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Xavier/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map detection.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map detection.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Option Script.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Option Script.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Station Selection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Station Selection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Text Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Text Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Travel Time Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Travel Time Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,6 +111,7 @@
       <workItem from="1703045250365" duration="2993000" />
       <workItem from="1703048442388" duration="2209000" />
       <workItem from="1703100220492" duration="2083000" />
+      <workItem from="1703186175608" duration="7095000" />
     </task>
     <servers />
   </component>

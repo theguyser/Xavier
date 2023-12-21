@@ -11,6 +11,8 @@ public class OptionScript : MonoBehaviour
     private Text textComponent;
     [SerializeField] GameObject[] routeOptions;
     private GameObject background;
+    public static bool onRouteOrange = false;
+    public static bool onRouteBlue = false;
 
     public void ChooseOption()
     {
@@ -58,6 +60,15 @@ public class OptionScript : MonoBehaviour
         
     }
 
-    
+    public void OnRouteOrange()
+    {
+        onRouteOrange = true;
+        onRouteBlue = false;
+    }
+    public void OnRouteBlue()
+    {
+        onRouteBlue = true;
+        onRouteOrange = false;
+    }
 
 }

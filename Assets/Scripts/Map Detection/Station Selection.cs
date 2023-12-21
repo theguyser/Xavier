@@ -15,7 +15,11 @@ public class StationSelection : MonoBehaviour
     private Button buttonComponent;
     private Image buttonImage;
     private Text textComponent;
-
+    [SerializeField] private TravelTimeManager travelTimeManager;
+    private RaycastHit hit;
+    private float timeOnRouteOrange = 0f;
+    private static float timeOnRouteBlue ;
+    private float timeSpent;
 
     private void Start()
     {
@@ -66,22 +70,24 @@ public class StationSelection : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit = CastRay();
+            hit = CastRay();
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
                 ShowOptions();
                 Debug.Log("Hit: " + hit.collider.gameObject);
+                if (OptionScript.onRouteOrange == true)
+                {
+                    RouteOrange();
+                }
+                else if (OptionScript.onRouteBlue == true)
+                {
+                    RouteBlue();
+                }
+                
             }
         }
 
-        if (TravelTimeManager.onRoute5 = true && Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit = CastRay();
-            if (hit.collider != null && hit.collider.gameObject == gameObject && hit.collider.tag == "Station Route 5min");
-            {
-                Debug.Log("Hit station in route 5min");
-            }
-        }
+        timeSpent = timeOnRouteBlue + timeOnRouteOrange;
     }
 
     private void ShowOptions()
@@ -140,4 +146,117 @@ public class StationSelection : MonoBehaviour
         Physics.Raycast(ray, out RaycastHit hit);
         return hit;
     }
+
+    private void RouteOrange()
+    {
+       
+        if (hit.collider.tag == "Station 2")
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation2");
+                    
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 3")
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation3");
+                    
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 4" && timeSpent == 0)
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation4");
+                    Debug.Log("Time one Blue: " + timeSpent);
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 4" && timeSpent == 17.7f)
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station3.2toStation4");
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+    
+    }
+
+    private void RouteBlue()
+    {
+       
+        if (hit.collider.tag == "Station 5")
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation5");
+
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 6")
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation6");
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 7")
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation7");
+
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 3")
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation3.2");
+                    timeOnRouteBlue = 17.7f;
+
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+    }
+    
 }
