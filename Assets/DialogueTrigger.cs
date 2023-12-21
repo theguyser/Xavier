@@ -6,7 +6,9 @@ public class DialogueTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     private Dialogue dialogue;
+    private Dialogue followUpDialogue;
     private GameObject correctTalkTarget;
+    public int correctDialogueOption;
 
     void Start()
     {
@@ -18,7 +20,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && TalkToScript.talkTarget!=null)
         {
-            Debug.Log("Mouse Button Down "+ TalkToScript.talkTarget);
+            //Debug.Log("Mouse Button Down "+ TalkToScript.talkTarget);
+            
             if (!TalkToScript.canStartConversation && TalkToScript.talkTarget==correctTalkTarget)
             {
                 //FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue); moved to dialogue trigger
@@ -28,6 +31,7 @@ public class DialogueTrigger : MonoBehaviour
             }
             else if(TalkToScript.canStartConversation && TalkToScript.talkTarget==correctTalkTarget)
             {
+                SetCorrectButton(correctDialogueOption);
                 //FindObjectOfType<DialogueManager>().StartDialogue(dialogue); moved to dialogue trigger
                 TriggerDialogue(dialogue);
                 //Debug.Log("Starting Dialogue");
@@ -39,6 +43,12 @@ public class DialogueTrigger : MonoBehaviour
                 return;
             }
             
+        }
+        if(TalkToScript.isCorrectFollowUp)
+        {
+            //FindObjectOfType<DialogueManager>().StartDialogue(followUpDialogue);
+            TriggerDialogue(followUpDialogue);
+            TalkToScript.isCorrectFollowUp = false;
         }
     }
     
@@ -55,5 +65,10 @@ public class DialogueTrigger : MonoBehaviour
     public void DisplayNextSentence(Dialogue dialogue)
     {
         FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue);
+    }
+
+    public void SetCorrectButton(int correctButton)
+    {
+        FindObjectOfType<ButtonManager>().SetCorrectDialogueOption(correctButton);
     }
 }

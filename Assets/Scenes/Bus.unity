@@ -258,7 +258,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 191136198}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 645367541}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: ButtonMiddlePressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &191136198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +644,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &645367540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645367542}
+  - component: {fileID: 645367541}
+  m_Layer: 0
+  m_Name: Button Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &645367541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645367540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35e2cb16491b144e83fb9602f7498f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonTop: {fileID: 1810662928}
+  ButtonMiddle: {fileID: 191136195}
+  ButtonBottom: {fileID: 1037675152}
+--- !u!4 &645367542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645367540}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.23323813, y: 3.468533, z: 0.14310265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &666490577
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +826,14 @@ MonoBehaviour:
     - 4th sentence
     DialogueOptions: []
   dialogueTrigger: {fileID: 666490584}
+  CorrectFollowUpDialogue:
+    names: []
+    sentences: []
+    DialogueOptions: []
+  IncorrectFollowUpDialogue:
+    names: []
+    sentences: []
+    DialogueOptions: []
 --- !u!114 &666490584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,6 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf4c79a61a633a45934c0218a847b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctDialogueOption: 0
 --- !u!1 &814221581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1235,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1037675155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 645367541}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: ButtonBottomPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1037675155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,6 +1359,14 @@ MonoBehaviour:
     - Is there any way I can help?
     - 
   dialogueTrigger: {fileID: 1064542155}
+  CorrectFollowUpDialogue:
+    names: []
+    sentences: []
+    DialogueOptions: []
+  IncorrectFollowUpDialogue:
+    names: []
+    sentences: []
+    DialogueOptions: []
 --- !u!23 &1064542152
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1356,6 +1444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf4c79a61a633a45934c0218a847b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctDialogueOption: 0
 --- !u!1 &1246727943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,13 +1781,19 @@ MonoBehaviour:
     sentences:
     - These knees are killing me.
     - (I hope she doesn't mind me asking how she's feeling.)
-    - Xavier is talking
-    - Lady is talking
     DialogueOptions:
     - Too bad, grandma.
     - Is there any way I can help?
     - 
   dialogueTrigger: {fileID: 1369731976}
+  CorrectFollowUpDialogue:
+    names: []
+    sentences: []
+    DialogueOptions: []
+  IncorrectFollowUpDialogue:
+    names: []
+    sentences: []
+    DialogueOptions: []
 --- !u!114 &1369731976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1711,6 +1806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf4c79a61a633a45934c0218a847b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctDialogueOption: 0
 --- !u!1 &1504132746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,7 +2175,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1810662931}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 645367541}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: ButtonTopPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1810662931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2470,3 +2578,4 @@ SceneRoots:
   - {fileID: 1757714578}
   - {fileID: 67141286}
   - {fileID: 951745182}
+  - {fileID: 645367542}

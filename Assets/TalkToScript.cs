@@ -11,7 +11,10 @@ public class TalkToScript : MonoBehaviour
     public bool DialogueOptionsAvailable = false;
     public Dialogue dialogue;
     public DialogueTrigger dialogueTrigger;
-    
+    public Dialogue CorrectFollowUpDialogue;
+    public Dialogue IncorrectFollowUpDialogue;
+    public static bool isCorrectFollowUp = false;
+    public static bool isIncorrectFollowUp = false;
 
     // Start is called before the first frame update
     void Start()
