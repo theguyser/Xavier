@@ -23,7 +23,7 @@ public class StartDialogue : MonoBehaviour
         {
             if (!canStart)
             {
-                FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue);
+                FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue,null,null);
             }
         }
 
@@ -32,11 +32,12 @@ public class StartDialogue : MonoBehaviour
     {
         canStart = false;
         //TalkManager.SelectObject(gameObject);
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue,null,null);
+        TalkToScript.canStartConversation = false;
     }
     public void StartingDialogueComplete()
     {
+        TalkToScript.canStartConversation = true;
         startingDialougueComplete = true;
         Destroy(this.gameObject);
     }

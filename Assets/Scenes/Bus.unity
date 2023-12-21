@@ -673,9 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35e2cb16491b144e83fb9602f7498f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonTop: {fileID: 1810662928}
-  ButtonMiddle: {fileID: 191136195}
-  ButtonBottom: {fileID: 1037675152}
+  ButtonScreen: {fileID: 217254987}
 --- !u!4 &645367542
 Transform:
   m_ObjectHideFlags: 0
@@ -813,17 +811,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueOptionsAvailable: 0
-  dialogue:
+  InitialDialogue:
     names:
-    - Rude Man
-    - Rude Man
-    - Rude Man
-    - Rude Man
+    - Man
     sentences:
-    - 1st sentence
-    - 2nd sentence
-    - 3rd sentence
-    - 4th sentence
+    - Scram!
     DialogueOptions: []
   dialogueTrigger: {fileID: 666490584}
   CorrectFollowUpDialogue:
@@ -1286,165 +1278,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037675152}
   m_CullTransparentMesh: 1
---- !u!1 &1064542149
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1064542154}
-  - component: {fileID: 1064542153}
-  - component: {fileID: 1064542152}
-  - component: {fileID: 1064542151}
-  - component: {fileID: 1064542155}
-  - component: {fileID: 1064542150}
-  m_Layer: 0
-  m_Name: Grandma (1)
-  m_TagString: drag
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!136 &1064542150
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064542149}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1064542151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064542149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1598e88aee41c740ae9f22f18cbf6ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DialogueOptionsAvailable: 1
-  dialogue:
-    names:
-    - Name 1
-    - Name 2
-    - Name 3
-    - Name 4
-    sentences:
-    - 1ST SENTENCE
-    - 2ND SENTENCE
-    - 3RD SENTENCE
-    - 4TH SENTENCE
-    DialogueOptions:
-    - Too bad, grandma.
-    - Is there any way I can help?
-    - 
-  dialogueTrigger: {fileID: 1064542155}
-  CorrectFollowUpDialogue:
-    names: []
-    sentences: []
-    DialogueOptions: []
-  IncorrectFollowUpDialogue:
-    names: []
-    sentences: []
-    DialogueOptions: []
---- !u!23 &1064542152
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064542149}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 1547cf48bc350ce4bbef4b5c7bbecee2, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1064542153
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064542149}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1064542154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064542149}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.726, y: 2.604, z: 5.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1064542155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064542149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf4c79a61a633a45934c0218a847b57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  correctDialogueOption: 0
 --- !u!1 &1246727943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,27 +1605,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueOptionsAvailable: 1
-  dialogue:
+  InitialDialogue:
     names:
     - Elderly Woman
     - Xavier
-    - Xavier
-    - Woman
     sentences:
-    - These knees are killing me.
+    - My knees are killing me!
     - (I hope she doesn't mind me asking how she's feeling.)
     DialogueOptions:
-    - Too bad, grandma.
-    - Is there any way I can help?
-    - 
+    - Too bad, Grandma!
+    - How can I help you?
+    - You should find a seat by yourself!
   dialogueTrigger: {fileID: 1369731976}
   CorrectFollowUpDialogue:
-    names: []
-    sentences: []
+    names:
+    - Elderly Woman
+    - Xavier
+    sentences:
+    - Thank you for your concern. It would help if you found me a seat on this bus.
+    - Alright! I will do my best!
     DialogueOptions: []
   IncorrectFollowUpDialogue:
-    names: []
-    sentences: []
+    names:
+    - Xavier
+    sentences:
+    - (That's mean to say. I should say something else
     DialogueOptions: []
 --- !u!114 &1369731976
 MonoBehaviour:
@@ -1806,7 +1643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf4c79a61a633a45934c0218a847b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctDialogueOption: 0
+  correctDialogueOption: 1
 --- !u!1 &1504132746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,7 +2409,6 @@ SceneRoots:
   - {fileID: 1818169645}
   - {fileID: 666490582}
   - {fileID: 1369731974}
-  - {fileID: 1064542154}
   - {fileID: 1246727946}
   - {fileID: 598862692}
   - {fileID: 1757714578}

@@ -6,9 +6,12 @@ public class DialogueTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     private Dialogue dialogue;
-    private Dialogue followUpDialogue;
+    //private Dialogue followUpDialogue;
     private GameObject correctTalkTarget;
+    private Dialogue correctFollowUp;
+    private Dialogue incorrectFollowUp;
     public int correctDialogueOption;
+    
 
     void Start()
     {
@@ -18,53 +21,69 @@ public class DialogueTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && TalkToScript.talkTarget!=null)
+        if (Input.GetMouseButtonDown(0) && TalkToScript.talkTarget != null)
         {
-            //Debug.Log("Mouse Button Down "+ TalkToScript.talkTarget);
-            
-            if (!TalkToScript.canStartConversation && TalkToScript.talkTarget==correctTalkTarget)
-            {
-                //FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue); moved to dialogue trigger
-                DisplayNextSentence(dialogue);
-                //Debug.Log("Displaying Next Sentence");
-                return;
-            }
-            else if(TalkToScript.canStartConversation && TalkToScript.talkTarget==correctTalkTarget)
-            {
-                SetCorrectButton(correctDialogueOption);
-                //FindObjectOfType<DialogueManager>().StartDialogue(dialogue); moved to dialogue trigger
-                TriggerDialogue(dialogue);
-                //Debug.Log("Starting Dialogue");
-                return;
-            }
-            else if(TalkToScript.talkTarget!=correctTalkTarget)
-            {
-                //Debug.Log("Not the correct talk target");
-                return;
-            }
-            
-        }
-        if(TalkToScript.isCorrectFollowUp)
-        {
-            //FindObjectOfType<DialogueManager>().StartDialogue(followUpDialogue);
-            TriggerDialogue(followUpDialogue);
-            TalkToScript.isCorrectFollowUp = false;
+            InitialDialogueTrigger();
         }
     }
+    private void InitialDialogueTrigger()
+    {
+        
+        if (!TalkToScript.canStartConversation && TalkToScript.talkTarget == correctTalkTarget)
+        {
+            DisplayNextSentence(dialogue,correctFollowUp,incorrectFollowUp);
+
+        }
+        else if (TalkToScript.canStartConversation && TalkToScript.talkTarget == correctTalkTarget)
+        {
+            SetCorrectButton(correctDialogueOption);
+            TriggerDialogue(dialogue, correctFollowUp, incorrectFollowUp);
+
+            return;
+        }
+        else if (TalkToScript.talkTarget != correctTalkTarget)
+        {
+            return;
+        }
+    }
+    /*public void FollowUpDialogueTriggger()
+    {
+        if (!TalkToScript.canStartConversation && TalkToScript.talkTarget == correctTalkTarget)
+        {
+            DisplayNextSentence(followUpDialogue);
+            return;
+        }
+        else if (TalkToScript.canStartConversation && TalkToScript.talkTarget == correctTalkTarget)
+        {
+            TriggerDialogue(followUpDialogue);
+            return;
+        }
+        else if (TalkToScript.talkTarget != correctTalkTarget)
+        {
+            return;
+        }
+    }*/
     
-    public void ReceiveDialogueFromScript(Dialogue dialogue)
+    public void ReceiveDialogueFromScript(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp)
     {
         this.dialogue = dialogue;
-
+        this.correctFollowUp = correctFollowUp;
+        this.incorrectFollowUp = incorrectFollowUp;
+        //this.followUpDialogue = followUpDialogue;
     }
-    public void TriggerDialogue(Dialogue dialogue)
+    /*public void ReceiveFollowUpDialogueFromScript(Dialogue followUpDialogue)
+    {
+        //this.dialogue = dialogue;
+        this.followUpDialogue = followUpDialogue;
+    }*/
+    public void TriggerDialogue(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp)
     {
         TalkToScript.canStartConversation = false;
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, correctFollowUp, incorrectFollowUp);
     }
-    public void DisplayNextSentence(Dialogue dialogue)
+    public void DisplayNextSentence(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp)
     {
-        FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue);
+        FindObjectOfType<DialogueManager>().DisplayNextSentence(dialogue, correctFollowUp, incorrectFollowUp);
     }
 
     public void SetCorrectButton(int correctButton)
