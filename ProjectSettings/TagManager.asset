@@ -10,6 +10,7 @@ TagManager:
   - haveSnapped
   - Traffic Light Spot
   - Speed Bump Spot
+  - SpawnTrigger
   layers:
   - Default
   - TransparentFX
