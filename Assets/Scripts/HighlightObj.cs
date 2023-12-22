@@ -28,7 +28,7 @@ public class Selection : MonoBehaviour
             highlight = raycastHit.transform;
             if (highlight.CompareTag("drag") && highlight != selection)
             {
-                if (highlight.GetComponent<MeshRenderer>().material != highlightMaterial)
+                if (highlight.GetComponent<MeshRenderer>().material != highlightMaterial )
                 {
                     originalMaterialHighlight = highlight.GetComponent<MeshRenderer>().material;
                     highlight.GetComponent<MeshRenderer>().material = highlightMaterial;
