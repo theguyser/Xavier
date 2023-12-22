@@ -6,6 +6,7 @@ public class Collision : MonoBehaviour
 {
     public GameObject thePlayer;
     public GameObject charModel;
+    public GameObject Button;
     
     void OnTriggerEnter(Collider other)
     {
@@ -25,5 +26,6 @@ public class Collision : MonoBehaviour
         }
 
         charModel.GetComponent<Animator>().Play("Stumble Backwards");
+        Button.SetActive(true);
     }
 }

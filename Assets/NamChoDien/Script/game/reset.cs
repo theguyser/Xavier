@@ -7,6 +7,6 @@ public class reset : MonoBehaviour
 {
   public void Reset()
   {
-    SceneManager.LoadScene("Menu");
+    SceneManager.LoadScene("subwaysurfer");
   }
 }
