@@ -13,6 +13,7 @@ public class OptionScript : MonoBehaviour
     private GameObject background;
     public static bool onRouteOrange = false;
     public static bool onRouteBlue = false;
+    public static bool onRouteGreen = false;
 
     public void ChooseOption()
     {
@@ -64,11 +65,26 @@ public class OptionScript : MonoBehaviour
     {
         onRouteOrange = true;
         onRouteBlue = false;
+        onRouteGreen = false;
+        StationSelection.timeSpent += StationSelection.timeOnRouteOrange; // Accumulate time
+        Debug.Log("Time spent on Orange route: " + StationSelection.timeSpent);
     }
+
     public void OnRouteBlue()
     {
         onRouteBlue = true;
         onRouteOrange = false;
+        onRouteGreen = false;
+        StationSelection.timeSpent += StationSelection.timeOnRouteBlue; // Accumulate time
+        Debug.Log("Time spent on Blue route: " + StationSelection.timeSpent);
     }
 
+    public void OnRouteGreen()
+    {
+        onRouteGreen = true;
+        onRouteBlue = false;
+        onRouteOrange = false;
+        StationSelection.timeSpent += StationSelection.timeOnRouteGreen; // Accumulate time
+        Debug.Log("Time spent on Green route: " + StationSelection.timeSpent);
+    }
 }

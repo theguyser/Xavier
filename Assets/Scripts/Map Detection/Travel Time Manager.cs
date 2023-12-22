@@ -17,15 +17,28 @@ public class TravelTimeManager : MonoBehaviour
             { "Station1toStation2", 5f },
             {"Station1toStation3",13f},
             {"Station1toStation4",16f},
+            {"Station1toStation9",14.5f},
+            {"Station3toStation9",14.5f},
             
             { "Station2toStation3", 8f },
             //Blue route
-            { "Station1toStation5", 4f },
-            { "Station1toStation6", 7.4f },
+            { "Station1toStation5", 4.5f },
+            { "Station1toStation6", 9f },
             { "Station1toStation7", 12.7f },
-            { "Station1toStation3.2", 17.7f },
+            { "Station1toStation3.2", 19f },
             //Blue + Orange
-            { "Station3.2toStation4", 20.7f },
+            { "Station3.2toStation4", 22f },
+            { "Station3.3toStation4", 19f },
+            { "Station3.2toStation9", 22f },
+            { "Station3.3toStation9", 16f },
+            //Green
+            { "Station5toStation6", 6f },
+            { "Station5toStation8", 9f },
+            { "Station5toStation9", 14.5f },
+            //Green + Blue
+            { "Station6toStation3", 16f },
+            //Green + Orange
+            { "Station9toStation4", 1f }
         };
 
         // Example usage: SetTravelTime("Station1toStation2");
@@ -35,12 +48,10 @@ public class TravelTimeManager : MonoBehaviour
     {
         if (travelTimeBetweenStations.TryGetValue(stationPair, out float travelTime))
         {
-            Debug.Log("travel time: " + travelTime);
-            //totalTravelTime = totalTravelTime + travelTime;
+            
             travelTimeText.text = "Travel Time: " + travelTime.ToString("F1") + " min";
             Debug.Log("TTT: " + totalTravelTime);
         }
+        
     }
-
-    // Other methods...
 }

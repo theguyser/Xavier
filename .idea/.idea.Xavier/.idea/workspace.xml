@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map detection.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map detection.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Option Script.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Option Script.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Station Selection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Station Selection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Text Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Text Manager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Travel Time Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map Detection/Travel Time Manager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
@@ -23,6 +22,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map Detection/Option Script.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map Detection/Reset 2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map Detection/Text Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map Detection/Travel Time Manager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -111,7 +111,7 @@
       <workItem from="1703045250365" duration="2993000" />
       <workItem from="1703048442388" duration="2209000" />
       <workItem from="1703100220492" duration="2083000" />
-      <workItem from="1703186175608" duration="7095000" />
+      <workItem from="1703186175608" duration="18182000" />
     </task>
     <servers />
   </component>

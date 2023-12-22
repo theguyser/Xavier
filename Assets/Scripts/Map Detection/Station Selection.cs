@@ -17,9 +17,10 @@ public class StationSelection : MonoBehaviour
     private Text textComponent;
     [SerializeField] private TravelTimeManager travelTimeManager;
     private RaycastHit hit;
-    private float timeOnRouteOrange = 0f;
-    private static float timeOnRouteBlue ;
-    private float timeSpent;
+    public static float timeOnRouteOrange = 0f;
+    public static float timeOnRouteBlue = 0f ;
+    public static float timeOnRouteGreen = 0f ;
+    public static float timeSpent = 0f;
 
     private void Start()
     {
@@ -83,11 +84,14 @@ public class StationSelection : MonoBehaviour
                 {
                     RouteBlue();
                 }
-                
+                else if (OptionScript.onRouteGreen == true)
+                {
+                    RouteGreen();
+                }
+                Debug.Log("time spent: " + timeSpent);
             }
         }
-
-        timeSpent = timeOnRouteBlue + timeOnRouteOrange;
+        
     }
 
     private void ShowOptions()
@@ -137,6 +141,7 @@ public class StationSelection : MonoBehaviour
         }
         // Debugging: Log connected routes
         Debug.Log("Connected Routes: " + string.Join(", ", connectedRoutes));
+        Debug.Log(timeSpent);
     }
 
 
@@ -149,7 +154,6 @@ public class StationSelection : MonoBehaviour
 
     private void RouteOrange()
     {
-       
         if (hit.collider.tag == "Station 2")
             {
                 if (travelTimeManager != null)
@@ -162,13 +166,13 @@ public class StationSelection : MonoBehaviour
                     Debug.LogError("TravelTimeManager reference not set in StationSelection.");
                 }
             }
-            else if (hit.collider.tag == "Station 3")
+            else if (hit.collider.tag == "Station 3" && timeSpent == 0)
 
             {
                 if (travelTimeManager != null)
                 {
                     travelTimeManager.SetTravelTime("Station1toStation3");
-                    
+                    timeOnRouteOrange += 13f;
                 }
                 else
                 {
@@ -181,6 +185,7 @@ public class StationSelection : MonoBehaviour
                 if (travelTimeManager != null)
                 {
                     travelTimeManager.SetTravelTime("Station1toStation4");
+                    timeOnRouteOrange += 16f;
                     Debug.Log("Time one Blue: " + timeSpent);
                 }
                 else
@@ -188,12 +193,119 @@ public class StationSelection : MonoBehaviour
                     Debug.LogError("TravelTimeManager reference not set in StationSelection.");
                 }
             }
-            else if (hit.collider.tag == "Station 4" && timeSpent == 17.7f)
+            else if (hit.collider.tag == "Station 4" && timeSpent == 13f)
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation4");
+                    timeOnRouteOrange += 16f;
+                    Debug.Log("Time one Blue: " + timeSpent);
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 4" && timeSpent == 14.5f)
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation4");
+                    timeOnRouteOrange += 16f;
+                    Debug.Log("Time one Blue: " + timeSpent);
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 4" && timeSpent == 19f)//This is for Blue change to Orange
 
             {
                 if (travelTimeManager != null)
                 {
                     travelTimeManager.SetTravelTime("Station3.2toStation4");
+                   timeOnRouteOrange += 3f;
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 4" && timeSpent == 14.5f)//This is for Green change to Orange
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station9toStation4");
+                   timeOnRouteOrange += 1.5f;
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 4" && timeSpent == 16f)//This is for Green cross Blue Cross Orange
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station3.3toStation4");
+                    timeOnRouteOrange += 1.5f;
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 9" && timeSpent == 0)
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation9");
+                    timeOnRouteOrange += 14.5f;
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 9" && timeSpent == 13f)//Orange to orange
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station3toStation9");
+                    timeOnRouteOrange += 1.5f;
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 9" && timeSpent == 20.5f)//Blue than staiton 3 then station 9
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station3.2toStation9");
+                    timeOnRouteOrange += 1.5f;
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 9" && timeSpent == 14.5f)//Green to Orange
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station3.3toStation9");
+                    timeOnRouteOrange += 1.5f;
                 }
                 else
                 {
@@ -205,12 +317,13 @@ public class StationSelection : MonoBehaviour
 
     private void RouteBlue()
     {
-       
+        
         if (hit.collider.tag == "Station 5")
             {
                 if (travelTimeManager != null)
                 {
                     travelTimeManager.SetTravelTime("Station1toStation5");
+                    timeOnRouteBlue += 4.5f;
 
                 }
                 else
@@ -224,6 +337,20 @@ public class StationSelection : MonoBehaviour
                 if (travelTimeManager != null)
                 {
                     travelTimeManager.SetTravelTime("Station1toStation6");
+                   timeOnRouteBlue += 9f;
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 6" && timeSpent == 4.5f)
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation6");
+                    timeOnRouteBlue += 4.5f;
                 }
                 else
                 {
@@ -243,13 +370,13 @@ public class StationSelection : MonoBehaviour
                     Debug.LogError("TravelTimeManager reference not set in StationSelection.");
                 }
             }
-            else if (hit.collider.tag == "Station 3")
+            else if (hit.collider.tag == "Station 3" && timeSpent == 0f)
 
             {
                 if (travelTimeManager != null)
                 {
                     travelTimeManager.SetTravelTime("Station1toStation3.2");
-                    timeOnRouteBlue = 17.7f;
+                    timeOnRouteBlue += 19f;
 
                 }
                 else
@@ -257,6 +384,95 @@ public class StationSelection : MonoBehaviour
                     Debug.LogError("TravelTimeManager reference not set in StationSelection.");
                 }
             }
+            else if (hit.collider.tag == "Station 3" && timeSpent == 4.5f)
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation3.2");
+                    timeOnRouteBlue += 14.5f;
+
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+        
+            else if (hit.collider.tag == "Station 3" && timeSpent == 9f)
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station1toStation3.2");
+                   timeOnRouteBlue += 10f;
+
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+            else if (hit.collider.tag == "Station 3" && timeSpent == 6f)
+
+            {
+                if (travelTimeManager != null)
+                {
+                    travelTimeManager.SetTravelTime("Station6toStation3");
+                    timeOnRouteBlue += 10f;
+
+                }
+                else
+                {
+                    Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+                }
+            }
+    }
+    
+    private void RouteGreen()
+    {
+
+        Debug.Log("Time on route orange: " + timeOnRouteOrange);
+        Debug.Log("Total time spent: " + timeSpent);
+        if (hit.collider.tag == "Station 6")
+        {
+            if (travelTimeManager != null)
+            {
+                travelTimeManager.SetTravelTime("Station5toStation6");
+                timeOnRouteGreen += 1.5f;
+
+            }
+            else
+            {
+                Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+            }
+        }
+        else if (hit.collider.tag == "Station 8")
+
+        {
+            if (travelTimeManager != null)
+            {
+                travelTimeManager.SetTravelTime("Station5toStation8");
+            }
+            else
+            {
+                Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+            }
+        }
+        else if (hit.collider.tag == "Station 9")
+
+        {
+            if (travelTimeManager != null)
+            {
+                travelTimeManager.SetTravelTime("Station5toStation9");
+                timeOnRouteGreen += 10f;
+
+            }
+            else
+            {
+                Debug.LogError("TravelTimeManager reference not set in StationSelection.");
+            }
+        }
     }
     
 }
