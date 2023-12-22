@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         grabObjectsByType = new Dictionary<ObjectType, List<GameObject>>();
         snapObjectsByType = new Dictionary<ObjectType, List<GameObject>>();
+      
 
         // Initialize these based on your game's logic
         // For example, if the first 4 are traffic lights and the 5th is a speed bump

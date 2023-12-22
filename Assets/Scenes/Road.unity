@@ -1006,7 +1006,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598501929}
         m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
-        m_MethodName: Click
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3314,10 +3314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3400,14 +3400,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53084d9572bbaf441a2b8c4553c628b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabObject:
-  - {fileID: 1354523968}
-  - {fileID: 679482399}
-  - {fileID: 1683869709}
-  snapObject:
-  - {fileID: 366334824}
-  - {fileID: 1539261877}
-  - {fileID: 339784581}
+  allGrabObjects:
+  - {fileID: 111040338}
+  - {fileID: 684701513}
+  - {fileID: 286820647}
+  - {fileID: 654665839}
+  - {fileID: 8250048770108262567}
+  allSnapObjects:
+  - {fileID: 2397940423904677853}
+  - {fileID: 7989328813609486526}
+  - {fileID: 4475434912463514561}
+  - {fileID: 1031498890643651011}
+  - {fileID: 1051818743}
+  - {fileID: 7491418296579393152}
+  - {fileID: 1871286741}
+  - {fileID: 1487902427}
+  - {fileID: 1298040035}
 --- !u!4 &1730986906
 Transform:
   m_ObjectHideFlags: 0
