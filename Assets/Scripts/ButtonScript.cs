@@ -68,14 +68,18 @@ public class ButtonScript : MonoBehaviour
 
         if (correctObjects == gameManager.GetNumberOfObjects(type))
         {
+            
             GoodJob.gameObject.SetActive(true);
-            resetButton.isTimerGoing = false;
+            //resetButton.isTimerGoing = false;
         }
         else
         {
             TryAgain.gameObject.SetActive(true);
         }
+
+        Debug.Log("sth: " + gameManager.GetNumberOfObjects(type) + "Correct: " + correctObjects);
     }
+    
 }
 
 
