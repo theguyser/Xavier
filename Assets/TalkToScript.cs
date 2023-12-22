@@ -16,6 +16,7 @@ public class TalkToScript : MonoBehaviour
     public static bool isCorrectFollowUp = false;
     public static bool isIncorrectFollowUp = false;
     public static bool isFollowUpConversation = false;
+    public bool completedDialogue = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,11 @@ public class TalkToScript : MonoBehaviour
             if (hit.collider != null && hit.collider.gameObject == gameObject && canStartConversation)
             {
                 talkTarget = hit.collider.gameObject;
-                dialogueTrigger.ReceiveDialogueFromScript(InitialDialogue, CorrectFollowUpDialogue, IncorrectFollowUpDialogue);
+                if(!completedDialogue)
+                {
+                    dialogueTrigger.ReceiveDialogueFromScript(InitialDialogue, CorrectFollowUpDialogue, IncorrectFollowUpDialogue, DialogueOptionsAvailable);
+                }
+                
             }
         }
             

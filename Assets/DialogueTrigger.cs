@@ -7,11 +7,11 @@ public class DialogueTrigger : MonoBehaviour
     // Start is called before the first frame update
     private Dialogue dialogue;
     //private Dialogue followUpDialogue;
-    private GameObject correctTalkTarget;
+    public GameObject correctTalkTarget = null;
     private Dialogue correctFollowUp;
     private Dialogue incorrectFollowUp;
     public int correctDialogueOption;
-    
+    private bool canDisplayDialogueOptions = false;
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class DialogueTrigger : MonoBehaviour
         else if (TalkToScript.canStartConversation && TalkToScript.talkTarget == correctTalkTarget)
         {
             SetCorrectButton(correctDialogueOption);
-            TriggerDialogue(dialogue, correctFollowUp, incorrectFollowUp);
+            TriggerDialogue(dialogue, correctFollowUp, incorrectFollowUp, canDisplayDialogueOptions, correctTalkTarget);
 
             return;
         }
@@ -46,40 +46,19 @@ public class DialogueTrigger : MonoBehaviour
             return;
         }
     }
-    /*public void FollowUpDialogueTriggger()
-    {
-        if (!TalkToScript.canStartConversation && TalkToScript.talkTarget == correctTalkTarget)
-        {
-            DisplayNextSentence(followUpDialogue);
-            return;
-        }
-        else if (TalkToScript.canStartConversation && TalkToScript.talkTarget == correctTalkTarget)
-        {
-            TriggerDialogue(followUpDialogue);
-            return;
-        }
-        else if (TalkToScript.talkTarget != correctTalkTarget)
-        {
-            return;
-        }
-    }*/
     
-    public void ReceiveDialogueFromScript(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp)
+    public void ReceiveDialogueFromScript(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp, bool canDisplayDialogueOptions)
     {
         this.dialogue = dialogue;
         this.correctFollowUp = correctFollowUp;
         this.incorrectFollowUp = incorrectFollowUp;
-        //this.followUpDialogue = followUpDialogue;
+        this.canDisplayDialogueOptions = canDisplayDialogueOptions;
+        
     }
-    /*public void ReceiveFollowUpDialogueFromScript(Dialogue followUpDialogue)
-    {
-        //this.dialogue = dialogue;
-        this.followUpDialogue = followUpDialogue;
-    }*/
-    public void TriggerDialogue(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp)
+    public void TriggerDialogue(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp, bool canDisplayDialogueOptions, GameObject correctTalkTarget)
     {
         TalkToScript.canStartConversation = false;
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, correctFollowUp, incorrectFollowUp);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, correctFollowUp, incorrectFollowUp, canDisplayDialogueOptions, correctTalkTarget);
     }
     public void DisplayNextSentence(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp)
     {

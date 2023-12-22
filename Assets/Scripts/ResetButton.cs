@@ -15,14 +15,20 @@ public class ResetButton : MonoBehaviour
     private TimeSpan timePlaying;
     private void Start()
     {
-        TimeInGame.text = "00:00.0";
-        BeginTimer();
+        if(TimeInGame != null)
+        {
+            TimeInGame.text = "00:00.0";
+            BeginTimer();
+        }
+        
     }
     private void BeginTimer()
     {
-        isTimerGoing = true;
-        StartCoroutine(UpdateTimer());
-
+        if (TimeInGame != null)
+        {
+            isTimerGoing = true;
+            StartCoroutine(UpdateTimer());
+        }
     }
 
     IEnumerator UpdateTimer()

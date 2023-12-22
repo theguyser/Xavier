@@ -11,15 +11,16 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox;
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI NameDisplayedOnDialogueBox;
-    //public TalkToScript talkToScript;
+    private bool canDisplayDialogueOptions;
     public GameObject DialogueOptions;
     public GameObject[] DialogueOptionButtons = new GameObject[3];
     public GameObject StartingDialogue;
-    /*public TextMeshProUGUI DialogueOption1;
-    public TextMeshProUGUI DialogueOption2;
-    public TextMeshProUGUI DialogueOption3;*/
+    public GameObject ElderlyWoman;
+    public GameObject Man;
+    private GameObject currentTalkTarget;
+    
     private bool startingDialougueComplete = false;
-    private bool buttonPressed = false;
+    //private bool buttonPressed = false;
 
     void Start()
     {
@@ -28,15 +29,13 @@ public class DialogueManager : MonoBehaviour
     }
     private void Update()
     {
-        buttonPressed = FindAnyObjectByType<ButtonManager>().buttonPressed;
-        if(buttonPressed)
-        {
-            Debug.Log("Button Pressed: " + buttonPressed);
-        }
+        
     }
-    public void StartDialogue(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp)
+    public void StartDialogue(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp, bool canDisplayDialogueOptions, GameObject currentTalkTarget)
     {
         //Debug.Log("Starting conversation with " + InitialDialogue.name);
+        this.canDisplayDialogueOptions = canDisplayDialogueOptions;
+        this.currentTalkTarget = currentTalkTarget;
         dialogueBox.SetActive(true);
         sentences.Clear();
         names.Clear();
@@ -68,7 +67,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (sentences.Count == 0 && TalkToScript.isFollowUpConversation)
         {
-            Debug.Log("why is sentence count 0?");
+            
             //dialogueOptions.SetActive(true);
             EndDialogue();
             return;
@@ -87,12 +86,18 @@ public class DialogueManager : MonoBehaviour
     }
     public void DisplayDialogueOptions(Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp)
     {
+
         if(dialogue.DialogueOptions == null)
         {
             EndDialogue();
             return;
         }
         else if (dialogue.DialogueOptions.Length == 0)
+        {
+            EndDialogue();
+            return;
+        }
+        else if(!canDisplayDialogueOptions)
         {
             EndDialogue();
             return;
@@ -119,7 +124,6 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            FindAnyObjectByType<ButtonManager>().buttonPressed = false;
             DialogueOptions.SetActive(false);
             dialogueBox.SetActive(true);
             
@@ -155,7 +159,7 @@ public class DialogueManager : MonoBehaviour
 
                 }
             }
-            Debug.Log("Displaying Follow Up Dialogue" + sentences);
+            
             DisplayNextSentence(null, correctFollowUp, incorrectFollowUp);
         }   
         
@@ -169,7 +173,16 @@ public class DialogueManager : MonoBehaviour
             startingDialougueComplete = true;
             
         }
-        
+        if (TalkToScript.isCorrectFollowUp == true && currentTalkTarget==ElderlyWoman)
+        {
+            Debug.Log("please be true: " + TalkToScript.isCorrectFollowUp);
+            FindObjectOfType<NPCManager>().womanCorrect = true;
+        }
+        if (TalkToScript.isCorrectFollowUp == true && currentTalkTarget == Man)
+        {
+            Debug.Log("please be true: " + TalkToScript.isCorrectFollowUp);
+            FindObjectOfType<NPCManager>().manCorrect = true;
+        }
         TalkToScript.canStartConversation = true;
         TalkToScript.talkTarget = null;
         TalkToScript.isFollowUpConversation = false;
@@ -184,22 +197,11 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.025f);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 
     
-    IEnumerator WaitUntil(bool condition, Dialogue dialogue, Dialogue correctFollowUp, Dialogue incorrectFollowUp)
-    {
-        while (!condition)
-        {
-            Debug.Log("Waiting");
-            yield return new WaitUntil(()=>condition);
-            
-        }
-        Debug.Log("After While Loop");
-        
-        DisplayFollowUpDialogue(correctFollowUp, incorrectFollowUp);
-    }
+    
     
 }

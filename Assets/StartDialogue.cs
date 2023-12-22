@@ -11,6 +11,7 @@ public class StartDialogue : MonoBehaviour
     
     void Start()
     {
+        startingDialougueComplete = false;
         StartConversation();
     }
     private void Update()
@@ -32,7 +33,7 @@ public class StartDialogue : MonoBehaviour
     {
         canStart = false;
         //TalkManager.SelectObject(gameObject);
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue,null,null);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue,null,null,false,null);
         TalkToScript.canStartConversation = false;
     }
     public void StartingDialogueComplete()
