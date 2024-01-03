@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     // Dictionary to store objects based on type
     private Dictionary<ObjectType, List<GameObject>> grabObjectsByType;
     private Dictionary<ObjectType, List<GameObject>> snapObjectsByType;
+    
 
     void Start()
     {
@@ -20,8 +21,7 @@ public class GameManager : MonoBehaviour
     {
         grabObjectsByType = new Dictionary<ObjectType, List<GameObject>>();
         snapObjectsByType = new Dictionary<ObjectType, List<GameObject>>();
-      
-
+        
         // Initialize these based on your game's logic
         // For example, if the first 4 are traffic lights and the 5th is a speed bump
         grabObjectsByType[ObjectType.TrafficLight] = new List<GameObject>(allGrabObjects).GetRange(0, 4);
@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
     public Vector3 GetSnapObjectPosition(ObjectType type, int index)
     {
         return snapObjectsByType[type][index].transform.position;
+    }
+    public Quaternion GetSnapObjectRotation(ObjectType type, int index)
+    {
+        return snapObjectsByType[type][index].transform.rotation;
     }
 
     public int GetNumberOfObjects(ObjectType type)
