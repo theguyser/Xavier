@@ -24,8 +24,12 @@ public class Collision : MonoBehaviour
         {
             Debug.Log("Movement script has been disabled on the player.");
         }
-
+        
+        //Run falling down animation
         charModel.GetComponent<Animator>().Play("Stumble Backwards");
         Button.SetActive(true);
+        
+        //Run game over scene
+        
     }
 }
