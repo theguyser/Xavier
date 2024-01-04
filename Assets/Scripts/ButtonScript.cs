@@ -19,12 +19,10 @@ public class ButtonScript : MonoBehaviour
     
     public ResetButton resetButton;
     private Dictionary<ObjectType, HashSet<Vector3>> correctSpotPositions;
-    private Dictionary<ObjectType, HashSet<Quaternion>> correctSpotRotations;
     
     void Start()
     {
         correctSpotPositions = new Dictionary<ObjectType, HashSet<Vector3>>();
-        correctSpotRotations = new Dictionary<ObjectType, HashSet<Quaternion>>();
 
         // Initialize correct spots for each type
         InitializeCorrectSpots(ObjectType.TrafficLight, 4); // 4 correct spots for traffic lights
@@ -34,20 +32,21 @@ public class ButtonScript : MonoBehaviour
     private void InitializeCorrectSpots(ObjectType type, int numberOfSpots)
     {
         HashSet<Vector3> spots = new HashSet<Vector3>();
-        HashSet<Quaternion> rotation = new HashSet<Quaternion>();
         for (int i = 0; i < numberOfSpots; i++)
         {
             spots.Add(gameManager.GetSnapObjectPosition(type, i));
-            rotation.Add(gameManager.GetSnapObjectRotation(type, i));
         }
         correctSpotPositions[type] = spots;
-        correctSpotRotations[type] = rotation;
-        Debug.Log("Rotation: " + correctSpotRotations[type]);
+        
     }
    
     public void OnButtonClick()
     {
-        int totalCorrectObjects = 0;
+        
+        Click(ObjectType.SpeedBump);
+        Click(ObjectType.TrafficLight);
+        
+        /*(int totalCorrectObjects = 0;
         int totalRequiredObjects = 0;
 
         // Accumulate correct objects for TrafficLight
@@ -68,9 +67,76 @@ public class ButtonScript : MonoBehaviour
         {
             TryAgain.gameObject.SetActive(true);
             GoodJob.gameObject.SetActive(false);
+        }*/
+    }
+    
+    public void Click(ObjectType type)
+    {
+        GoodJob.gameObject.SetActive(false);
+        TryAgain.gameObject.SetActive(false);
+        correctObjects = 0;
+
+        foreach (var obj in gameManager.GetGrabObjects(type))
+        {
+            if (IsObjectCorrect(obj, type))
+            {
+                Debug.Log("Correct: " + obj.name);
+                correctObjects++;
+            }
+            else
+            {
+                Debug.Log("Incorrect: " + obj.name);
+            }
+        }
+
+        if (correctObjects == gameManager.GetNumberOfObjects(type))
+        {
+            GoodJob.gameObject.SetActive(true);
+            //resetButton.isTimerGoing = false;
+        }
+        else
+        {
+            TryAgain.gameObject.SetActive(true);
         }
     }
-    private int CountCorrectObjects(ObjectType type)
+
+    private bool IsObjectCorrect(GameObject obj, ObjectType type)
+    {
+        var correctPositions = correctSpotPositions[type];
+        var correctRotations = gameManager.GetCorrectRotations(type);
+         if (correctPositions.Contains(obj.transform.position))
+         {
+             Debug.Log("Position true");
+         }
+         else
+         {
+             Debug.Log("Position false");
+             
+         }
+         if (correctRotations.Contains(obj.transform.rotation))
+         {
+             Debug.Log("Rotation true");
+         }
+         else
+         {
+             Debug.Log("Rotation false");
+             
+         }
+         
+         return correctPositions.Contains(obj.transform.position) && correctRotations.Contains(obj.transform.rotation);
+    }
+    
+    private bool IsRotationCorrect(Quaternion rotation, List<Quaternion> correctRotations)
+    {
+        foreach (var correctRotation in correctRotations)
+        {
+            if (Quaternion.Angle(rotation, correctRotation) <= 5)
+                return true;
+        }
+        return false;
+    }
+    
+   /* private int CountCorrectObjects(ObjectType type)
     {
         int correctCount = 0;
         foreach (var obj in gameManager.GetGrabObjects(type))
@@ -86,7 +152,7 @@ public class ButtonScript : MonoBehaviour
             }
         }
         return correctCount;
-    }
+    }*/
     
 }
 
