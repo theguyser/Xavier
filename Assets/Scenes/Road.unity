@@ -1015,6 +1015,7 @@ GameObject:
   - component: {fileID: 598501927}
   - component: {fileID: 598501926}
   - component: {fileID: 598501929}
+  - component: {fileID: 598501930}
   m_Layer: 5
   m_Name: Check Button
   m_TagString: Untagged
@@ -1152,6 +1153,18 @@ MonoBehaviour:
   GoodJob: {fileID: 1292180244}
   TryAgain: {fileID: 1824228944}
   resetButton: {fileID: 1049231807}
+--- !u!114 &598501930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598501924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b4e05299e89d04aae711d061c72d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &654665839
 GameObject:
   m_ObjectHideFlags: 0

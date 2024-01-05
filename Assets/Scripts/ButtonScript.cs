@@ -19,6 +19,7 @@ public class ButtonScript : MonoBehaviour
     
     public ResetButton resetButton;
     private Dictionary<ObjectType, HashSet<Vector3>> correctSpotPositions;
+    [SerializeField] private RotationCheckScript rotationCheckScript; // Reference to the RotationCheckScript
     
     void Start()
     {
@@ -75,21 +76,40 @@ public class ButtonScript : MonoBehaviour
         GoodJob.gameObject.SetActive(false);
         TryAgain.gameObject.SetActive(false);
         correctObjects = 0;
-
+        bool allObjectsCorrectRotation = false;
         foreach (var obj in gameManager.GetGrabObjects(type))
         {
             if (IsObjectCorrect(obj, type))
             {
                 Debug.Log("Correct: " + obj.name);
                 correctObjects++;
+                if (rotationCheckScript != null)
+                {
+                    bool areRotationsCorrect = rotationCheckScript.CheckRotations(gameManager.GetGrabObjects(type));
+                    if (areRotationsCorrect)
+                    {
+                        Debug.Log("All rotations are correct for type: " + type);
+                        allObjectsCorrectRotation = true;
+                    }
+                    else
+                    {
+                        Debug.Log("Some rotations are incorrect for type: " + type);
+                        allObjectsCorrectRotation = false;
+                    }
+                }
+                else
+                {
+                    Debug.LogError("RotationCheckScript is not assigned in the inspector.");
+                }
             }
             else
             {
                 Debug.Log("Incorrect: " + obj.name);
             }
+            
         }
 
-        if (correctObjects == gameManager.GetNumberOfObjects(type))
+        if (correctObjects == gameManager.GetNumberOfObjects(type) && allObjectsCorrectRotation)
         {
             GoodJob.gameObject.SetActive(true);
             //resetButton.isTimerGoing = false;
@@ -98,12 +118,14 @@ public class ButtonScript : MonoBehaviour
         {
             TryAgain.gameObject.SetActive(true);
         }
+
+        
+
     }
 
     private bool IsObjectCorrect(GameObject obj, ObjectType type)
     {
         var correctPositions = correctSpotPositions[type];
-        var correctRotations = gameManager.GetCorrectRotations(type);
          if (correctPositions.Contains(obj.transform.position))
          {
              Debug.Log("Position true");
@@ -113,27 +135,8 @@ public class ButtonScript : MonoBehaviour
              Debug.Log("Position false");
              
          }
-         if (correctRotations.Contains(obj.transform.rotation))
-         {
-             Debug.Log("Rotation true");
-         }
-         else
-         {
-             Debug.Log("Rotation false");
-             
-         }
          
-         return correctPositions.Contains(obj.transform.position) && correctRotations.Contains(obj.transform.rotation);
-    }
-    
-    private bool IsRotationCorrect(Quaternion rotation, List<Quaternion> correctRotations)
-    {
-        foreach (var correctRotation in correctRotations)
-        {
-            if (Quaternion.Angle(rotation, correctRotation) <= 5)
-                return true;
-        }
-        return false;
+         return correctPositions.Contains(obj.transform.position);
     }
     
    /* private int CountCorrectObjects(ObjectType type)
