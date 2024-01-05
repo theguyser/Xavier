@@ -49,7 +49,7 @@ public class ButtonManager : MonoBehaviour
             Debug.Log("Incorrect Dialogue Option");
             TalkToScript.isIncorrectFollowUp = true;
             TalkToScript.isCorrectFollowUp = false;
-            
+            FindObjectOfType<HealthManager>().SubtractHealth();
             FindObjectOfType<DialogueManager>().DisplayFollowUpDialogue(correct, incorrect);
         }
     }
@@ -74,7 +74,7 @@ public class ButtonManager : MonoBehaviour
             TalkToScript.isIncorrectFollowUp = true;
             TalkToScript.isCorrectFollowUp = false;
             FindObjectOfType<DialogueManager>().DisplayFollowUpDialogue(correct, incorrect);
-            
+            FindObjectOfType<HealthManager>().SubtractHealth();
         }
     }
     public void ButtonBottomPressed()
@@ -96,7 +96,7 @@ public class ButtonManager : MonoBehaviour
             Debug.Log("Incorrect Dialogue Option");
             TalkToScript.isIncorrectFollowUp = true;
             TalkToScript.isCorrectFollowUp = false;
-            
+            FindObjectOfType<HealthManager>().SubtractHealth();
             FindObjectOfType<DialogueManager>().DisplayFollowUpDialogue(correct, incorrect);
         }
     }
