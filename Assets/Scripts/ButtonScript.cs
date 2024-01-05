@@ -27,7 +27,7 @@ public class ButtonScript : MonoBehaviour
 
         // Initialize correct spots for each type
         InitializeCorrectSpots(ObjectType.TrafficLight, 4); // 4 correct spots for traffic lights
-        InitializeCorrectSpots(ObjectType.SpeedBump, 2);    // 3 correct spots for speed bumps
+        InitializeCorrectSpots(ObjectType.SpeedBump, 1);    // 3 correct spots for speed bumps
     }
 
     private void InitializeCorrectSpots(ObjectType type, int numberOfSpots)
@@ -46,29 +46,6 @@ public class ButtonScript : MonoBehaviour
         
         Click(ObjectType.SpeedBump);
         Click(ObjectType.TrafficLight);
-        
-        /*(int totalCorrectObjects = 0;
-        int totalRequiredObjects = 0;
-
-        // Accumulate correct objects for TrafficLight
-        totalCorrectObjects += CountCorrectObjects(ObjectType.TrafficLight);
-        totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.TrafficLight);
-
-        // Accumulate correct objects for SpeedBump
-        totalCorrectObjects += CountCorrectObjects(ObjectType.SpeedBump);
-        totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.SpeedBump);
-
-        // Now check if total correct objects match the total required objects
-        if (totalCorrectObjects == totalRequiredObjects)
-        {
-            GoodJob.gameObject.SetActive(true);
-            TryAgain.gameObject.SetActive(false);
-        }
-        else
-        {
-            TryAgain.gameObject.SetActive(true);
-            GoodJob.gameObject.SetActive(false);
-        }*/
     }
     
     public void Click(ObjectType type)
