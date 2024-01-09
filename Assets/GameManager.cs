@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     // Dictionary to store objects based on type
     private Dictionary<ObjectType, List<GameObject>> grabObjectsByType;
     private Dictionary<ObjectType, List<GameObject>> snapObjectsByType;
-    
+
 
     void Start()
     {
@@ -21,7 +22,8 @@ public class GameManager : MonoBehaviour
     {
         grabObjectsByType = new Dictionary<ObjectType, List<GameObject>>();
         snapObjectsByType = new Dictionary<ObjectType, List<GameObject>>();
-        
+
+        // Initialize based on your game's logic
         // Initialize these based on your game's logic
         // For example, if the first 4 are traffic lights and the 5th is a speed bump
         grabObjectsByType[ObjectType.TrafficLight] = new List<GameObject>(allGrabObjects).GetRange(0, 4);
@@ -30,6 +32,8 @@ public class GameManager : MonoBehaviour
         // Similar logic for snap objects
         snapObjectsByType[ObjectType.TrafficLight] = new List<GameObject>(allSnapObjects).GetRange(0, 5);
         snapObjectsByType[ObjectType.SpeedBump] = new List<GameObject>(allSnapObjects).GetRange(5, 4);
+        
+
     }
 
     public List<GameObject> GetGrabObjects(ObjectType type)
@@ -40,10 +44,6 @@ public class GameManager : MonoBehaviour
     public Vector3 GetSnapObjectPosition(ObjectType type, int index)
     {
         return snapObjectsByType[type][index].transform.position;
-    }
-    public Quaternion GetSnapObjectRotation(ObjectType type, int index)
-    {
-        return snapObjectsByType[type][index].transform.rotation;
     }
 
     public int GetNumberOfObjects(ObjectType type)

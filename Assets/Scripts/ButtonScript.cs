@@ -19,58 +19,104 @@ public class ButtonScript : MonoBehaviour
     
     public ResetButton resetButton;
     private Dictionary<ObjectType, HashSet<Vector3>> correctSpotPositions;
-    private Dictionary<ObjectType, HashSet<Quaternion>> correctSpotRotations;
+    [SerializeField] private RotationCheckScript rotationCheckScript; // Reference to the RotationCheckScript
     
     void Start()
     {
         correctSpotPositions = new Dictionary<ObjectType, HashSet<Vector3>>();
-        correctSpotRotations = new Dictionary<ObjectType, HashSet<Quaternion>>();
 
         // Initialize correct spots for each type
         InitializeCorrectSpots(ObjectType.TrafficLight, 4); // 4 correct spots for traffic lights
-        InitializeCorrectSpots(ObjectType.SpeedBump, 2);    // 3 correct spots for speed bumps
+        InitializeCorrectSpots(ObjectType.SpeedBump, 1);    // 3 correct spots for speed bumps
     }
 
     private void InitializeCorrectSpots(ObjectType type, int numberOfSpots)
     {
         HashSet<Vector3> spots = new HashSet<Vector3>();
-        HashSet<Quaternion> rotation = new HashSet<Quaternion>();
         for (int i = 0; i < numberOfSpots; i++)
         {
             spots.Add(gameManager.GetSnapObjectPosition(type, i));
-            rotation.Add(gameManager.GetSnapObjectRotation(type, i));
         }
         correctSpotPositions[type] = spots;
-        correctSpotRotations[type] = rotation;
-        Debug.Log("Rotation: " + correctSpotRotations[type]);
+        
     }
    
     public void OnButtonClick()
     {
-        int totalCorrectObjects = 0;
-        int totalRequiredObjects = 0;
+        
+        Click(ObjectType.SpeedBump);
+        Click(ObjectType.TrafficLight);
+    }
+    
+    public void Click(ObjectType type)
+    {
+        GoodJob.gameObject.SetActive(false);
+        TryAgain.gameObject.SetActive(false);
+        correctObjects = 0;
+        bool allObjectsCorrectRotation = false;
+        foreach (var obj in gameManager.GetGrabObjects(type))
+        {
+            if (IsObjectCorrect(obj, type))
+            {
+                Debug.Log("Correct: " + obj.name);
+                correctObjects++;
+                if (rotationCheckScript != null)
+                {
+                    bool areRotationsCorrect = rotationCheckScript.CheckRotations(gameManager.GetGrabObjects(type));
+                    if (areRotationsCorrect)
+                    {
+                        Debug.Log("All rotations are correct for type: " + type);
+                        allObjectsCorrectRotation = true;
+                    }
+                    else
+                    {
+                        Debug.Log("Some rotations are incorrect for type: " + type);
+                        allObjectsCorrectRotation = false;
+                    }
+                }
+                else
+                {
+                    Debug.LogError("RotationCheckScript is not assigned in the inspector.");
+                }
+            }
+            else
+            {
+                Debug.Log("Incorrect: " + obj.name);
+            }
+            
+        }
 
-        // Accumulate correct objects for TrafficLight
-        totalCorrectObjects += CountCorrectObjects(ObjectType.TrafficLight);
-        totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.TrafficLight);
-
-        // Accumulate correct objects for SpeedBump
-        totalCorrectObjects += CountCorrectObjects(ObjectType.SpeedBump);
-        totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.SpeedBump);
-
-        // Now check if total correct objects match the total required objects
-        if (totalCorrectObjects == totalRequiredObjects)
+        if (correctObjects == gameManager.GetNumberOfObjects(type) && allObjectsCorrectRotation)
         {
             GoodJob.gameObject.SetActive(true);
-            TryAgain.gameObject.SetActive(false);
+            //resetButton.isTimerGoing = false;
         }
         else
         {
             TryAgain.gameObject.SetActive(true);
-            GoodJob.gameObject.SetActive(false);
         }
+
+        
+
     }
-    private int CountCorrectObjects(ObjectType type)
+
+    private bool IsObjectCorrect(GameObject obj, ObjectType type)
+    {
+        var correctPositions = correctSpotPositions[type];
+         if (correctPositions.Contains(obj.transform.position))
+         {
+             Debug.Log("Position true");
+         }
+         else
+         {
+             Debug.Log("Position false");
+             
+         }
+         
+         return correctPositions.Contains(obj.transform.position);
+    }
+    
+   /* private int CountCorrectObjects(ObjectType type)
     {
         int correctCount = 0;
         foreach (var obj in gameManager.GetGrabObjects(type))
@@ -86,7 +132,7 @@ public class ButtonScript : MonoBehaviour
             }
         }
         return correctCount;
-    }
+    }*/
     
 }
 
