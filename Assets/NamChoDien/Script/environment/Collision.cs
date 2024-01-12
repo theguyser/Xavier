@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    public GameObject thePlayer;
-    public GameObject charModel;
+    private GameObject thePlayer;
+    private GameObject runAnim;
     public GameObject Button;
-    
+    private void Start()
+    {
+        thePlayer = GameObject.Find("Player");
+        runAnim = GameObject.Find("RunningAnimation");
+        Button = GameObject.Find("ResetButton");
+    }
     void OnTriggerEnter(Collider other)
     {
         // Log the name of the colliding object for debugging
@@ -26,7 +31,7 @@ public class Collision : MonoBehaviour
         }
         
         //Run falling down animation
-        charModel.GetComponent<Animator>().Play("Stumble Backwards");
+        runAnim.GetComponent<Animator>().Play("Stumble Backwards");
         Button.SetActive(true);
         
         //Run game over scene

@@ -4,23 +4,63 @@ using UnityEngine;
 
 public class CarYMotion : MonoBehaviour
 {
-    public float amplitude = 0.05f;
-    public float frequency = 1f;
-    float originalY;
-    public float noiseoffset = 0.05f;
+    private Vector3 startingPosition;
+    public Rigidbody carRigidbody;
+    public float rumbleIntensity = 20;
+    public float rumbleFrequency = 0.01f; // Time between rumbles
 
-    void Start()
+    private float nextRumbleTime = 0f;
+    private void Start()
     {
-        originalY = transform.position.y-0.5f;
-        //noiseoffset = Random.Range(0f, 10f);
+        startingPosition = transform.position;
+        //find the car rigidbody
+        carRigidbody = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        float newY = originalY + amplitude * Mathf.Sin(Time.time) + Mathf.PerlinNoise(noiseoffset, Time.time*frequency);
-        float onlyNoise = originalY + Mathf.PerlinNoise(noiseoffset, Time.time * frequency);
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-        
+        ResetPosition();
+        ResetPosition();
+        if (Time.time >= nextRumbleTime)
+        {
+            Rumble();
+            nextRumbleTime = Time.time + rumbleFrequency;
+        }
+    }
+
+    void Rumble()
+    {
+        float newX = Random.Range(-rumbleIntensity, rumbleIntensity);
+        float newY = Random.Range(-rumbleIntensity, rumbleIntensity);
+        float newZ = Random.Range(-rumbleIntensity, rumbleIntensity);
+
+        // Apply force at random positions
+        Vector3 force = new Vector3(newX,newY,newZ);
+
+        Vector3 position = transform.position + Random.insideUnitSphere;
+
+        carRigidbody.AddForceAtPosition(force, position);
+    }
+    private void ResetRotation()
+    {
+        if (transform.rotation.x > 0.01f)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (transform.rotation.x < -0.01f)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
+    private void ResetPosition()
+    {
+        if (transform.position.z > 0.01f)
+        {
+            transform.position = startingPosition;
+        }
+        else if (transform.position.z < -0.01f)
+        {
+            transform.position = startingPosition;
+        }
     }
 }

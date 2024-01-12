@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &12777714
 BoxCollider:
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &21714551
 BoxCollider:
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &23465725
 BoxCollider:
@@ -1089,7 +1089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &97762522
 BoxCollider:
@@ -1549,7 +1549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &134134452
 BoxCollider:
@@ -1866,7 +1866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &159352092
 BoxCollider:
@@ -1987,7 +1987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &170570941
 BoxCollider:
@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &191986126
 BoxCollider:
@@ -2318,7 +2318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &207727375
 BoxCollider:
@@ -2439,7 +2439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &223570921
 BoxCollider:
@@ -2560,7 +2560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &229944956
 BoxCollider:
@@ -3187,7 +3187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &338897472
 BoxCollider:
@@ -3308,7 +3308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &341488270
 BoxCollider:
@@ -3496,7 +3496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &342616928
 BoxCollider:
@@ -3722,7 +3722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &353996319
 BoxCollider:
@@ -3926,7 +3926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &391185190
 BoxCollider:
@@ -4277,7 +4277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &468922354
 BoxCollider:
@@ -4465,7 +4465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &524542832
 BoxCollider:
@@ -5094,7 +5094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!1001 &616538741
 PrefabInstance:
@@ -5385,7 +5385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &619744664
 BoxCollider:
@@ -5506,7 +5506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &630696653
 BoxCollider:
@@ -5627,7 +5627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &633134673
 BoxCollider:
@@ -5903,7 +5903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &659917842
 BoxCollider:
@@ -6107,7 +6107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &685117906
 BoxCollider:
@@ -6228,7 +6228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &688252867
 BoxCollider:
@@ -6416,7 +6416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &710463295
 BoxCollider:
@@ -6604,7 +6604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &727726234
 BoxCollider:
@@ -7182,7 +7182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &835047521
 BoxCollider:
@@ -7961,7 +7961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &935020339
 BoxCollider:
@@ -8546,7 +8546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &970926481
 BoxCollider:
@@ -8667,7 +8667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &984195293
 BoxCollider:
@@ -10303,7 +10303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1225463918
 BoxCollider:
@@ -10791,7 +10791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1309594097
 BoxCollider:
@@ -11183,7 +11183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1345694363
 BoxCollider:
@@ -11523,7 +11523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1415375179
 BoxCollider:
@@ -11650,7 +11650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1424194881
 BoxCollider:
@@ -11832,7 +11832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1434685551
 BoxCollider:
@@ -12554,7 +12554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1538505726
 BoxCollider:
@@ -12675,7 +12675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1540269505
 BoxCollider:
@@ -12802,7 +12802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1560856047
 BoxCollider:
@@ -13177,7 +13177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1589463850
 BoxCollider:
@@ -13735,7 +13735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1628132618
 BoxCollider:
@@ -14016,7 +14016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1652304710
 BoxCollider:
@@ -14288,7 +14288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1688421343
 BoxCollider:
@@ -14840,7 +14840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1755001303
 BoxCollider:
@@ -14961,7 +14961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1769468453
 BoxCollider:
@@ -15082,7 +15082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1773873999
 BoxCollider:
@@ -15203,7 +15203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1809980547
 BoxCollider:
@@ -16167,7 +16167,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a836a312925313e46afd07e07a65954b,
         type: 3}
       propertyPath: m_Name
-      value: Ch09_nonPBR@Standard Run
+      value: RunningAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a836a312925313e46afd07e07a65954b,
         type: 3}
@@ -16652,7 +16652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1834999055
 BoxCollider:
@@ -17034,7 +17034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1898894399
 BoxCollider:
@@ -17161,7 +17161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1913103413
 BoxCollider:
@@ -17365,7 +17365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &1932376954
 BoxCollider:
@@ -17557,7 +17557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!1 &1941279971
 GameObject:
@@ -18095,7 +18095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &2005335822
 BoxCollider:
@@ -18746,7 +18746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &2074510321
 BoxCollider:
@@ -19110,7 +19110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &2084666089
 BoxCollider:
@@ -19231,7 +19231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &2089001173
 BoxCollider:
@@ -19409,7 +19409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 0}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!1001 &2097652222
 PrefabInstance:
@@ -19520,7 +19520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &2108385233
 BoxCollider:
@@ -19641,7 +19641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &2111538721
 BoxCollider:
@@ -19830,7 +19830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1810177125}
-  charModel: {fileID: 569700940}
+  runAnim: {fileID: 0}
   Button: {fileID: 962160190}
 --- !u!65 &2122443075
 BoxCollider:
