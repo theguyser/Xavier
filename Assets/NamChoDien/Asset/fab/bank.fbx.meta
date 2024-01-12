@@ -3,7 +3,52 @@ guid: 817d27839c4df904993b34ec34d1b27c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brown
+    second: {fileID: 2100000, guid: 319de0520fd7a9149bfb35f1af88d74b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cam
+    second: {fileID: 2100000, guid: d49c934826d3bc346bf6756c2f61ef04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: den
+    second: {fileID: 2100000, guid: 3b2fa6b30fb13e848ae45bbb26ddf28c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mau be_
+    second: {fileID: 2100000, guid: 25774564d9ff58649951778d0ab6cb91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trang
+    second: {fileID: 2100000, guid: 2eedfc9ebfb68d3478e104609c20b9e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xam
+    second: {fileID: 2100000, guid: 662fcb066e9b81443b6aed66b7412611, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xanh dam_
+    second: {fileID: 2100000, guid: 08fe124d925bd5c45bd5906b24d1fbf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xanh la_
+    second: {fileID: 2100000, guid: a69556da4b288a641b33c6c4e86f8d12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xanh nhat_
+    second: {fileID: 2100000, guid: d652229972d9b0746a925acf098d306a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

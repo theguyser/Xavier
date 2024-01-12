@@ -3,7 +3,62 @@ guid: 1651abf3ecdd36140a9e8066d6407a88
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brown
+    second: {fileID: 2100000, guid: 94df946136a8bbd439921b37dd89807a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cam
+    second: {fileID: 2100000, guid: f735709184a6daf43be341c44c19acfa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: den
+    second: {fileID: 2100000, guid: 07d4f568e90ef0c40b4f4cea1ea20352, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: do
+    second: {fileID: 2100000, guid: 29a38bb003aa5f14cb822826c0413f33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mau be_
+    second: {fileID: 2100000, guid: a263ca4f71dd9364c87164e412bb5fa1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trang
+    second: {fileID: 2100000, guid: 5d4dd65561f89634da0f7ff1e102cbfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vang
+    second: {fileID: 2100000, guid: 9477e1f9b73a0ed42a67c7f638395665, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xam
+    second: {fileID: 2100000, guid: 95a3b12499e1a0241930471d870d4c22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xanh
+    second: {fileID: 2100000, guid: f47554d5f093ce44887bfb543bde85b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xanh la_
+    second: {fileID: 2100000, guid: 5a1e1a62233eb7a428b03953db1ea5d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xanh nhat_
+    second: {fileID: 2100000, guid: ec5195d9122426543bbad0b48e6f0ee6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

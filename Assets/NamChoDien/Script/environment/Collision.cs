@@ -11,30 +11,43 @@ public class Collision : MonoBehaviour
     {
         thePlayer = GameObject.Find("Player");
         runAnim = GameObject.Find("RunningAnimation");
-        Button = GameObject.Find("ResetButton");
+        Button = GameObject.Find("Reset Button");
+        StartCoroutine(Wait());
     }
+
     void OnTriggerEnter(Collider other)
     {
-        // Log the name of the colliding object for debugging
-        Debug.Log("Collision detected with: " + other.name);
-        
-        // Disable the BoxCollider of this GameObject
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        
-        // Disable the movement script in thePlayer GameObject
-        thePlayer.GetComponent<movement>().enabled = false;
-        
-        // Additional debug log to confirm the script is disabled
-        if (!thePlayer.GetComponent<movement>().enabled)
+        if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Movement script has been disabled on the player.");
+            // Log the name of the colliding object for debugging
+            Debug.Log("Collision detected with: " + other.name);
+
+            // Disable the BoxCollider of this GameObject
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+
+            // Disable the movement script in thePlayer GameObject
+            thePlayer.GetComponent<movement>().enabled = false;
+
+            // Additional debug log to confirm the script is disabled
+            if (!thePlayer.GetComponent<movement>().enabled)
+            {
+                Debug.Log("Movement script has been disabled on the player.");
+            }
+
+            //Run falling down animation
+            runAnim.GetComponent<Animator>().Play("Stumble Backwards");
+            Button.SetActive(true);
+
+            //Run game over scene
         }
-        
-        //Run falling down animation
-        runAnim.GetComponent<Animator>().Play("Stumble Backwards");
-        Button.SetActive(true);
-        
-        //Run game over scene
-        
+
+
     }
+
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.01f);
+        Button.SetActive(false);
+    }   
 }

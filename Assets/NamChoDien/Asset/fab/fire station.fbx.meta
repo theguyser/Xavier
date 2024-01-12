@@ -3,7 +3,37 @@ guid: d4f3fe4ad72bcf04c88b6d41b3bcb264
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: den
+    second: {fileID: 2100000, guid: 6c582ff1c5be0454d8d79048ae60a388, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: do
+    second: {fileID: 2100000, guid: 0172a676df73739448539b0b2f6041d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trang
+    second: {fileID: 2100000, guid: f34031c099cf62045b0029a729ae0084, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vang
+    second: {fileID: 2100000, guid: 2de6d5de660d79a48ab50ef452dc9596, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xam
+    second: {fileID: 2100000, guid: c462beebc74bda74abb38e7fc55ae324, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xanh
+    second: {fileID: 2100000, guid: e2a370f0c2e74784db4e878232dae82a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
