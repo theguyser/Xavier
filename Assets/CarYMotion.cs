@@ -8,18 +8,19 @@ public class CarYMotion : MonoBehaviour
     public Rigidbody carRigidbody;
     public float rumbleIntensity = 20;
     public float rumbleFrequency = 0.01f; // Time between rumbles
-
+    private float initialXRotation;
     private float nextRumbleTime = 0f;
     private void Start()
     {
+        initialXRotation = transform.rotation.x;
         startingPosition = transform.position;
         //find the car rigidbody
         carRigidbody = GetComponent<Rigidbody>();
     }
     void Update()
     {
-        ResetPosition();
-        ResetPosition();
+        //ResetPosition();
+        //ResetRotation();
         if (Time.time >= nextRumbleTime)
         {
             Rumble();
@@ -42,13 +43,13 @@ public class CarYMotion : MonoBehaviour
     }
     private void ResetRotation()
     {
-        if (transform.rotation.x > 0.01f)
+        if (transform.rotation.x > initialXRotation+0.01f)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(initialXRotation, 0, 0);
         }
-        else if (transform.rotation.x < -0.01f)
+        else if (transform.rotation.x < initialXRotation-0.01f)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(initialXRotation, 0, 0);
         }
     }
 
