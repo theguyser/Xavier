@@ -19,8 +19,8 @@ public class CarYMotion : MonoBehaviour
     }
     void Update()
     {
-        //ResetPosition();
-        //ResetRotation();
+        ResetPosition();
+        ResetRotation();
         if (Time.time >= nextRumbleTime)
         {
             Rumble();
