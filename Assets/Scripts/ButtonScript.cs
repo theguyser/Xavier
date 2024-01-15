@@ -6,8 +6,12 @@ using UnityEngine;
 
 public enum ObjectType
 {
-    TrafficLight,
-    SpeedBump
+    Sign,
+    Bus,
+    Ambulance,
+    Car,
+    TrafficLight
+    
 }
 public class ButtonScript : MonoBehaviour
 {
@@ -26,8 +30,12 @@ public class ButtonScript : MonoBehaviour
         correctSpotPositions = new Dictionary<ObjectType, HashSet<Vector3>>();
 
         // Initialize correct spots for each type
-        InitializeCorrectSpots(ObjectType.TrafficLight, 4); // 4 correct spots for traffic lights
-        InitializeCorrectSpots(ObjectType.SpeedBump, 1);    // 3 correct spots for speed bumps
+        InitializeCorrectSpots(ObjectType.Sign, 2);    // 3 correct spots for speed bumps
+        InitializeCorrectSpots(ObjectType.Bus, 1);    // 3 correct spots for speed bumps
+        InitializeCorrectSpots(ObjectType.Ambulance, 1);    // 3 correct spots for speed bumps
+        InitializeCorrectSpots(ObjectType.Car, 1);    // 3 correct spots for speed bumps
+        InitializeCorrectSpots(ObjectType.TrafficLight, 3); // 4 correct spots for traffic lights
+        
     }
 
     private void InitializeCorrectSpots(ObjectType type, int numberOfSpots)
@@ -44,7 +52,10 @@ public class ButtonScript : MonoBehaviour
     public void OnButtonClick()
     {
         
-        Click(ObjectType.SpeedBump);
+        Click(ObjectType.Sign);
+        Click(ObjectType.Bus);
+        Click(ObjectType.Ambulance);
+        Click(ObjectType.Car);
         Click(ObjectType.TrafficLight);
     }
     

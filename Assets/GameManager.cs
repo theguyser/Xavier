@@ -26,13 +26,17 @@ public class GameManager : MonoBehaviour
         // Initialize based on your game's logic
         // Initialize these based on your game's logic
         // For example, if the first 4 are traffic lights and the 5th is a speed bump
-        grabObjectsByType[ObjectType.TrafficLight] = new List<GameObject>(allGrabObjects).GetRange(0, 4);
-        grabObjectsByType[ObjectType.SpeedBump] = new List<GameObject> { allGrabObjects[4] };
-
+        grabObjectsByType[ObjectType.Sign] = new List<GameObject> { allGrabObjects[0] };
+        grabObjectsByType[ObjectType.Bus] = new List<GameObject> { allGrabObjects[1] };
+        grabObjectsByType[ObjectType.Ambulance] = new List<GameObject> { allGrabObjects[2] };
+        grabObjectsByType[ObjectType.Car] = new List<GameObject> { allGrabObjects[3] };
+        grabObjectsByType[ObjectType.TrafficLight] = new List<GameObject> (allGrabObjects).GetRange(4,3) ;
         // Similar logic for snap objects
-        snapObjectsByType[ObjectType.TrafficLight] = new List<GameObject>(allSnapObjects).GetRange(0, 5);
-        snapObjectsByType[ObjectType.SpeedBump] = new List<GameObject>(allSnapObjects).GetRange(5, 4);
-        
+        snapObjectsByType[ObjectType.Sign] = new List<GameObject>(allSnapObjects).GetRange(0, 2);
+        snapObjectsByType[ObjectType.Bus] = new List<GameObject>(allSnapObjects).GetRange(2, 2);
+        snapObjectsByType[ObjectType.Ambulance] = new List<GameObject>(allSnapObjects).GetRange(4, 2);
+        snapObjectsByType[ObjectType.Car] = new List<GameObject>(allSnapObjects).GetRange(6, 2);
+        snapObjectsByType[ObjectType.TrafficLight] = new List<GameObject>(allSnapObjects).GetRange(8, 3);
 
     }
 

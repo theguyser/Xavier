@@ -18,7 +18,7 @@ public class Grabber : MonoBehaviour
     [SerializeField] private GameObject objectRemainsCounting;
     private int totalSnapableObjects;
     [SerializeField] private string assetType;
-    [SerializeField] private GameObject rightPosition;
+    //[SerializeField] private GameObject rightPosition;
 
     private void Start()
     {
@@ -189,7 +189,7 @@ public class Grabber : MonoBehaviour
     {
         
         if (assetType == "Speed Bump" && other.CompareTag("Speed Bump Spot") ||
-            assetType == "Traffic" && other.CompareTag("Traffic Light Spot"))
+            assetType == "Traffic Light" && other.CompareTag("Traffic Light Spot"))
         {
             canSnap = true;
             snapTarget = other.gameObject;
