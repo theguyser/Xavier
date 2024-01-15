@@ -3,7 +3,57 @@ guid: 2643e46016c68924bba9bd2e0bacc0b0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car
+    second: {fileID: 2100000, guid: 3d7d56761ba4b2847b047f5bc7daec7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car inside
+    second: {fileID: 2100000, guid: 54196b18968d58640a7bbfa6e6ae6923, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car.001
+    second: {fileID: 2100000, guid: edc5d112fc2c2dc40ab53b6f94c1de30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: elc
+    second: {fileID: 2100000, guid: d88d033ccdcb63f46841230b66ec2e28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: handle_
+    second: {fileID: 2100000, guid: 74f1469ba802938418e38422599d0267, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: orange
+    second: {fileID: 2100000, guid: a0c58ae4f0ac4df4dbd2c612fc901671, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pipe
+    second: {fileID: 2100000, guid: 4cb7b66763398eb4e80cec9c28f6a243, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sign
+    second: {fileID: 2100000, guid: 40ce47fab4985574fa855d0427497749, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: weel
+    second: {fileID: 2100000, guid: 3e175115604f6ab4c908fa2043007a28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: weel.001
+    second: {fileID: 2100000, guid: e7c93bfd226154c498a3e2ea22552958, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
