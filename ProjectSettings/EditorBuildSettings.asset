@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map detection.unity
     guid: eaa2f5545f220834a87db3f658593b65
+  - enabled: 1
+    path: Assets/NamChoDien/Scene/easier subway surfer.unity
+    guid: 57d88d825d4105e4ba92739d3c2ca694
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5dfa2561bcea5fb45b1ccf8f909ff669,
       type: 2}

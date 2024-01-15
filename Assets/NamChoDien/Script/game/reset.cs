@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class reset : MonoBehaviour
 {
-  public void Reset()
+    string currentSceneName;
+    Scene currentScene;
+    private void Start()
+    {
+        currentScene = SceneManager.GetActiveScene();
+        currentSceneName = currentScene.name;
+        Debug.Log(currentSceneName);
+    }
+    public void Reset()
   {
-    SceneManager.LoadScene("subwaysurfer");
+    SceneManager.LoadScene(currentSceneName);
   }
 }
