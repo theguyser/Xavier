@@ -97,12 +97,11 @@ public class Grabber : MonoBehaviour
         {
             snapTargetCollider.enabled = false;
             snapTargetMeshRenderer.enabled = false;
-            snapTarget.tag = "haveSnapped";
+            snapTarget.tag = "haveSnapped"; 
             //Debug.Log("Tag:" + snapTarget.tag);
             SnappedObjectManager.IncrementCount(assetType);
-            Debug.Log("Snapped Objects: " + SnappedObjectManager.snappedCounts[assetType]);
+            Debug.Log("Snapped Objects: " + SnappedObjectManager.snappedCounts[assetType] + " Assets Type:" + SnappedObjectManager.snappedCounts[name]);
             CheckAndDisableLeftoverSpots();
-           
         }
     
         snapTarget = null;
@@ -154,7 +153,7 @@ public class Grabber : MonoBehaviour
         {
             MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
             Collider childCollider = child.GetComponent<Collider>();
-            if (meshRenderer != null && (child.gameObject.CompareTag("Traffic Light Spot")||child.gameObject.CompareTag("Speed Bump Spot")))
+            if (meshRenderer != null && (child.gameObject.CompareTag("Traffic Light Spot")||child.gameObject.CompareTag("Ambulance Spot") ||child.gameObject.CompareTag("Bus Spot")))
             {
                 meshRenderer.enabled = true;
                 childCollider.enabled = true;
@@ -188,8 +187,9 @@ public class Grabber : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger: " + other.gameObject.name);
-        if (assetType == "Speed Bump" && other.CompareTag("Speed Bump Spot") ||
-            assetType == "Traffic Light" && other.CompareTag("Traffic Light Spot"))
+        if (assetType == "Ambulance" && other.CompareTag("Ambulance Spot") ||
+            assetType == "Traffic Light" && other.CompareTag("Traffic Light Spot") ||
+            assetType == "Bus" && other.CompareTag("Bus Spot"))
         {
             canSnap = true;
             snapTarget = other.gameObject;
@@ -203,13 +203,17 @@ public class Grabber : MonoBehaviour
     {
         if (isDragging && other.gameObject.CompareTag("haveSnapped"))
         {
-            if (assetType == "Speed Bump")
+            if (assetType == "Ambulance")
             {
-                other.gameObject.tag = "Speed Bump Spot";
+                other.gameObject.tag = "Ambulance Spot";
             }
-            else if (assetType == "Traffic")
+            else if (assetType == "Traffic Light")
             {
                 other.gameObject.tag = "Traffic Light Spot";
+            }
+            else if (assetType == "Bus")
+            {
+                other.gameObject.tag = "Bus Spot";
             }
             
             SnappedObjectManager.DecrementCount(assetType);
@@ -223,13 +227,17 @@ public class Grabber : MonoBehaviour
     {
         if (other.CompareTag("haveSnapped"))
         {
-            if (assetType == "Speed Bump")
+            if (assetType == "Ambulance")
             {
-                other.gameObject.tag = "Speed Bump Spot";
+                other.gameObject.tag = "Ambulance Spot";
             }
-            else if (assetType == "Traffic")
+            else if (assetType == "Traffic Light")
             {
                 other.gameObject.tag = "Traffic Light Spot";
+            }
+            else if (assetType == "Bus")
+            {
+                other.gameObject.tag = "Bus Spot";
             }
             canSnap = false;
             snapTarget = null;
