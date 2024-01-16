@@ -6583,7 +6583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 43091083}
   objectRemainsCounting: {fileID: 974989549}
-  assetType: ' Traffic Light'
+  assetType: Traffic Light
 --- !u!54 &843111844
 Rigidbody:
   m_ObjectHideFlags: 0
