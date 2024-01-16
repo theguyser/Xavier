@@ -96,8 +96,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.71215844, y: 1.6369487, z: 3.1436334}
-  m_Center: {x: -0.0045005707, y: 0.8144755, z: -0.12788236}
+  m_Size: {x: 0.71215844, y: 1.6538945, z: 3.1436334}
+  m_Center: {x: -0.004500568, y: 0.17335373, z: -0.12788236}
 --- !u!1001 &774138375024791981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9003730aefbb0af4ca40cc7ac1be6fca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.639
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9003730aefbb0af4ca40cc7ac1be6fca,
         type: 3}
@@ -213,6 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b8903566a2b5a4fb474beae7e25f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thePlayer: {fileID: 0}
+  runAnim: {fileID: 0}
   Button: {fileID: 0}
 --- !u!4 &951653415914878534 stripped
 Transform:

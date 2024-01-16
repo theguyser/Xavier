@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    private GameObject thePlayer;
-    private GameObject runAnim;
+    public GameObject thePlayer;
+    public GameObject runAnim;
     public GameObject Button;
     private void Start()
     {
