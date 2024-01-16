@@ -5,35 +5,56 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public Transform positionA; // Assign in Inspector
-    public Transform positionD; // Assign in Inspector
-
-    public float transitionSpeed = 1f; // Speed of camera movement
-
+    //public Transform positionD; // Assign in Inspector
+    //public Transform positioW1; // Assign in Inspector
+    public float transitionSpeed = 5f;
+    public float smoothTime = 0.3f;// Speed of camera movement
+    
+    public Vector3 minBounds; // Minimum bounds for camera movement
+    public Vector3 maxBounds;
+    
+    private Vector3 velocity = Vector3.zero;
     private Transform targetPosition;
     private Quaternion initialRotation;
     void Start()
     {
         // Store the initial rotation of the camera
-        initialRotation = transform.rotation;
+        initialRotation = Quaternion.Euler(142.681f, 0f, 180f);
     }
     void Update()
     {
+        Vector3 checkPosition = transform.position;
         // Check for input and update target position
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
-            targetPosition = positionA;
+              checkPosition += new Vector3(transitionSpeed,0f, 0f);
+            //checkPosition.position = targetPosition.position;
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
-            targetPosition = positionD;
+             checkPosition += new Vector3(-transitionSpeed ,0f, 0f);
         }
 
-        // Move camera towards target position
-        if (targetPosition != null)
+        
+        if (Input.GetKey(KeyCode.W))
         {
-            transform.position = Vector3.Lerp(transform.position, targetPosition.position, transitionSpeed * Time.deltaTime);
-            transform.rotation = initialRotation;
+            checkPosition+= new Vector3(0f,0f,-transitionSpeed);
         }
+        else if (Input.GetKey(KeyCode.S))
+        {
+             checkPosition+= new Vector3(0f,0f,transitionSpeed);
+        }
+        checkPosition.x = Mathf.Clamp(checkPosition.x, minBounds.x, maxBounds.x);
+        checkPosition.y = Mathf.Clamp(checkPosition.y, minBounds.y, maxBounds.y);
+        checkPosition.z = Mathf.Clamp(checkPosition.z, minBounds.z, maxBounds.z);
+
+        //argetPosition.position = checkPosition;
+        // Move camera towards target position
+       
+        //transform.position = Vector3.Lerp(transform.position, checkPosition, transitionSpeed * Time.deltaTime);
+        transform.position = Vector3.SmoothDamp(transform.position, checkPosition, ref velocity, smoothTime);
+        transform.rotation = initialRotation;
+        
     }
 }
 

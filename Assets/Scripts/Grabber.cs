@@ -187,7 +187,7 @@ public class Grabber : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        Debug.Log("Trigger: " + other.gameObject.name);
         if (assetType == "Speed Bump" && other.CompareTag("Speed Bump Spot") ||
             assetType == "Traffic Light" && other.CompareTag("Traffic Light Spot"))
         {

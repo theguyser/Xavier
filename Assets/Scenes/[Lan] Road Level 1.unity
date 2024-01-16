@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12260883, g: 0.30901143, b: 0.70510423, a: 1}
+  m_IndirectSpecularColor: {r: 0.112726726, g: 0.28158873, b: 0.7091778, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1633,7 +1633,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 37.037167, y: 18.993454, z: 322.58426}
+  m_Size: {x: 100, y: 99.5, z: 456.4}
   m_Center: {x: 5.5469723, y: 0.028937053, z: -75.941635}
 --- !u!23 &286820651
 MeshRenderer:
@@ -1958,7 +1958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.94743764, z: 0.31994048, w: 0}
+  m_LocalRotation: {x: 0, y: -0.9474367, z: 0.31994346, w: 0}
   m_LocalPosition: {x: 19.7, y: 5.2299995, z: 18.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2022,8 +2022,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionA: {fileID: 1644696001}
-  positionD: {fileID: 1132151121}
-  transitionSpeed: 5
+  transitionSpeed: 10
+  smoothTime: 0.5
+  minBounds: {x: 10, y: 5.23, z: 10}
+  maxBounds: {x: 30, y: 5.23, z: 30}
 --- !u!1 &339784581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,6 +2957,37 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &443424524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443424525}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &443424525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443424524}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.9474367, z: 0.31994346, w: 0}
+  m_LocalPosition: {x: 19.7, y: 5.23, z: 18.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 142.681, y: 0, z: 180}
 --- !u!1001 &443519450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4506,7 +4539,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 37.037167, y: 18.993454, z: 322.58426}
+  m_Size: {x: 117.6, y: 108, z: 426.5}
   m_Center: {x: 5.5469723, y: 0.028937053, z: -75.941635}
 --- !u!23 &654665843
 MeshRenderer:
@@ -19943,6 +19976,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
+  - {fileID: 443424525}
   - {fileID: 153176940}
   - {fileID: 410087041}
   - {fileID: 832575519}
