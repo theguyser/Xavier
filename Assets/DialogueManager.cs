@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject StartingDialogue;
     public GameObject ElderlyWoman;
     public GameObject Man;
+    public GameObject Man2;
     private GameObject currentTalkTarget;
     
     private bool startingDialougueComplete = false;
@@ -179,6 +180,11 @@ public class DialogueManager : MonoBehaviour
             FindObjectOfType<NPCManager>().womanCorrect = true;
         }
         if (TalkToScript.isCorrectFollowUp == true && currentTalkTarget == Man)
+        {
+            Debug.Log("please be true: " + TalkToScript.isCorrectFollowUp);
+            FindObjectOfType<NPCManager>().manCorrect = true;
+        }
+        if (TalkToScript.isCorrectFollowUp == true && currentTalkTarget == Man2)
         {
             Debug.Log("please be true: " + TalkToScript.isCorrectFollowUp);
             FindObjectOfType<NPCManager>().manCorrect = true;

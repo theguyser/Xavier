@@ -11,6 +11,7 @@ public class NPCManager : MonoBehaviour
     public bool manCorrect = false;
     public TalkToScript Man;
     public TalkToScript Woman;
+    public TalkToScript Man2;
     [SerializeField] TextMeshProUGUI GoodJob;
     public GameObject resetButton;
     void Start()
@@ -25,6 +26,10 @@ public class NPCManager : MonoBehaviour
         if (womanCorrect)
         {
             Man.DialogueOptionsAvailable = true;
+            if (Man2 != null)
+            {
+                Man2.DialogueOptionsAvailable = true;
+            }
             Woman.completedDialogue = true;
         }
         if (manCorrect)
