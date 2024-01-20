@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12260883, g: 0.30901143, b: 0.70510423, a: 1}
+  m_IndirectSpecularColor: {r: 0.11272717, g: 0.2815861, b: 0.70917326, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,22 +153,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allGrabObjects:
-  - {fileID: 1212313453}
   - {fileID: 365485335}
   - {fileID: 919132148799589213}
-  - {fileID: 919132148813148099}
   - {fileID: 843111841}
   - {fileID: 1014735737}
   - {fileID: 545593282}
   allSnapObjects:
-  - {fileID: 708911274}
-  - {fileID: 1726405031}
   - {fileID: 1446986012}
   - {fileID: 1331323736}
   - {fileID: 919132149349565250}
   - {fileID: 919132149173976658}
-  - {fileID: 919132148683274865}
-  - {fileID: 919132149482852867}
   - {fileID: 684701513}
   - {fileID: 286820647}
   - {fileID: 654665839}
@@ -2201,13 +2195,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365485335}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.008635618, y: 0.707609, z: 0.7065155, w: 0.0071306177}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 20.468567, y: 1.3434346, z: 1.9873457}
   m_LocalScale: {x: 0.12982962, y: 0.12982966, z: 0.12982962}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1630867549}
-  m_LocalEulerAnglesHint: {x: -90.149, y: 53.36, z: -234.637}
+  m_LocalEulerAnglesHint: {x: -90, y: 55, z: -235}
 --- !u!23 &365485337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3743,7 +3737,7 @@ GameObject:
   - component: {fileID: 545593285}
   - component: {fileID: 545593284}
   m_Layer: 0
-  m_Name: Select Traffic Light (3)
+  m_Name: Traffic
   m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6374,7 +6368,7 @@ GameObject:
   - component: {fileID: 843111844}
   - component: {fileID: 843111843}
   m_Layer: 0
-  m_Name: Select Traffic Light (1)
+  m_Name: Traffic
   m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7835,7 +7829,7 @@ GameObject:
   - component: {fileID: 1014735740}
   - component: {fileID: 1014735739}
   m_Layer: 0
-  m_Name: Select Traffic Light (2)
+  m_Name: Traffic
   m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10645,13 +10639,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446986012}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0023695875, y: -0.7076386, z: -0.7065701, w: -0.00087265734}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 2.4979477, y: -0.60023654, z: -13.1936035}
   m_LocalScale: {x: 0.12982962, y: 0.12982962, z: 0.12982962}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 24919613}
-  m_LocalEulerAnglesHint: {x: -90.148, y: 54.35, z: -234.612}
+  m_LocalEulerAnglesHint: {x: -90, y: 55, z: -235}
 --- !u!23 &1446986014
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15134,13 +15128,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149349565250}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99997026, z: -0, w: 0.007722065}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 2.8179474, y: -1.1336715, z: -9.333603}
   m_LocalScale: {x: 0.5694164, y: 0.3774946, z: 0.37758192}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1835723717}
-  m_LocalEulerAnglesHint: {x: 0, y: 179.115, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &543450653714261224
 Transform:
   m_ObjectHideFlags: 0

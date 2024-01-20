@@ -15,18 +15,18 @@ public class RotationCheckScript : MonoBehaviour
     private void InitializedObjectSpots()
     {
         correctRotationsForPositions = new Dictionary<Vector3, Quaternion>();
-        correctRotationsForPositions.Add(GameObject.Find("car_1 (1)").transform.position, GameObject.Find("car_1 (1)").transform.rotation);
+        //correctRotationsForPositions.Add(GameObject.Find("car_1 (1)").transform.position, GameObject.Find("car_1 (1)").transform.rotation);
         //Debug.Log(GameObject.Find("TrafficLight").transform.rotation);
         correctRotationsForPositions.Add(GameObject.Find("ambulance (1)").transform.position, GameObject.Find("ambulance (1)").transform.rotation);
         //Debug.Log(GameObject.Find("TrafficLight.001").transform.rotation);
         correctRotationsForPositions.Add(GameObject.Find("bus (1)").transform.position, GameObject.Find("bus (1)").transform.rotation);
         //Debug.Log(GameObject.Find("TrafficLight.002").transform.rotation);
-        correctRotationsForPositions.Add(GameObject.Find("Sign 3 (1)").transform.position, GameObject.Find("Sign 3 (1)").transform.rotation);
+        //correctRotationsForPositions.Add(GameObject.Find("Sign 3 (1)").transform.position, GameObject.Find("Sign 3 (1)").transform.rotation);
         //Debug.Log(GameObject.Find("TrafficLight.003").transform.rotation);
-        correctRotationsForPositions.Add(GameObject.Find("Sign 3 (2)").transform.position, GameObject.Find("Sign 3 (2)").transform.rotation);
-        correctRotationsForPositions.Add(GameObject.Find("Traffic Light (1)").transform.position, GameObject.Find("Traffic Light (1)").transform.rotation);
-        correctRotationsForPositions.Add(GameObject.Find("Traffic Light (2)").transform.position, GameObject.Find("Traffic Light (2)").transform.rotation);
-        correctRotationsForPositions.Add(GameObject.Find("Traffic Light (3)").transform.position, GameObject.Find("Traffic Light (3)").transform.rotation);
+        //correctRotationsForPositions.Add(GameObject.Find("Sign 3 (2)").transform.position, GameObject.Find("Sign 3 (2)").transform.rotation);
+        correctRotationsForPositions.Add(GameObject.Find("Traffic").transform.position, GameObject.Find("Traffic").transform.rotation);
+        //correctRotationsForPositions.Add(GameObject.Find("Traffic Light (2)").transform.position, GameObject.Find("Traffic Light (2)").transform.rotation);
+        //correctRotationsForPositions.Add(GameObject.Find("Traffic Light (3)").transform.position, GameObject.Find("Traffic Light (3)").transform.rotation);
         // Example: Add correct position-rotation pairs
         // correctRotationsForPositions.Add(new Vector3(x, y, z), Quaternion.Euler(rx, ry, rz));
         // Repeat for each position-rotation pair

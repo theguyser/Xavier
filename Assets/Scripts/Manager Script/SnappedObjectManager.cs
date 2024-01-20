@@ -38,7 +38,7 @@ public class SnappedObjectManager
         if (snappedCounts.ContainsKey(assetType))
         {
             return snappedCounts[assetType];
-            Debug.Log("GetCount for Asset Type: " + assetType);
+            
         }
         return 0;
     }

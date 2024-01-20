@@ -6,10 +6,9 @@ using UnityEngine;
 
 public enum ObjectType
 {
-    Sign,
+    
     Bus,
     Ambulance,
-    Car,
     Traffic
     
 }
