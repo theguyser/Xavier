@@ -7,7 +7,7 @@ public enum ObjectName
     Bus,
     Ambulance,
     //Car,
-    TrafficLight,
+    Barier,
     //SpeedBump
 }
 public class SomethingManager : MonoBehaviour
@@ -19,6 +19,15 @@ public class SomethingManager : MonoBehaviour
     private void Start()
     {
         InitializeObjects();
+        DebugSnapObjectPositions();
+    }
+    private void Update()
+    {
+        // Check if the 'D' key is pressed
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            DebugSnapObjectPositions(); // Call the method to debug snap object positions
+        }
     }
     private void InitializeObjects()
     {
@@ -32,7 +41,7 @@ public class SomethingManager : MonoBehaviour
         //grabObjectsByType[ObjectType.Bus] = new List<GameObject> { allGrabObjects[1] };
         //grabObjectsByType[ObjectType.Ambulance] = new List<GameObject> { allGrabObjects[2] };
         //grabObjectsByType[ObjectType.Car] = new List<GameObject> { allGrabObjects[3] };
-        grabObjectsByType[ObjectName.TrafficLight] = new List<GameObject>(allGrabObjects).GetRange(2, 3);
+        grabObjectsByType[ObjectName.Barier] = new List<GameObject>{ allGrabObjects[2] };
         grabObjectsByType[ObjectName.Bus] = new List<GameObject> { allGrabObjects[0] };
         grabObjectsByType[ObjectName.Ambulance] = new List<GameObject> { allGrabObjects[1] };
         // Similar logic for snap objects
@@ -40,10 +49,21 @@ public class SomethingManager : MonoBehaviour
         //snapObjectsByType[ObjectType.Bus] = new List<GameObject>(allSnapObjects).GetRange(2, 2);
         //snapObjectsByType[ObjectType.Ambulance] = new List<GameObject>(allSnapObjects).GetRange(4, 2);
         //snapObjectsByType[ObjectType.Car] = new List<GameObject>(allSnapObjects).GetRange(6, 2);
-        snapObjectsByType[ObjectName.TrafficLight] = new List<GameObject>(allSnapObjects).GetRange(4, 3);
+        snapObjectsByType[ObjectName.Barier] = new List<GameObject>{ allSnapObjects[4] };
         snapObjectsByType[ObjectName.Bus] = new List<GameObject>(allSnapObjects).GetRange(0, 2);
         snapObjectsByType[ObjectName.Ambulance] = new List<GameObject>(allSnapObjects).GetRange(2, 2);
+        foreach (var type in grabObjectsByType.Keys)
+        {
+            Debug.Log("Type: " + type + ", Grab Count: " + grabObjectsByType[type].Count);
+        }
+
+        foreach (var type in snapObjectsByType.Keys)
+        {
+            Debug.Log("Type: " + type + ", Snap Count: " + snapObjectsByType[type].Count);
+        }
     }
+    
+    
 
     public List<GameObject> GetGrabObjects(ObjectName type)
     {
@@ -58,5 +78,18 @@ public class SomethingManager : MonoBehaviour
     public int GetNumberOfObjects(ObjectName type)
     {
         return grabObjectsByType[type].Count;
+    }
+    private void DebugSnapObjectPositions()
+    {
+        foreach (ObjectName type in snapObjectsByType.Keys)
+        {
+            List<GameObject> snapObjects = snapObjectsByType[type];
+            for (int i = 0; i < snapObjects.Count; i++)
+            {
+                GameObject snapObject = snapObjects[i];
+                Vector3 position = snapObject.transform.position;
+                Debug.Log("Type: " + type + ", Snap Object Index: " + i + ", Position: " + position);
+            }
+        }
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - Speed Bump Spot
   - Ambulance Spot
   - Bus Spot
+  - Barier Spot
   layers:
   - Default
   - TransparentFX

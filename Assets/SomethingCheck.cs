@@ -18,7 +18,7 @@ public class SomethingCheck : MonoBehaviour
         correctSpotPositions = new Dictionary<ObjectName, HashSet<Vector3>>();
 
         // Initialize correct spots for each type
-        InitializeCorrectSpots(ObjectName.TrafficLight, 3);
+        InitializeCorrectSpots(ObjectName.Barier, 1);
         InitializeCorrectSpots(ObjectName.Bus, 1);    
         InitializeCorrectSpots(ObjectName.Ambulance, 1);
     }
@@ -37,10 +37,12 @@ public class SomethingCheck : MonoBehaviour
     {
         int totalCorrectObjects = 0;
         int totalRequiredObjects = 0;
+        TryAgain.gameObject.SetActive(false);
+        GoodJob.gameObject.SetActive(false);
 
         // Accumulate correct objects for TrafficLight
-        totalCorrectObjects += CountCorrectObjects(ObjectName.TrafficLight);
-        totalRequiredObjects += something.GetNumberOfObjects(ObjectName.TrafficLight);
+        totalCorrectObjects += CountCorrectObjects(ObjectName.Barier);
+        totalRequiredObjects += something.GetNumberOfObjects(ObjectName.Barier);
 
         // Accumulate correct objects for SpeedBump
         totalCorrectObjects += CountCorrectObjects(ObjectName.Bus);
@@ -53,7 +55,7 @@ public class SomethingCheck : MonoBehaviour
         if (totalCorrectObjects == totalRequiredObjects)
         {
             GoodJob.gameObject.SetActive(true);
-            resetButton.isTimerGoing = false;
+            //resetButton.isTimerGoing = false;
             TryAgain.gameObject.SetActive(false);
         }
         else
