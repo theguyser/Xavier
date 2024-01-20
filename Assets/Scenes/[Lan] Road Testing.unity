@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: TrafficLight
+  assetType: Traffic Light
   rightPosition: {fileID: 0}
 --- !u!95 &111040345
 Animator:
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: TrafficLight
+  assetType: Traffic Light
   rightPosition: {fileID: 0}
 --- !u!54 &286820649
 Rigidbody:
@@ -1209,11 +1209,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598501924}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2b4e05299e89d04aae711d061c72d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 19760312}
 --- !u!1 &654665839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: TrafficLight
+  assetType: Traffic Light
   rightPosition: {fileID: 0}
 --- !u!54 &654665841
 Rigidbody:
@@ -1567,7 +1568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: TrafficLight
+  assetType: Traffic Light
   rightPosition: {fileID: 0}
 --- !u!54 &684701515
 Rigidbody:
