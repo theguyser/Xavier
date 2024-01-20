@@ -334,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: Traffic
+  assetType: TrafficLight
   rightPosition: {fileID: 0}
 --- !u!1 &286820647
 GameObject:
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: Traffic
+  assetType: TrafficLight
   rightPosition: {fileID: 0}
 --- !u!54 &286820649
 Rigidbody:
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: Traffic
+  assetType: TrafficLight
   rightPosition: {fileID: 0}
 --- !u!54 &654665841
 Rigidbody:
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
-  assetType: Traffic
+  assetType: TrafficLight
   rightPosition: {fileID: 0}
 --- !u!54 &684701515
 Rigidbody:

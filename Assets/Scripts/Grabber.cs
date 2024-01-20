@@ -189,7 +189,7 @@ public class Grabber : MonoBehaviour
     {
         
         if (assetType == "Speed Bump" && other.CompareTag("Speed Bump Spot") ||
-            assetType == "Traffic" && other.CompareTag("Traffic Light Spot"))
+            assetType == "TrafficLight" && other.CompareTag("Traffic Light Spot"))
         {
             canSnap = true;
             snapTarget = other.gameObject;
@@ -207,7 +207,7 @@ public class Grabber : MonoBehaviour
             {
                 other.gameObject.tag = "Speed Bump Spot";
             }
-            else if (assetType == "Traffic")
+            else if (assetType == "TrafficLight")
             {
                 other.gameObject.tag = "Traffic Light Spot";
             }
@@ -227,7 +227,7 @@ public class Grabber : MonoBehaviour
             {
                 other.gameObject.tag = "Speed Bump Spot";
             }
-            else if (assetType == "Traffic")
+            else if (assetType == "TrafficLight")
             {
                 other.gameObject.tag = "Traffic Light Spot";
             }
