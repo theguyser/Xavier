@@ -8,8 +8,8 @@ public class Selection : MonoBehaviour
     public Material highlightMaterial;
     public Material selectionMaterial;
 
-    private Material originalMaterialHighlight;
-    private Material originalMaterialSelection;
+    private Material[] originalMaterialsHighlight;
+    private Material[] originalMaterialsSelection;
     private Transform highlight;
     private Transform selection;
     private RaycastHit raycastHit;
@@ -19,19 +19,21 @@ public class Selection : MonoBehaviour
         // Highlight
         if (highlight != null)
         {
-            highlight.GetComponent<MeshRenderer>().sharedMaterial = originalMaterialHighlight;
+            RestoreMaterials(highlight, originalMaterialsHighlight);
             highlight = null;
         }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)) //Make sure you have EventSystem in the hierarchy before using EventSystem
+        if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit))
         {
             highlight = raycastHit.transform;
             if (highlight.CompareTag("drag") && highlight != selection)
             {
-                if (highlight.GetComponent<MeshRenderer>().material != highlightMaterial )
+                MeshRenderer renderer = highlight.GetComponent<MeshRenderer>();
+                if (renderer != null && !MaterialsAreEqual(renderer.materials, highlightMaterial))
                 {
-                    originalMaterialHighlight = highlight.GetComponent<MeshRenderer>().material;
-                    highlight.GetComponent<MeshRenderer>().material = highlightMaterial;
+                    originalMaterialsHighlight = renderer.materials;
+                    SetMaterials(renderer, highlightMaterial);
                 }
             }
             else
@@ -47,26 +49,63 @@ public class Selection : MonoBehaviour
             {
                 if (selection != null)
                 {
-                    selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
+                    RestoreMaterials(selection, originalMaterialsSelection);
                 }
+
                 selection = raycastHit.transform;
-                if (selection.GetComponent<MeshRenderer>().material != selectionMaterial)
+                MeshRenderer selectionRenderer = selection.GetComponent<MeshRenderer>();
+                if (selectionRenderer != null && !MaterialsAreEqual(selectionRenderer.materials, selectionMaterial))
                 {
-                    originalMaterialSelection = originalMaterialHighlight;
-                    selection.GetComponent<MeshRenderer>().material = selectionMaterial;
+                    originalMaterialsSelection = originalMaterialsHighlight;
+                    SetMaterials(selectionRenderer, selectionMaterial);
                 }
+
                 highlight = null;
             }
             else
             {
                 if (selection)
                 {
-                    selection.GetComponent<MeshRenderer>().material = originalMaterialSelection;
+                    RestoreMaterials(selection, originalMaterialsSelection);
                     selection = null;
                 }
             }
         }
-
     }
 
+    private void SetMaterials(MeshRenderer renderer, Material newMaterial)
+    {
+        int materialsCount = renderer.materials.Length;
+        Material[] newMaterials = new Material[materialsCount];
+        for (int i = 0; i < materialsCount; i++)
+        {
+            newMaterials[i] = newMaterial;
+        }
+
+        renderer.materials = newMaterials;
+    }
+
+    private void RestoreMaterials(Transform obj, Material[] originalMaterials)
+    {
+        if (obj == null || originalMaterials == null) return;
+
+        MeshRenderer renderer = obj.GetComponent<MeshRenderer>();
+        if (renderer != null)
+        {
+            renderer.materials = originalMaterials;
+        }
+    }
+
+    private bool MaterialsAreEqual(Material[] materials, Material material)
+    {
+        foreach (var mat in materials)
+        {
+            if (mat != material)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
