@@ -10,7 +10,7 @@ public enum ObjectType
     Bus,
     Ambulance,
     Car,
-    TrafficLight
+    Traffic
     
 }
 public class ButtonScript : MonoBehaviour
@@ -30,11 +30,11 @@ public class ButtonScript : MonoBehaviour
         correctSpotPositions = new Dictionary<ObjectType, HashSet<Vector3>>();
 
         // Initialize correct spots for each type
-        InitializeCorrectSpots(ObjectType.Sign, 2);    // 3 correct spots for speed bumps
+        //InitializeCorrectSpots(ObjectType.Sign, 2);    // 3 correct spots for speed bumps
         InitializeCorrectSpots(ObjectType.Bus, 1);    // 3 correct spots for speed bumps
         InitializeCorrectSpots(ObjectType.Ambulance, 1);    // 3 correct spots for speed bumps
-        InitializeCorrectSpots(ObjectType.Car, 1);    // 3 correct spots for speed bumps
-        InitializeCorrectSpots(ObjectType.TrafficLight, 3); // 4 correct spots for traffic lights
+        //InitializeCorrectSpots(ObjectType.Car, 1);    // 3 correct spots for speed bumps
+        InitializeCorrectSpots(ObjectType.Traffic, 3); // 4 correct spots for traffic lights
         
     }
 
@@ -52,11 +52,11 @@ public class ButtonScript : MonoBehaviour
     public void OnButtonClick()
     {
         
-        Click(ObjectType.Sign);
+        //Click(ObjectType.Sign);
         Click(ObjectType.Bus);
         Click(ObjectType.Ambulance);
-        Click(ObjectType.Car);
-        Click(ObjectType.TrafficLight);
+        //Click(ObjectType.Car);
+        Click(ObjectType.Traffic);
     }
     
     public void Click(ObjectType type)

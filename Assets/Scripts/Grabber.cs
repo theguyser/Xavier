@@ -76,6 +76,7 @@ public class Grabber : MonoBehaviour
            SnapObject();
         }
         isDragging = false;
+        Debug.Log("isDragging: " + isDragging);
         GrabManager.DeselectObject();
     }
 
@@ -91,6 +92,7 @@ public class Grabber : MonoBehaviour
         if (!canSnap) return; // Do not proceed if canSnap is false
         transform.position = snapPosition;
         canSnap = false;
+        isDragging = false;
         snapTargetCollider = snapTarget.GetComponent<Collider>();
         snapTargetMeshRenderer = snapTarget.GetComponent<MeshRenderer>();
         if (snapTargetCollider != null && snapTargetMeshRenderer != null)
@@ -98,7 +100,8 @@ public class Grabber : MonoBehaviour
             snapTargetCollider.enabled = false;
             snapTargetMeshRenderer.enabled = false;
             snapTarget.tag = "haveSnapped"; 
-            //Debug.Log("Tag:" + snapTarget.tag);
+            Debug.Log("Tag:" + snapTarget.tag);
+            Debug.Log("isDragging: " + isDragging);
             SnappedObjectManager.IncrementCount(assetType);
             Debug.Log("Snapped Objects: " + SnappedObjectManager.snappedCounts[assetType] + " Assets Type:" + SnappedObjectManager.snappedCounts[name]);
             CheckAndDisableLeftoverSpots();
@@ -188,7 +191,7 @@ public class Grabber : MonoBehaviour
     {
         Debug.Log("Trigger: " + other.gameObject.name);
         if (assetType == "Ambulance" && other.CompareTag("Ambulance Spot") ||
-            assetType == "Traffic Light" && other.CompareTag("Traffic Light Spot") ||
+            assetType == "Traffic" && other.CompareTag("Traffic Light Spot") ||
             assetType == "Bus" && other.CompareTag("Bus Spot"))
         {
             canSnap = true;
@@ -207,7 +210,7 @@ public class Grabber : MonoBehaviour
             {
                 other.gameObject.tag = "Ambulance Spot";
             }
-            else if (assetType == "Traffic Light")
+            else if (assetType == "Traffic")
             {
                 other.gameObject.tag = "Traffic Light Spot";
             }
@@ -231,7 +234,7 @@ public class Grabber : MonoBehaviour
             {
                 other.gameObject.tag = "Ambulance Spot";
             }
-            else if (assetType == "Traffic Light")
+            else if (assetType == "Traffic")
             {
                 other.gameObject.tag = "Traffic Light Spot";
             }
