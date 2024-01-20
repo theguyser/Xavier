@@ -14,12 +14,13 @@ public class ButtonScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameManager gameManager;
-    private float correctObjects = 0;
+    //private float correctObjects = 0;
     [SerializeField] TextMeshProUGUI GoodJob;
     [SerializeField] TextMeshProUGUI TryAgain;
     
     public ResetButton resetButton;
     private Dictionary<ObjectType, HashSet<Vector3>> correctSpotPositions;
+    [SerializeField] private RotationCheckScript rotationCheckScript;
     
     void Start()
     {
@@ -56,15 +57,39 @@ public class ButtonScript : MonoBehaviour
         // Now check if total correct objects match the total required objects
         if (totalCorrectObjects == totalRequiredObjects)
         {
-            GoodJob.gameObject.SetActive(true);
-            resetButton.isTimerGoing = false;
-            TryAgain.gameObject.SetActive(false);
+            bool allRotationsCorrect = true;
+
+            if (rotationCheckScript != null)
+            {
+                // Check rotations for TrafficLight
+                allRotationsCorrect &= CheckRotationsForType(ObjectType.TrafficLight);
+
+                // Check rotations for SpeedBump
+                allRotationsCorrect &= CheckRotationsForType(ObjectType.SpeedBump);
+            }
+            else
+            {
+                Debug.LogError("RotationCheckScript is not assigned in the inspector.");
+            }
+
+            if (allRotationsCorrect)
+            {
+                GoodJob.gameObject.SetActive(true);
+                resetButton.isTimerGoing = false;
+                TryAgain.gameObject.SetActive(false);
+            }
+            else
+            {
+                TryAgain.gameObject.SetActive(true);
+                GoodJob.gameObject.SetActive(false);
+            }
         }
         else
         {
             TryAgain.gameObject.SetActive(true);
             GoodJob.gameObject.SetActive(false);
         }
+        
     }
 
     private int CountCorrectObjects(ObjectType type)
@@ -83,6 +108,20 @@ public class ButtonScript : MonoBehaviour
             }
         }
         return correctCount;
+    }
+    
+    private bool CheckRotationsForType(ObjectType type)
+    {
+        bool areRotationsCorrect = rotationCheckScript.CheckRotations(gameManager.GetGrabObjects(type));
+        if (areRotationsCorrect)
+        {
+            Debug.Log("All rotations are correct for type: " + type);
+        }
+        else
+        {
+            Debug.Log("Some rotations are incorrect for type: " + type);
+        }
+        return areRotationsCorrect;
     }
 }
 
