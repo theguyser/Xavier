@@ -3737,7 +3737,7 @@ GameObject:
   - component: {fileID: 545593285}
   - component: {fileID: 545593284}
   m_Layer: 0
-  m_Name: Traffic
+  m_Name: Traffic3
   m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3887,6 +3887,7 @@ GameObject:
   - component: {fileID: 598501927}
   - component: {fileID: 598501926}
   - component: {fileID: 598501929}
+  - component: {fileID: 598501930}
   m_Layer: 5
   m_Name: Check Button
   m_TagString: Untagged
@@ -4024,7 +4025,20 @@ MonoBehaviour:
   GoodJob: {fileID: 1292180244}
   TryAgain: {fileID: 1824228944}
   resetButton: {fileID: 1049231807}
-  rotationCheckScript: {fileID: 0}
+  rotationCheckScript: {fileID: 598501930}
+--- !u!114 &598501930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598501924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b4e05299e89d04aae711d061c72d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 19760312}
 --- !u!1 &600232223
 GameObject:
   m_ObjectHideFlags: 0
@@ -6368,7 +6382,7 @@ GameObject:
   - component: {fileID: 843111844}
   - component: {fileID: 843111843}
   m_Layer: 0
-  m_Name: Traffic
+  m_Name: Traffic1
   m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7829,7 +7843,7 @@ GameObject:
   - component: {fileID: 1014735740}
   - component: {fileID: 1014735739}
   m_Layer: 0
-  m_Name: Traffic
+  m_Name: Traffic2
   m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10727,6 +10741,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.2144847, y: 21.7422, z: 7.5897756}
   m_Center: {x: -2.9383743, y: 8.838242, z: 0.39029044}
+--- !u!1 &1453343178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1453343180}
+  - component: {fileID: 1453343179}
+  m_Layer: 0
+  m_Name: RotationCheckScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1453343179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453343178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b4e05299e89d04aae711d061c72d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 19760312}
+--- !u!4 &1453343180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453343178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.746769, y: 1.6093081, z: 11.805403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1459091221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e4d9a2f673400534e9d22c71259869e5,
@@ -18665,3 +18724,4 @@ SceneRoots:
   - {fileID: 232830627}
   - {fileID: 884280042}
   - {fileID: 1136064312}
+  - {fileID: 1453343180}

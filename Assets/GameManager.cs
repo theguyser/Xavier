@@ -48,11 +48,14 @@ public class GameManager : MonoBehaviour
 
     public Vector3 GetSnapObjectPosition(ObjectType type, int index)
     {
+        
         return snapObjectsByType[type][index].transform.position;
+        
     }
 
-    public int GetNumberOfObjects(ObjectType type)
+    public float GetNumberOfObjects(ObjectType type)
     {
+        Debug.Log(grabObjectsByType[type]);
         return grabObjectsByType[type].Count;
     }
 }

@@ -8,19 +8,21 @@ public class SnappedObjectManager
 
     public static void RegisterAssetType(string assetType)
     {
+        
         if (!snappedCounts.ContainsKey(assetType))
         {
             snappedCounts[assetType] = 0;
-            Debug.Log("Registering Asset Type: " + assetType);
+            
         }
     }
+  
 
     public static void IncrementCount(string assetType)
     {
         if (snappedCounts.ContainsKey(assetType))
         {
             snappedCounts[assetType]++;
-            Debug.Log("Incrementing Count for Asset Type: " + assetType);
+           
         }
     }
 
@@ -29,7 +31,7 @@ public class SnappedObjectManager
         if (snappedCounts.ContainsKey(assetType) && snappedCounts[assetType] > 0)
         {
             snappedCounts[assetType]--;
-            Debug.Log("DecrementCount for Asset Type: " + assetType);
+            
         }
     }
 

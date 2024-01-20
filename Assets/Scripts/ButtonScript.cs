@@ -69,6 +69,7 @@ public class ButtonScript : MonoBehaviour
             if (IsObjectCorrect(obj, type))
             {
                 Debug.Log("Correct: " + obj.name);
+                //Debug.Log("Rotion Check Working");
                 correctObjects++;
                 if (rotationCheckScript != null)
                 {
@@ -126,23 +127,7 @@ public class ButtonScript : MonoBehaviour
          return correctPositions.Contains(obj.transform.position);
     }
     
-   /* private int CountCorrectObjects(ObjectType type)
-    {
-        int correctCount = 0;
-        foreach (var obj in gameManager.GetGrabObjects(type))
-        {
-            if (correctSpotPositions[type].Contains(obj.transform.position) && correctSpotRotations[type].Contains(obj.transform.rotation))
-            {
-                Debug.Log("Correct: " + obj.name);
-                correctCount++;
-            }
-            else
-            {
-                Debug.Log("Incorrect: " + obj.name);
-            }
-        }
-        return correctCount;
-    }*/
+   
     
 }
 

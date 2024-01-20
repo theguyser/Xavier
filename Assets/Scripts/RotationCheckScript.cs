@@ -24,7 +24,9 @@ public class RotationCheckScript : MonoBehaviour
         //correctRotationsForPositions.Add(GameObject.Find("Sign 3 (1)").transform.position, GameObject.Find("Sign 3 (1)").transform.rotation);
         //Debug.Log(GameObject.Find("TrafficLight.003").transform.rotation);
         //correctRotationsForPositions.Add(GameObject.Find("Sign 3 (2)").transform.position, GameObject.Find("Sign 3 (2)").transform.rotation);
-        correctRotationsForPositions.Add(GameObject.Find("Traffic").transform.position, GameObject.Find("Traffic").transform.rotation);
+        correctRotationsForPositions.Add(GameObject.Find("Traffic1").transform.position, GameObject.Find("Traffic1").transform.rotation);
+        correctRotationsForPositions.Add(GameObject.Find("Traffic2").transform.position, GameObject.Find("Traffic2").transform.rotation);
+        correctRotationsForPositions.Add(GameObject.Find("Traffic3").transform.position, GameObject.Find("Traffic3").transform.rotation);
         //correctRotationsForPositions.Add(GameObject.Find("Traffic Light (2)").transform.position, GameObject.Find("Traffic Light (2)").transform.rotation);
         //correctRotationsForPositions.Add(GameObject.Find("Traffic Light (3)").transform.position, GameObject.Find("Traffic Light (3)").transform.rotation);
         // Example: Add correct position-rotation pairs

@@ -103,7 +103,7 @@ public class Grabber : MonoBehaviour
             Debug.Log("Tag:" + snapTarget.tag);
             Debug.Log("isDragging: " + isDragging);
             SnappedObjectManager.IncrementCount(assetType);
-            Debug.Log("Snapped Objects: " + SnappedObjectManager.snappedCounts[assetType] + " Assets Type:" + SnappedObjectManager.snappedCounts[name]);
+            //Debug.Log("Snapped Objects: " + SnappedObjectManager.snappedCounts[assetType] + " Assets Type:" + SnappedObjectManager.snappedCounts[name]);
             CheckAndDisableLeftoverSpots();
         }
     
