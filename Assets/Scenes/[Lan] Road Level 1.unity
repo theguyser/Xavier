@@ -180,12 +180,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19760311}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.569511, y: -0.056665063, z: 4.259453}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4602623, y: -0.1955005, z: 3.786807}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 934275491}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &24919612
 GameObject:
@@ -647,6 +647,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 1647443331}
   objectRemainsCounting: {fileID: 1528768324}
   assetType: Traffic
+  rightPosition: {fileID: 0}
 --- !u!95 &111040345
 Animator:
   serializedVersion: 5
@@ -2457,6 +2458,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 24919612}
   objectRemainsCounting: {fileID: 1630867548}
   assetType: Bus
+  rightPosition: {fileID: 0}
 --- !u!54 &365485340
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3953,6 +3955,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 43091083}
   objectRemainsCounting: {fileID: 974989549}
   assetType: Traffic Light
+  rightPosition: {fileID: 0}
 --- !u!54 &545593285
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4138,7 +4141,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 598501929}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 1
@@ -4197,14 +4200,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 598501924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f50754991619b844693c557c6d12925f, type: 3}
+  m_Script: {fileID: 11500000, guid: 396195de9ac8abe49a1c6db494425b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 19760312}
-  GoodJob: {fileID: 1292180244}
-  TryAgain: {fileID: 1824228944}
-  resetButton: {fileID: 1049231807}
-  rotationCheckScript: {fileID: 0}
 --- !u!1 &600232223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4680,6 +4678,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
   assetType: 
+  rightPosition: {fileID: 0}
 --- !u!136 &679482401
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6584,6 +6583,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 43091083}
   objectRemainsCounting: {fileID: 974989549}
   assetType: Traffic Light
+  rightPosition: {fileID: 0}
 --- !u!54 &843111844
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7407,7 +7407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &934275491
 Transform:
   m_ObjectHideFlags: 0
@@ -7425,6 +7425,7 @@ Transform:
   - {fileID: 1528768325}
   - {fileID: 1575271988}
   - {fileID: 1195405320}
+  - {fileID: 19760313}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &938794102
@@ -8080,6 +8081,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 43091083}
   objectRemainsCounting: {fileID: 974989549}
   assetType: Traffic Light
+  rightPosition: {fileID: 0}
 --- !u!54 &1014735740
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8434,7 +8436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeInGame: {fileID: 1855797052}
-  buttonScript: {fileID: 598501929}
+  buttonScript: {fileID: 0}
   isTimerGoing: 0
 --- !u!114 &1049231808
 MonoBehaviour:
@@ -9199,6 +9201,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
   assetType: Sign
+  rightPosition: {fileID: 0}
 --- !u!54 &1212313456
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10573,6 +10576,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
   assetType: 
+  rightPosition: {fileID: 0}
 --- !u!114 &1354523976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12225,6 +12229,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 1835723716}
   objectRemainsCounting: {fileID: 1004370171}
   assetType: Ambulance
+  rightPosition: {fileID: 0}
 --- !u!54 &1619839202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13002,6 +13007,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
   assetType: 
+  rightPosition: {fileID: 0}
 --- !u!114 &1683869717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13765,6 +13771,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 0}
   objectRemainsCounting: {fileID: 0}
   assetType: Car
+  rightPosition: {fileID: 0}
 --- !u!54 &1821275897
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14586,6 +14593,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1871864009}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1907106970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907106972}
+  - component: {fileID: 1907106971}
+  m_Layer: 0
+  m_Name: GameManager Lv1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1907106971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907106970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4771f295d82154844899770352681392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allGrabObjects:
+  - {fileID: 365485335}
+  - {fileID: 919132148799589213}
+  - {fileID: 843111841}
+  - {fileID: 1014735737}
+  - {fileID: 545593282}
+  allSnapObjects:
+  - {fileID: 1446986012}
+  - {fileID: 1331323736}
+  - {fileID: 919132149349565250}
+  - {fileID: 919132149173976658}
+  - {fileID: 684701513}
+  - {fileID: 286820647}
+  - {fileID: 654665839}
+--- !u!4 &1907106972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907106970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.35814, y: -3.47931, z: 7.359866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1924693139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19543,6 +19608,7 @@ MonoBehaviour:
   allSnapableGameObject: {fileID: 1195405319}
   objectRemainsCounting: {fileID: 1575271987}
   assetType: Speed Bump
+  rightPosition: {fileID: 0}
 --- !u!1 &7989328813609486526
 GameObject:
   m_ObjectHideFlags: 0
@@ -20121,7 +20187,7 @@ SceneRoots:
   - {fileID: 2085228149}
   - {fileID: 543450652432149273}
   - {fileID: 934275491}
-  - {fileID: 19760313}
   - {fileID: 232830627}
   - {fileID: 884280042}
   - {fileID: 1136064312}
+  - {fileID: 1907106972}

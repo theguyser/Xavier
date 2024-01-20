@@ -7,7 +7,8 @@ using UnityEngine;
 public enum ObjectType
 {
     TrafficLight,
-    SpeedBump
+    SpeedBump,
+   
 }
 public class ButtonScript : MonoBehaviour
 {
@@ -57,10 +58,12 @@ public class ButtonScript : MonoBehaviour
         {
             GoodJob.gameObject.SetActive(true);
             resetButton.isTimerGoing = false;
+            TryAgain.gameObject.SetActive(false);
         }
         else
         {
             TryAgain.gameObject.SetActive(true);
+            GoodJob.gameObject.SetActive(false);
         }
     }
 
