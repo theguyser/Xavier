@@ -3,7 +3,42 @@ guid: 0d420d267add8d64ca1a38c40bab2853
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mom's hair
+    second: {fileID: 2100000, guid: 015d77b34a878c149a69d8b70b2a9b00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mom's shoes
+    second: {fileID: 2100000, guid: 5c8476c76130fc649b8b4c3a89e9a35a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Police's star
+    second: {fileID: 2100000, guid: b04f5e073f7ff4747930ad442432b3a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Teacher's Hair
+    second: {fileID: 2100000, guid: 118b63dde6b7eb746b67fe6594770a19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Xavier child's skin
+    second: {fileID: 2100000, guid: aff1f7d778857484085450ade69478c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Xavier child's socks
+    second: {fileID: 2100000, guid: 69aab89debaa10846a3e838b92edf183, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teenage X's face
+    second: {fileID: 2100000, guid: 98778c8c5300a454fbf2719c4a251a5a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

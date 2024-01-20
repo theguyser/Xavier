@@ -3,7 +3,32 @@ guid: 9ccf2d99ace72a247a3e8a08390043fa
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mom's hair
+    second: {fileID: 2100000, guid: d02c50a882b0bf0408198d729eec394f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mom's jacket
+    second: {fileID: 2100000, guid: b3d52a9bbec70024ba7fa6feb3d98dff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mom's shirt
+    second: {fileID: 2100000, guid: 46dc06bb9aca9834992c082a3ccefa49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mom's skin
+    second: {fileID: 2100000, guid: 6d3a4f8b3e38bfb4eaaff8d2bf7e7f1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mom's face
+    second: {fileID: 2100000, guid: 4aa53634159405d4f88c936cf9cf795f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

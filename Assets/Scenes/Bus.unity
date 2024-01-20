@@ -530,6 +530,7 @@ MonoBehaviour:
   StartingDialogue: {fileID: 951745181}
   ElderlyWoman: {fileID: 1369731970}
   Man: {fileID: 666490577}
+  Man2: {fileID: 0}
 --- !u!4 &67141286
 Transform:
   m_ObjectHideFlags: 0
@@ -2287,6 +2288,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ae6c6c9f14a9e6042a560e44276013ab,
     type: 3}
   m_PrefabInstance: {fileID: 1576890706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &364944337
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 666490582}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50.837456
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12400007
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.88966656
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03699994
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7284308
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6851194
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 86.49
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0d420d267add8d64ca1a38c40bab2853,
+        type: 3}
+      propertyPath: m_Name
+      value: Xavier adult
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d420d267add8d64ca1a38c40bab2853, type: 3}
+--- !u!4 &364944338 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d420d267add8d64ca1a38c40bab2853,
+    type: 3}
+  m_PrefabInstance: {fileID: 364944337}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &370186383 stripped
 Transform:
@@ -4441,9 +4521,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 3.586072
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.793036, z: 0}
 --- !u!23 &666490580
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4451,7 +4531,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666490577}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4503,10 +4583,11 @@ Transform:
   m_GameObject: {fileID: 666490577}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.6, y: 3.3330097, z: 1.7386551}
+  m_LocalPosition: {x: -4.866, y: 2.512, z: 2.079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 364944338}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &666490583
@@ -4530,19 +4611,27 @@ MonoBehaviour:
     DialogueOptions:
     - Can you give me your seat?
     - Hey, get off your phone!
-    - Pardon me for disturbing you, but could you help? An elderly woman needs it.
+    - Pardon me for disturbing you, but could you help? A woman needs it.
   dialogueTrigger: {fileID: 666490584}
   CorrectFollowUpDialogue:
     names:
     - Man
+    - Jasmine
+    - Xavier
     sentences:
     - Of course. I don't mind helping out those in need.
+    - Look at you go, using those manners. Feels good to help others, right?
+    - (Looks like I was able to help someone in need today!)
     DialogueOptions: []
   IncorrectFollowUpDialogue:
     names:
     - Man
+    - Jasmine
+    - Jasmine
     sentences:
     - Don't tell me what to do, kid. I'm busy.
+    - Not the best approach, Xavier.
+    - Maybe try asking him nicely.
     DialogueOptions: []
   completedDialogue: 0
 --- !u!114 &666490584
@@ -5319,6 +5408,7 @@ MonoBehaviour:
   manCorrect: 0
   Man: {fileID: 666490583}
   Woman: {fileID: 1369731975}
+  Man2: {fileID: 0}
   GoodJob: {fileID: 1900117696}
   resetButton: {fileID: 1682431519}
 --- !u!4 &758417719
@@ -7435,6 +7525,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122809705}
   m_CullTransparentMesh: 1
+--- !u!4 &1136149731 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1160989081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1144597110
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,6 +7636,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144597110}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1160989081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1369731974}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12831259
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9509997
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0325047
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000037748947
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ccf2d99ace72a247a3e8a08390043fa,
+        type: 3}
+      propertyPath: m_Name
+      value: mom
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ccf2d99ace72a247a3e8a08390043fa, type: 3}
 --- !u!1001 &1178703240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8901,7 +9065,7 @@ GameObject:
   - component: {fileID: 1369731976}
   - component: {fileID: 1369731971}
   m_Layer: 0
-  m_Name: Grandma
+  m_Name: Woman
   m_TagString: drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8927,9 +9091,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 3.429182
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.714591, z: 0}
 --- !u!23 &1369731972
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8937,7 +9101,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369731970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8992,7 +9156,8 @@ Transform:
   m_LocalPosition: {x: -4.726, y: 2.604, z: -0.077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1136149731}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1369731975
@@ -9010,7 +9175,7 @@ MonoBehaviour:
   DialogueOptionsAvailable: 1
   InitialDialogue:
     names:
-    - Elderly Woman
+    - Woman
     - Xavier
     sentences:
     - My knees are killing me!
@@ -9022,17 +9187,25 @@ MonoBehaviour:
   dialogueTrigger: {fileID: 1369731976}
   CorrectFollowUpDialogue:
     names:
-    - Elderly Woman
+    - Woman
     - Xavier
+    - Xavier to Jasmine
+    - Jasmine
     sentences:
-    - Thank you for your concern. It would help if you found me a seat on this bus.
-    - Alright! I will do my best!
+    - You're a sweetheart. If only a seat was free...
+    - (I want to help, but the bus looks full...)
+    - She could really use a seat. But it's so full!
+    - Just ask someone nicely and they should switch seats with the lady.
     DialogueOptions: []
   IncorrectFollowUpDialogue:
     names:
+    - Woman
+    - Jasmine
     - Xavier
     sentences:
-    - (That's mean to say. I should say something else
+    - Oh, never mind. I'll manage somehow.
+    - "Xavier, sometimes we need to step out of our comfort zones to help others.\r"
+    - (Jasmine's right. I should try another response.)
     DialogueOptions: []
   completedDialogue: 0
 --- !u!114 &1369731976
