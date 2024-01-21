@@ -194,7 +194,8 @@ public class DialogueManager : MonoBehaviour
         TalkToScript.isFollowUpConversation = false;
         sentences.Clear();
         names.Clear();
-        dialogueBox.SetActive(false);
+        //dialogueBox.SetActive(false);
+        GameObject.Find("Background").SetActive(false);
     }
 
     IEnumerator TypeSentence(string sentence)
