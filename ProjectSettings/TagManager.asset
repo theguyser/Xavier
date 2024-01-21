@@ -13,6 +13,9 @@ TagManager:
   - Ambulance Spot
   - Bus Spot
   - Barier Spot
+  - SpawnTrigger
+  - OraCar Spot
+  - RedCar Spot
   layers:
   - Default
   - TransparentFX

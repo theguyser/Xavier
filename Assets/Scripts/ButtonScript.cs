@@ -8,6 +8,8 @@ public enum ObjectType
 {
     TrafficLight,
     SpeedBump,
+    OraCar,
+    RedCar,
    
 }
 public class ButtonScript : MonoBehaviour
@@ -28,7 +30,9 @@ public class ButtonScript : MonoBehaviour
 
         // Initialize correct spots for each type
         InitializeCorrectSpots(ObjectType.TrafficLight, 4); // 4 correct spots for traffic lights
-        InitializeCorrectSpots(ObjectType.SpeedBump, 1);    // 3 correct spots for speed bumps
+        InitializeCorrectSpots(ObjectType.SpeedBump, 1);
+        InitializeCorrectSpots(ObjectType.OraCar, 1);
+        InitializeCorrectSpots(ObjectType.RedCar, 1);// 3 correct spots for speed bumps
     }
 
     private void InitializeCorrectSpots(ObjectType type, int numberOfSpots)

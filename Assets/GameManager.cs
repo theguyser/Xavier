@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
         //grabObjectsByType[ObjectType.Car] = new List<GameObject> { allGrabObjects[3] };
         grabObjectsByType[ObjectType.TrafficLight] = new List<GameObject> (allGrabObjects).GetRange(0,4) ;
         grabObjectsByType[ObjectType.SpeedBump] = new List<GameObject> { allGrabObjects[4] };
+        grabObjectsByType[ObjectType.OraCar] = new List<GameObject> { allGrabObjects[5] };
+        grabObjectsByType[ObjectType.OraCar] = new List<GameObject> { allGrabObjects[6] };
         // Similar logic for snap objects
         //snapObjectsByType[ObjectType.Sign] = new List<GameObject>(allSnapObjects).GetRange(0, 2);
         //snapObjectsByType[ObjectType.Bus] = new List<GameObject>(allSnapObjects).GetRange(2, 2);
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
         //snapObjectsByType[ObjectType.Car] = new List<GameObject>(allSnapObjects).GetRange(6, 2);
         snapObjectsByType[ObjectType.TrafficLight] = new List<GameObject>(allSnapObjects).GetRange(0, 5);
         snapObjectsByType[ObjectType.SpeedBump] = new List<GameObject>(allSnapObjects).GetRange(5, 4);
+        snapObjectsByType[ObjectType.OraCar] = new List<GameObject>(allSnapObjects).GetRange(9, 2);
+        snapObjectsByType[ObjectType.OraCar] = new List<GameObject>(allSnapObjects).GetRange(11, 2);
     }
 
     public List<GameObject> GetGrabObjects(ObjectType type)
