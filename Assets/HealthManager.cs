@@ -36,6 +36,7 @@ public class HealthManager : MonoBehaviour
             hearts[0].SetActive(false);
             gameOver.SetActive(true);
             restartButton.SetActive(true);
+           GameObject.Find("Dialogue Box").SetActive(false);
             //quitButton.SetActive(true);
         }
     }

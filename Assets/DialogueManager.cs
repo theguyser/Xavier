@@ -195,7 +195,16 @@ public class DialogueManager : MonoBehaviour
         sentences.Clear();
         names.Clear();
         //dialogueBox.SetActive(false);
-        GameObject.Find("Background").SetActive(false);
+        if (GameObject.Find("Dialogue Box"))
+        {
+            GameObject.Find("Dialogue Box").SetActive(false);
+        }
+
+        if (GameObject.Find("Background"))
+        {
+            GameObject.Find("Background").SetActive(false);
+            
+        }
     }
 
     IEnumerator TypeSentence(string sentence)

@@ -1302,7 +1302,7 @@ GameObject:
   - component: {fileID: 1419756172}
   - component: {fileID: 1419756171}
   m_Layer: 5
-  m_Name: Dialogue Box
+  m_Name: Dialogue Box Road 1 - End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
