@@ -1,30 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class CameraOcclusion : MonoBehaviour
+public class CameraTransparency : MonoBehaviour
 {
-    public Transform target; // Assign your character
-    public float thresholdDistance = 1.0f; // Distance at which the character becomes transparent
-    private int defaultLayer;
+    public List<Transform> targets; // Assign all your target objects here in the inspector
+    public float thresholdDistance; // Distance at which objects become transparent
+    private List<int> defaultLayers = new List<int>();
     private int transparentLayer;
 
     void Start()
     {
-        defaultLayer = target.gameObject.layer;
-        transparentLayer = LayerMask.NameToLayer("TransparentFX");
+        transparentLayer = LayerMask.NameToLayer("Transparent");
+        foreach (var target in targets)
+        {
+            defaultLayers.Add(target.gameObject.layer); // Store the default layer of each object
+        }
     }
 
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, target.position);
-        if (distance < thresholdDistance)
+        for (int i = 0; i < targets.Count; i++)
         {
-            target.gameObject.layer = transparentLayer;
-        }
-        else
-        {
-            target.gameObject.layer = defaultLayer;
+            if (Vector3.Distance(transform.position, targets[i].position) < thresholdDistance)
+            {
+                targets[i].gameObject.layer = transparentLayer; // Make object transparent
+            }
+            else
+            {
+                targets[i].gameObject.layer = defaultLayers[i]; // Revert to original layer
+            }
         }
     }
 }
