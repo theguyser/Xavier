@@ -154,7 +154,9 @@ public class Grabber : MonoBehaviour
         {
             MeshRenderer meshRenderer = child.GetComponent<MeshRenderer>();
             Collider childCollider = child.GetComponent<Collider>();
-            if (meshRenderer != null && (child.gameObject.CompareTag("Traffic Light Spot")||child.gameObject.CompareTag("Speed Bump Spot")))
+            if (meshRenderer != null && (child.gameObject.CompareTag("Traffic Light Spot")||child.gameObject.CompareTag("Speed Bump Spot")||
+                                         child.gameObject.CompareTag("Bus Spot")||child.gameObject.CompareTag("Ambulance Spot")||
+                                         child.gameObject.CompareTag("Barier Spot")))
             {
                 meshRenderer.enabled = true;
                 childCollider.enabled = true;
@@ -189,7 +191,10 @@ public class Grabber : MonoBehaviour
     {
         
         if (assetType == "Speed Bump" && other.CompareTag("Speed Bump Spot") ||
-            assetType == "Traffic" && other.CompareTag("Traffic Light Spot"))
+            assetType == "Traffic Light" && other.CompareTag("Traffic Light Spot") ||
+            assetType == "Bus" && other.CompareTag("Bus Spot") || 
+            assetType == "Ambulance" && other.CompareTag("Ambulance Spot")||
+            assetType == "Barier" && other.CompareTag("Barier Spot"))
         {
             canSnap = true;
             snapTarget = other.gameObject;
@@ -207,9 +212,21 @@ public class Grabber : MonoBehaviour
             {
                 other.gameObject.tag = "Speed Bump Spot";
             }
-            else if (assetType == "Traffic")
+            else if (assetType == "Traffic Light")
             {
                 other.gameObject.tag = "Traffic Light Spot";
+            }
+            else if (assetType == "Bus")
+            {
+                other.gameObject.tag = "Bus Spot";
+            }
+            else if (assetType == "Ambulance")
+            {
+                other.gameObject.tag = "Ambulance Spot";
+            }
+            else if (assetType == "Barier")
+            {
+                other.gameObject.tag = "Barier Spot";
             }
             
             SnappedObjectManager.DecrementCount(assetType);
@@ -227,9 +244,21 @@ public class Grabber : MonoBehaviour
             {
                 other.gameObject.tag = "Speed Bump Spot";
             }
-            else if (assetType == "Traffic")
+            else if (assetType == "Traffic Light")
             {
                 other.gameObject.tag = "Traffic Light Spot";
+            }
+            else if (assetType == "Bus")
+            {
+                other.gameObject.tag = "Bus Spot";
+            }
+            else if (assetType == "Ambulance")
+            {
+                other.gameObject.tag = "Ambulance Spot";
+            }
+            else if (assetType == "Barier")
+            {
+                other.gameObject.tag = "Barier Spot";
             }
             canSnap = false;
             snapTarget = null;

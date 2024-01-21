@@ -3,7 +3,12 @@ guid: acbf79c5ff648d6498f3bfd8177d8b6a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chiome
+    second: {fileID: 2100000, guid: 41218f6f8dbcfae41a9ca557e8ac56c0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

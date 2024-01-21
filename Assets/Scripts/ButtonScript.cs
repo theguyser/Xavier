@@ -7,18 +7,20 @@ using UnityEngine;
 public enum ObjectType
 {
     TrafficLight,
-    SpeedBump
+    SpeedBump,
+   
 }
 public class ButtonScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameManager gameManager;
-    private float correctObjects = 0;
+    //private float correctObjects = 0;
     [SerializeField] TextMeshProUGUI GoodJob;
     [SerializeField] TextMeshProUGUI TryAgain;
     
     public ResetButton resetButton;
     private Dictionary<ObjectType, HashSet<Vector3>> correctSpotPositions;
+    [SerializeField] private RotationCheckScript rotationCheckScript;
     
     void Start()
     {
@@ -41,45 +43,86 @@ public class ButtonScript : MonoBehaviour
    
     public void OnButtonClick()
     {
-        // Call Click with a specific ObjectType
-        // Example: ObjectType.TrafficLight or ObjectType.SpeedBump
-        Click(ObjectType.TrafficLight); 
-        Click(ObjectType.SpeedBump);
-    }
+        int totalCorrectObjects = 0;
+        int totalRequiredObjects = 0;
 
-    public void Click(ObjectType type)
-    {
-        GoodJob.gameObject.SetActive(false);
-        TryAgain.gameObject.SetActive(false);
-        correctObjects = 0;
+        // Accumulate correct objects for TrafficLight
+        totalCorrectObjects += CountCorrectObjects(ObjectType.TrafficLight);
+        totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.TrafficLight);
 
-        foreach (var obj in gameManager.GetGrabObjects(type))
+        // Accumulate correct objects for SpeedBump
+        totalCorrectObjects += CountCorrectObjects(ObjectType.SpeedBump);
+        totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.SpeedBump);
+
+        // Now check if total correct objects match the total required objects
+        if (totalCorrectObjects == totalRequiredObjects)
         {
-            if (correctSpotPositions[type].Contains(obj.transform.position))
+            bool allRotationsCorrect = true;
+
+            if (rotationCheckScript != null)
             {
-                Debug.Log("correct");
-                correctObjects++;
+                // Check rotations for TrafficLight
+                allRotationsCorrect &= CheckRotationsForType(ObjectType.TrafficLight);
+
+                // Check rotations for SpeedBump
+                allRotationsCorrect &= CheckRotationsForType(ObjectType.SpeedBump);
             }
             else
             {
-                Debug.Log("incorrect");
+                Debug.LogError("RotationCheckScript is not assigned in the inspector.");
             }
-        }
 
-        if (correctObjects == gameManager.GetNumberOfObjects(type))
-        {
-            
-            GoodJob.gameObject.SetActive(true);
-            //resetButton.isTimerGoing = false;
+            if (allRotationsCorrect)
+            {
+                GoodJob.gameObject.SetActive(true);
+                resetButton.isTimerGoing = false;
+                TryAgain.gameObject.SetActive(false);
+            }
+            else
+            {
+                TryAgain.gameObject.SetActive(true);
+                GoodJob.gameObject.SetActive(false);
+            }
         }
         else
         {
             TryAgain.gameObject.SetActive(true);
+            GoodJob.gameObject.SetActive(false);
         }
+        
+    }
 
-        Debug.Log("sth: " + gameManager.GetNumberOfObjects(type) + "Correct: " + correctObjects);
+    private int CountCorrectObjects(ObjectType type)
+    {
+        int correctCount = 0;
+        foreach (var obj in gameManager.GetGrabObjects(type))
+        {
+            if (correctSpotPositions[type].Contains(obj.transform.position))
+            {
+                Debug.Log("Correct: " + obj.name);
+                correctCount++;
+            }
+            else
+            {
+                Debug.Log("Incorrect: " + obj.name);
+            }
+        }
+        return correctCount;
     }
     
+    private bool CheckRotationsForType(ObjectType type)
+    {
+        bool areRotationsCorrect = rotationCheckScript.CheckRotations(gameManager.GetGrabObjects(type));
+        if (areRotationsCorrect)
+        {
+            Debug.Log("All rotations are correct for type: " + type);
+        }
+        else
+        {
+            Debug.Log("Some rotations are incorrect for type: " + type);
+        }
+        return areRotationsCorrect;
+    }
 }
 
 
