@@ -13,6 +13,8 @@ TagManager:
   - Ambulance Spot
   - Bus Spot
   - Barier Spot
+  - SpawnTrigger
+  - Reset
   layers:
   - Default
   - TransparentFX

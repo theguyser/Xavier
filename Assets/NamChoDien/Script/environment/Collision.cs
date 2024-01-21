@@ -7,27 +7,25 @@ public class Collision : MonoBehaviour
 {
     public GameObject thePlayer;
     public GameObject runAnim;
-    public GameObject Button;
-    public GameObject GameOverText;
+    //public GameObject Button;
+    //public GameObject GameOverText;
+    public static bool isCollided = false;
     private void Start()
     {
+        isCollided = false;
         thePlayer = GameObject.Find("Player");
         runAnim = GameObject.Find("RunningAnimation");
-        Button = GameObject.Find("Reset Button");
-        GameOverText = GameObject.Find("Game Over");
-        if(Button == null)
-        {
-            Debug.Log("Button is null");
-            Button = GameObject.Find("Reset");
-            Debug.Log("Button is " + Button.name);
-        }
-        else
-        {
-            Debug.Log("Button is not null");
-            Button = GameObject.Find("Reset Button");
-            Debug.Log("Button is " + Button.name);
-        }
-        StartCoroutine(Wait());
+        
+        
+    }
+    private void Awake()
+    {
+        isCollided = false;
+        //Button = GameObject.FindGameObjectWithTag("Reset");
+        //GameOverText = GameObject.Find("Game Over");
+    }
+    private void Update()
+    {
         
     }
 
@@ -35,6 +33,7 @@ public class Collision : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            isCollided = true;
             // Log the name of the colliding object for debugging
             Debug.Log("Collision detected with: " + other.name);
 
@@ -52,8 +51,7 @@ public class Collision : MonoBehaviour
 
             //Run falling down animation
             runAnim.GetComponent<Animator>().Play("Stumble Backwards");
-            Button.SetActive(true);
-            GameOverText.SetActive(true);
+            
             //Run game over scene
         }
 
@@ -61,10 +59,5 @@ public class Collision : MonoBehaviour
     }
 
 
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(0.1f);
-        Button.SetActive(false);
-        GameOverText.SetActive(false);
-    }   
+    
 }

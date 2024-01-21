@@ -172,8 +172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &12777714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -294,8 +292,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &21714551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -416,8 +412,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &23465725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1094,8 +1088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &97762522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1538,6 +1530,8 @@ MonoBehaviour:
   button: {fileID: 2004723403}
   Winner: {fileID: 64084784}
   text: {fileID: 1078722181}
+  resetButton: {fileID: 962160190}
+  GameOverText: {fileID: 337488991}
 --- !u!4 &131161526
 Transform:
   m_ObjectHideFlags: 0
@@ -1602,8 +1596,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &134134452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1852,8 +1844,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &159352092
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1974,8 +1964,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &170570941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2102,8 +2090,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &191986126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2307,8 +2293,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &207727375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2429,8 +2413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &223570921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2551,8 +2533,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &229944956
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3153,7 +3133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &337488992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3321,8 +3301,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &338897472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3443,8 +3421,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &341488270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3632,8 +3608,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &342616928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3994,8 +3968,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &353996319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4199,8 +4171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &391185190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4557,8 +4527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &468922354
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4849,8 +4817,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &524542832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5479,8 +5445,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!1001 &616538741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5771,8 +5735,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &619744664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5893,8 +5855,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &630696653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6015,8 +5975,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &633134673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6294,8 +6252,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &659917842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6499,8 +6455,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &685117906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6621,8 +6575,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &688252867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6810,8 +6762,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &710463295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6999,8 +6949,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &727726234
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7590,8 +7538,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &835047521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8370,8 +8316,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &935020339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8736,11 +8680,11 @@ GameObject:
   - component: {fileID: 962160192}
   m_Layer: 5
   m_Name: Reset Button
-  m_TagString: Untagged
+  m_TagString: Reset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &962160191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8981,8 +8925,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &970926481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9103,8 +9045,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &984195293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10888,8 +10828,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1225463918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11322,8 +11260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1309594097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11715,8 +11651,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1345694363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12066,8 +12000,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1415375179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12194,8 +12126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1424194881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12377,8 +12307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1434685551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13039,8 +12967,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1538505726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13161,8 +13087,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1540269505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13289,8 +13213,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1560856047
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13665,8 +13587,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1589463850
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14224,8 +14144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1628132618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14506,8 +14424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1652304710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14854,8 +14770,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1688421343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15408,8 +15322,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1755001303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15536,8 +15448,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1769468453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15658,8 +15568,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1773873999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15780,8 +15688,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1809980547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17165,8 +17071,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1834999055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17623,8 +17527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1898894399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17751,8 +17653,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1913103413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17956,8 +17856,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &1932376954
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18149,8 +18047,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!1001 &1969024139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18687,8 +18583,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &2005335822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19339,8 +19233,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &2074510321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19704,8 +19596,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &2084666089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19826,8 +19716,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &2089001173
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20005,8 +19893,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!1001 &2097652222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20117,8 +20003,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &2108385233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20239,8 +20123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &2111538721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20429,8 +20311,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 0}
   runAnim: {fileID: 0}
-  Button: {fileID: 962160190}
-  GameOverText: {fileID: 0}
 --- !u!65 &2122443075
 BoxCollider:
   m_ObjectHideFlags: 0

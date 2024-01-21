@@ -14,4 +14,5 @@ public class SceneSelect : MonoBehaviour
     {
         Application.Quit();
     }
+    
 }
