@@ -6,7 +6,7 @@ public class Winner : MonoBehaviour
 {
     public GameObject thePlayer;
     public GameObject charModel;
-    public GameObject nextLevelButton;
+    public bool completedLevel = false;
     
     void OnTriggerEnter(Collider other)
     {
@@ -28,6 +28,7 @@ public class Winner : MonoBehaviour
             }
             
             charModel.GetComponent<Animator>().Play("Jump");
+            completedLevel = true;
         }
         
     }

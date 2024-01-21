@@ -7,19 +7,11 @@ public class SceneSelect : MonoBehaviour
 {
     public void LoadRoadScene()
     {
-        SceneManager.LoadScene("Road");
+        SceneManager.LoadScene("Road Level 1 Start Dialogue");
 
     }
-    public void LoadBusScene()
+    public void QuitGame()
     {
-        SceneManager.LoadScene("Bus");
-    }
-    public void LoadMapDetectionScene()
-    {
-        SceneManager.LoadScene("Map detection");
-    }
-    public void LoadSubwaySurferScene()
-    {
-        SceneManager.LoadScene("subwaysurfer");
+        Application.Quit();
     }
 }
