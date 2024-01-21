@@ -14,6 +14,8 @@ public class SomethingCheck : MonoBehaviour
     public ResetButton resetButton;
     private Dictionary<ObjectName, HashSet<Vector3>> correctSpotPositions;
     [SerializeField] private SomethingRotation somethingRotation;
+    public AudioSource winSound;
+    public AudioSource loseSound;
     void Start()
     {
         correctSpotPositions = new Dictionary<ObjectName, HashSet<Vector3>>();
@@ -76,17 +78,20 @@ public class SomethingCheck : MonoBehaviour
                 GoodJob.gameObject.SetActive(true);
                // resetButton.isTimerGoing = false;
                 TryAgain.gameObject.SetActive(false);
+                winSound.Play();
             }
             else
             {
                 TryAgain.gameObject.SetActive(true);
                 GoodJob.gameObject.SetActive(false);
+                loseSound.Play();
             }
         }
         else
         {
             TryAgain.gameObject.SetActive(true);
             GoodJob.gameObject.SetActive(false);
+            loseSound.Play();
         }
     }
 

@@ -628,6 +628,7 @@ MonoBehaviour:
   ElderlyWoman: {fileID: 0}
   Man: {fileID: 0}
   Man2: {fileID: 0}
+  textSound: {fileID: 0}
 --- !u!4 &442609318
 Transform:
   m_ObjectHideFlags: 0

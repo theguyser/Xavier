@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject Man;
     public GameObject Man2;
     private GameObject currentTalkTarget;
+    public AudioSource textSound;
     
     private bool startingDialougueComplete = false;
     //private bool buttonPressed = false;

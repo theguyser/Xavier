@@ -19,6 +19,8 @@ public class Grabber : MonoBehaviour
     private int totalSnapableObjects;
     [SerializeField] private string assetType;
     [SerializeField] private GameObject rightPosition;
+    public AudioSource dragSound;
+    public AudioSource dropSound;
 
     private void Start()
     {
@@ -59,6 +61,7 @@ public class Grabber : MonoBehaviour
     private void StartDragging()
     {
         isDragging = true;
+        dragSound.Play();
         if (this.name == "Select Speed bump" || this.name == "OraCar"|| this.name == "RedCar")
         {
             transform.rotation = new Quaternion(0f, 0f, 0f, 1f);
@@ -86,6 +89,7 @@ public class Grabber : MonoBehaviour
         }
         isDragging = false;
         GrabManager.DeselectObject();
+        dragSound.Play();
     }
 
     private void DragObject()
