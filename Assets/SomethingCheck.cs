@@ -13,6 +13,7 @@ public class SomethingCheck : MonoBehaviour
     [SerializeField] TextMeshProUGUI TryAgain;
     public ResetButton resetButton;
     private Dictionary<ObjectName, HashSet<Vector3>> correctSpotPositions;
+    [SerializeField] private SomethingRotation somethingRotation;
     void Start()
     {
         correctSpotPositions = new Dictionary<ObjectName, HashSet<Vector3>>();
@@ -54,9 +55,33 @@ public class SomethingCheck : MonoBehaviour
         // Now check if total correct objects match the total required objects
         if (totalCorrectObjects == totalRequiredObjects)
         {
-            GoodJob.gameObject.SetActive(true);
-            //resetButton.isTimerGoing = false;
-            TryAgain.gameObject.SetActive(false);
+            bool allRotationsCorrect = true;
+
+            if (somethingRotation != null)
+            {
+                // Check rotations for TrafficLight
+                allRotationsCorrect &= CheckRotationsForType(ObjectName.Barier);
+
+                // Check rotations for SpeedBump
+                allRotationsCorrect &= CheckRotationsForType(ObjectName.Ambulance);
+                allRotationsCorrect &= CheckRotationsForType(ObjectName.Bus);
+            }
+            else
+            {
+                Debug.LogError("RotationCheckScript is not assigned in the inspector.");
+            }   
+            
+            if (allRotationsCorrect)
+            {
+                GoodJob.gameObject.SetActive(true);
+               // resetButton.isTimerGoing = false;
+                TryAgain.gameObject.SetActive(false);
+            }
+            else
+            {
+                TryAgain.gameObject.SetActive(true);
+                GoodJob.gameObject.SetActive(false);
+            }
         }
         else
         {
@@ -81,5 +106,18 @@ public class SomethingCheck : MonoBehaviour
             }
         }
         return correctCount;
+    }
+    private bool CheckRotationsForType(ObjectName type)
+    {
+        bool areRotationsCorrect = somethingRotation.CheckRotations(something.GetGrabObjects(type));
+        if (areRotationsCorrect)
+        {
+            Debug.Log("All rotations are correct for type: " + type);
+        }
+        else
+        {
+            Debug.Log("Some rotations are incorrect for type: " + type);
+        }
+        return areRotationsCorrect;
     }
 }

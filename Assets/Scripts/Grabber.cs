@@ -175,7 +175,16 @@ public class Grabber : MonoBehaviour
     }
     private void RotateObject()
     {
-        transform.Rotate(0, 0, 90f);
+        if (this.name == "Ambulance" || this.name == "Bus" || this.name == "Barier")
+        {
+            // Apply a different rotation for this specific object
+            transform.Rotate(0, 90, 0); // Example: rotate around Y-axis
+        }
+        else
+        {
+            transform.Rotate(0, 0, 90f);
+        }
+       
     }
 
     private RaycastHit CastRay()
