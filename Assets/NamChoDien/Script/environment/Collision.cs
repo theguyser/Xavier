@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Collision : MonoBehaviour
@@ -7,11 +8,13 @@ public class Collision : MonoBehaviour
     public GameObject thePlayer;
     public GameObject runAnim;
     public GameObject Button;
+    public GameObject GameOverText;
     private void Start()
     {
         thePlayer = GameObject.Find("Player");
         runAnim = GameObject.Find("RunningAnimation");
         Button = GameObject.Find("Reset Button");
+        GameOverText = GameObject.Find("Game Over");
         if(Button == null)
         {
             Debug.Log("Button is null");
@@ -50,7 +53,7 @@ public class Collision : MonoBehaviour
             //Run falling down animation
             runAnim.GetComponent<Animator>().Play("Stumble Backwards");
             Button.SetActive(true);
-
+            GameOverText.SetActive(true);
             //Run game over scene
         }
 
@@ -62,5 +65,6 @@ public class Collision : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         Button.SetActive(false);
+        GameOverText.SetActive(false);
     }   
 }
