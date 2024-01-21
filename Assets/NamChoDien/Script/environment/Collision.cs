@@ -12,7 +12,20 @@ public class Collision : MonoBehaviour
         thePlayer = GameObject.Find("Player");
         runAnim = GameObject.Find("RunningAnimation");
         Button = GameObject.Find("Reset Button");
+        if(Button == null)
+        {
+            Debug.Log("Button is null");
+            Button = GameObject.Find("Reset");
+            Debug.Log("Button is " + Button.name);
+        }
+        else
+        {
+            Debug.Log("Button is not null");
+            Button = GameObject.Find("Reset Button");
+            Debug.Log("Button is " + Button.name);
+        }
         StartCoroutine(Wait());
+        
     }
 
     void OnTriggerEnter(Collider other)
