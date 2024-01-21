@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -59,6 +60,14 @@ public class Grabber : MonoBehaviour
     private void StartDragging()
     {
         isDragging = true;
+        if (this.name == "Select Speed bump" || this.name == "OraCar"|| this.name == "RedCar")
+        {
+            transform.rotation = new Quaternion(0f, 0f, 0f, 1f);
+        }
+        else
+        {
+            
+        }
         GrabManager.SelectObject(gameObject);
         if (snapTargetCollider != null)
         {
@@ -66,6 +75,7 @@ public class Grabber : MonoBehaviour
             //turn on mesh renderer
             snapTargetMeshRenderer.enabled = true;
             snapTargetCollider = null;
+            
         }
     }
 
@@ -156,7 +166,9 @@ public class Grabber : MonoBehaviour
             Collider childCollider = child.GetComponent<Collider>();
             if (meshRenderer != null && (child.gameObject.CompareTag("Traffic Light Spot")||child.gameObject.CompareTag("Speed Bump Spot")||
                                          child.gameObject.CompareTag("Bus Spot")||child.gameObject.CompareTag("Ambulance Spot")||
-                                         child.gameObject.CompareTag("Barier Spot")))
+                                         child.gameObject.CompareTag("Barier Spot")||
+                                         child.gameObject.CompareTag("OraCar Spot")||
+                                         child.gameObject.CompareTag("RedCar Spot")))
             {
                 meshRenderer.enabled = true;
                 childCollider.enabled = true;
@@ -173,10 +185,12 @@ public class Grabber : MonoBehaviour
         }
         return count;
     }
+
     private void RotateObject()
     {
-        if (this.name == "Ambulance" || this.name == "Bus" || this.name == "Barier")
-        {
+        if (this.name == "Ambulance" || this.name == "Bus" || this.name == "Barier" ||
+            this.name == "Select Speed bump" || this.name == "OraCar"||this.name == "RedCar")
+         {
             // Apply a different rotation for this specific object
             transform.Rotate(0, 90, 0); // Example: rotate around Y-axis
         }
@@ -203,7 +217,9 @@ public class Grabber : MonoBehaviour
             assetType == "Traffic Light" && other.CompareTag("Traffic Light Spot") ||
             assetType == "Bus" && other.CompareTag("Bus Spot") || 
             assetType == "Ambulance" && other.CompareTag("Ambulance Spot")||
-            assetType == "Barier" && other.CompareTag("Barier Spot"))
+            assetType == "Barier" && other.CompareTag("Barier Spot")||
+            assetType == "OraCar" && other.CompareTag("OraCar Spot")||
+            assetType == "RedCar" && other.CompareTag("RedCar Spot"))
         {
             canSnap = true;
             snapTarget = other.gameObject;
@@ -237,6 +253,14 @@ public class Grabber : MonoBehaviour
             {
                 other.gameObject.tag = "Barier Spot";
             }
+            else if (assetType == "OraCar")
+            {
+                other.gameObject.tag = "OraCar Spot";
+            }
+            else if (assetType == "RedCar")
+            {
+                other.gameObject.tag = "RedCar Spot";
+            }
             
             SnappedObjectManager.DecrementCount(assetType);
             CheckAndDisableLeftoverSpots();
@@ -268,6 +292,14 @@ public class Grabber : MonoBehaviour
             else if (assetType == "Barier")
             {
                 other.gameObject.tag = "Barier Spot";
+            }
+            else if (assetType == "OraCar")
+            {
+                other.gameObject.tag = "OraCar Spot";
+            }
+            else if (assetType == "RedCar")
+            {
+                other.gameObject.tag = "RedCar Spot";
             }
             canSnap = false;
             snapTarget = null;

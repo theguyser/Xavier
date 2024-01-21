@@ -37,7 +37,8 @@ public class RotationCheckScript : MonoBehaviour
         correctRotationsForPositions.Add(GameObject.Find("TrafficLight.002").transform.position, GameObject.Find("TrafficLight.002").transform.rotation);
         correctRotationsForPositions.Add(GameObject.Find("TrafficLight.003").transform.position, GameObject.Find("TrafficLight.003").transform.rotation);
         correctRotationsForPositions.Add(GameObject.Find("speed bump (1)").transform.position, GameObject.Find("speed bump (1)").transform.rotation);
-        
+        correctRotationsForPositions.Add(GameObject.Find("OraCar (1)").transform.position, GameObject.Find("OraCar (1)").transform.rotation);
+        correctRotationsForPositions.Add(GameObject.Find("RedCar (1)").transform.position, GameObject.Find("RedCar (1)").transform.rotation);
         //correctRotationsForPositions.Add(GameObject.Find("Ambulance").transform.position, GameObject.Find("Ambulance").transform.rotation);
 
     }
