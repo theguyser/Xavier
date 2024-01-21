@@ -6,6 +6,7 @@ public class Winner : MonoBehaviour
 {
     public GameObject thePlayer;
     public GameObject charModel;
+    public GameObject nextLevelButton;
     
     void OnTriggerEnter(Collider other)
     {

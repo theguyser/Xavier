@@ -40,6 +40,12 @@ public class StartDialogue : MonoBehaviour
     {
         TalkToScript.canStartConversation = true;
         startingDialougueComplete = true;
+        StartCoroutine(Wait());
         Destroy(this.gameObject);
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);
+        
     }
 }

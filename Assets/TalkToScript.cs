@@ -27,6 +27,10 @@ public class TalkToScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(HealthManager.health == 0)
+        {
+            return;
+        }
         if (canStartConversation) 
         {
             RaycastHit hit = CastRay();

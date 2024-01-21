@@ -8,14 +8,14 @@ public class HealthManager : MonoBehaviour
     public GameObject[] hearts;
     public GameObject gameOver;
     public GameObject restartButton;
-    public GameObject quitButton;
+    //public GameObject quitButton;
 
     private void Start()
     {
         health = 3;
         gameOver.SetActive(false);
         restartButton.SetActive(false);
-        quitButton.SetActive(false);
+        //quitButton.SetActive(false);
         for (int i = 0; i < hearts.Length; i++)
         {
             hearts[i].SetActive(true);
@@ -36,7 +36,7 @@ public class HealthManager : MonoBehaviour
             hearts[0].SetActive(false);
             gameOver.SetActive(true);
             restartButton.SetActive(true);
-            quitButton.SetActive(true);
+            //quitButton.SetActive(true);
         }
     }
 

@@ -36,7 +36,7 @@ public class NPCManager : MonoBehaviour
         {
             Debug.Log("Good Job!");
             GoodJob.gameObject.SetActive(true);
-            resetButton.SetActive(true);
+            //resetButton.SetActive(true);
         }
     }
 }
