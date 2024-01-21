@@ -38,6 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Road Level 2 Start Dialogue.unity
     guid: a9c5f6442e474ed4f8dcf3744d8606c5
+  - enabled: 1
+    path: Assets/Scenes/Road Level 2 End Dialogue.unity
+    guid: 2e1aa78f671a2fa47a3b1907a6d73059
+  - enabled: 1
+    path: Assets/Scenes/Bike 2 Dialogue Start.unity
+    guid: 289f91ed6b3596b41bb35d5e4682be50
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5dfa2561bcea5fb45b1ccf8f909ff669,
       type: 2}

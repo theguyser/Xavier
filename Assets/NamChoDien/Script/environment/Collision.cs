@@ -63,7 +63,7 @@ public class Collision : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.02f);
         Button.SetActive(false);
         GameOverText.SetActive(false);
     }   
