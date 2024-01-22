@@ -58,6 +58,11 @@ public class ButtonScript : MonoBehaviour
         totalCorrectObjects += CountCorrectObjects(ObjectType.SpeedBump);
         totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.SpeedBump);
 
+        totalCorrectObjects += CountCorrectObjects(ObjectType.OraCar);
+        totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.OraCar);
+        
+        totalCorrectObjects += CountCorrectObjects(ObjectType.RedCar);
+        totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.RedCar);
         // Now check if total correct objects match the total required objects
         if (totalCorrectObjects == totalRequiredObjects)
         {
@@ -70,6 +75,8 @@ public class ButtonScript : MonoBehaviour
 
                 // Check rotations for SpeedBump
                 allRotationsCorrect &= CheckRotationsForType(ObjectType.SpeedBump);
+                allRotationsCorrect &= CheckRotationsForType(ObjectType.OraCar);
+                allRotationsCorrect &= CheckRotationsForType(ObjectType.RedCar);
             }
             else
             {

@@ -29,6 +29,10 @@ public class RoadLevel2EndScript : MonoBehaviour
             check.SetActive(false);
             button.SetActive(true);
         }
+        else
+        {
+            Debug.Log("Null");
+        }
 
     }
 }
