@@ -23,6 +23,7 @@ public class TalkToScript : MonoBehaviour
     void Start()
     {
         completedLevel = false;
+        isCorrectFollowUp = false;
     }
 
     // Update is called once per frame

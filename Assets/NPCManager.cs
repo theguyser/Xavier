@@ -16,7 +16,8 @@ public class NPCManager : MonoBehaviour
     public GameObject resetButton;
     void Start()
     {
-        
+        manCorrect = false;
+        womanCorrect = false;
     }
 
     // Update is called once per frame
