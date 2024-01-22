@@ -27,7 +27,7 @@ public class TalkToScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HealthManager.health == 0)
+        if(HealthManager.health == 0 || NPCManager.completedLevel)
         {
             return;
         }

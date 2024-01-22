@@ -5980,7 +5980,6 @@ MonoBehaviour:
   something: {fileID: 1074069048}
   GoodJob: {fileID: 1911560175}
   TryAgain: {fileID: 1078559236}
-  resetButton: {fileID: 0}
 --- !u!114 &1089575321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6049,7 +6048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 8f7d0d02ca2b5b04f9d75f014edf1052, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -6437,7 +6436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 8f7d0d02ca2b5b04f9d75f014edf1052, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -8500,7 +8499,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -7198559261415225722, guid: acbf79c5ff648d6498f3bfd8177d8b6a, type: 3}
-  - {fileID: 8345974537734670933, guid: acbf79c5ff648d6498f3bfd8177d8b6a, type: 3}
+  - {fileID: 2100000, guid: 41218f6f8dbcfae41a9ca557e8ac56c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

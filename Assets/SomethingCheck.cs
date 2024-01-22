@@ -8,10 +8,9 @@ using UnityEngine;
 public class SomethingCheck : MonoBehaviour
 {
     public SomethingManager something;
-    private string[] lel;
     [SerializeField] TextMeshProUGUI GoodJob;
     [SerializeField] TextMeshProUGUI TryAgain;
-    public ResetButton resetButton;
+    
     private Dictionary<ObjectName, HashSet<Vector3>> correctSpotPositions;
     void Start()
     {

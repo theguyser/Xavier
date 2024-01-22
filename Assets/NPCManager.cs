@@ -14,9 +14,10 @@ public class NPCManager : MonoBehaviour
     public TalkToScript Man2;
     [SerializeField] TextMeshProUGUI GoodJob;
     public GameObject resetButton;
+    public static bool completedLevel = false;
     void Start()
     {
-        
+        completedLevel = false;
     }
 
     // Update is called once per frame
@@ -36,6 +37,7 @@ public class NPCManager : MonoBehaviour
         {
             Debug.Log("Good Job!");
             GoodJob.gameObject.SetActive(true);
+            completedLevel = true;
             //resetButton.SetActive(true);
         }
     }
