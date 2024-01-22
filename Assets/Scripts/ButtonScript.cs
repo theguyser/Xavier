@@ -19,8 +19,8 @@ public class ButtonScript : MonoBehaviour
     //private float correctObjects = 0;
     [SerializeField] TextMeshProUGUI GoodJob;
     [SerializeField] TextMeshProUGUI TryAgain;
-    
-    public ResetButton resetButton;
+
+    public GameObject ResetButton;
     private Dictionary<ObjectType, HashSet<Vector3>> correctSpotPositions;
     [SerializeField] private RotationCheckScript rotationCheckScript;
     
@@ -64,6 +64,7 @@ public class ButtonScript : MonoBehaviour
         totalCorrectObjects += CountCorrectObjects(ObjectType.RedCar);
         totalRequiredObjects += gameManager.GetNumberOfObjects(ObjectType.RedCar);
         // Now check if total correct objects match the total required objects
+        
         if (totalCorrectObjects == totalRequiredObjects)
         {
             bool allRotationsCorrect = true;
@@ -72,7 +73,6 @@ public class ButtonScript : MonoBehaviour
             {
                 // Check rotations for TrafficLight
                 allRotationsCorrect &= CheckRotationsForType(ObjectType.TrafficLight);
-
                 // Check rotations for SpeedBump
                 allRotationsCorrect &= CheckRotationsForType(ObjectType.SpeedBump);
                 allRotationsCorrect &= CheckRotationsForType(ObjectType.OraCar);
@@ -86,18 +86,20 @@ public class ButtonScript : MonoBehaviour
             if (allRotationsCorrect)
             {
                 GoodJob.gameObject.SetActive(true);
-                resetButton.isTimerGoing = false;
                 TryAgain.gameObject.SetActive(false);
+                ResetButton.SetActive(false);
             }
             else
             {
                 TryAgain.gameObject.SetActive(true);
+                ResetButton.SetActive(true);
                 GoodJob.gameObject.SetActive(false);
             }
         }
         else
         {
             TryAgain.gameObject.SetActive(true);
+            ResetButton.SetActive(true);
             GoodJob.gameObject.SetActive(false);
         }
         
