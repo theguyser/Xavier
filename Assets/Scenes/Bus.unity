@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.080814146, g: 0.38265428, b: 0.9662608, a: 1}
+  m_IndirectSpecularColor: {r: 0.084654, g: 0.39416078, b: 0.96439844, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8150,7 +8150,7 @@ MonoBehaviour:
     - My knees are killing me!
     - (I hope he doesn't mind me asking how he's feeling.)
     DialogueOptions:
-    - Too bad, Grandma!
+    - Too bad, Grandpa!
     - How can I help you?
     - You should find a seat by yourself!
   dialogueTrigger: {fileID: 1369731976}

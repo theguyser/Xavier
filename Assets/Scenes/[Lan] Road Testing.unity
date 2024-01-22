@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
+  m_AmbientGroundColor: {r: 0.6320754, g: 0.6072297, b: 0.5575382, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 8e19cfba2e9c55e4297fc64f49c9bb35, type: 2}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08236044, g: 0.3873167, b: 0.96548814, a: 1}
+  m_IndirectSpecularColor: {r: 0.084654, g: 0.39416078, b: 0.96439844, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1080,6 +1080,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 1528768324}
   assetType: Traffic Light
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 243334464}
+  dropSound: {fileID: 243334464}
 --- !u!95 &111040345
 Animator:
   serializedVersion: 5
@@ -1735,6 +1737,134 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235264793}
   m_Mesh: {fileID: 1893686813606940769, guid: e8c39577b49b2494e80c1d81806e2c39, type: 3}
+--- !u!1 &243334462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243334463}
+  - component: {fileID: 243334464}
+  m_Layer: 0
+  m_Name: Drop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &243334463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243334462}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1226243022}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &243334464
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243334462}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 056c9f1e78e447b429032a814df7c6ee, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &249994900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2089,6 +2219,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 1528768324}
   assetType: Traffic Light
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 243334464}
+  dropSound: {fileID: 243334464}
 --- !u!54 &286820649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5239,6 +5371,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 1528768324}
   assetType: Traffic Light
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 243334464}
+  dropSound: {fileID: 243334464}
 --- !u!54 &654665841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5393,6 +5527,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 0}
   assetType: 
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 0}
+  dropSound: {fileID: 0}
 --- !u!136 &679482401
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5625,6 +5761,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 1528768324}
   assetType: Traffic Light
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 243334464}
+  dropSound: {fileID: 243334464}
 --- !u!54 &684701515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8475,6 +8613,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225749539}
   m_Mesh: {fileID: -462981019419857548, guid: f4234d45761fd1f4587c761cd3184d54, type: 3}
+--- !u!1 &1226243021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1226243022}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1226243022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226243021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.73262, y: -0.13034976, z: 3.8839798}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 243334463}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1243552885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2679971833762959614, guid: e73220d48088663499b6e287a979883a,
@@ -9325,6 +9495,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 0}
   assetType: 
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 0}
+  dropSound: {fileID: 0}
 --- !u!114 &1354523976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11421,6 +11593,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 0}
   assetType: 
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 0}
+  dropSound: {fileID: 0}
 --- !u!114 &1683869717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18444,6 +18618,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 2014558411}
   assetType: RedCar
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 243334464}
+  dropSound: {fileID: 243334464}
 --- !u!65 &3469287836954282476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18860,6 +19036,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 1898451324}
   assetType: OraCar
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 243334464}
+  dropSound: {fileID: 243334464}
 --- !u!54 &3469287838545813262
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19430,6 +19608,8 @@ MonoBehaviour:
   objectRemainsCounting: {fileID: 1575271987}
   assetType: Speed Bump
   rightPosition: {fileID: 0}
+  dragSound: {fileID: 243334464}
+  dropSound: {fileID: 243334464}
 --- !u!1 &7989328813609486526
 GameObject:
   m_ObjectHideFlags: 0
@@ -19643,3 +19823,4 @@ SceneRoots:
   - {fileID: 2113899004}
   - {fileID: 45864614}
   - {fileID: 729223825}
+  - {fileID: 1226243022}
