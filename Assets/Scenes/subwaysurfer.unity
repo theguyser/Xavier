@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12252875, g: 0.3088974, b: 0.70513463, a: 1}
+  m_IndirectSpecularColor: {r: 0.11269947, g: 0.28155032, b: 0.7091768, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -829,8 +829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dd525db5d8a0e4cab77c363817f8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlayer: {fileID: 309941874}
-  charModel: {fileID: 1810177125}
+  thePlayer: {fileID: 1810177125}
+  charModel: {fileID: 569700940}
   completedLevel: 0
 --- !u!65 &64084785
 BoxCollider:
@@ -3447,12 +3447,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: fbb8756519c039b4f804c77c5e3293f9,
     type: 3}
   m_PrefabInstance: {fileID: 295246363}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &309941874 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5515114769743701270, guid: 0d166f62969e74e438e9f696a142b72c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1552792338}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &315115340
 PrefabInstance:
@@ -10737,8 +10731,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1680112404}
   - {fileID: 1508318908}
+  - {fileID: 1680112404}
   m_Father: {fileID: 639839541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -14749,6 +14743,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Good Job
       objectReference: {fileID: 0}
+    - target: {fileID: 2213302080325403395, guid: 1bf730566b0f0bb4cb79c09194cb6362,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738456949301791275, guid: 1bf730566b0f0bb4cb79c09194cb6362,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18030,7 +18034,7 @@ Transform:
   m_GameObject: {fileID: 1810177125}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.173, z: -6.5}
+  m_LocalPosition: {x: 0, y: 1.173, z: -10.33}
   m_LocalScale: {x: 0.5, y: 1.3333334, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:

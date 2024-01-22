@@ -17,17 +17,18 @@ public class TalkToScript : MonoBehaviour
     public static bool isIncorrectFollowUp = false;
     public static bool isFollowUpConversation = false;
     public bool completedDialogue = false;
+    public static bool completedLevel = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        completedLevel = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(HealthManager.health == 0)
+        if(HealthManager.health == 0 || completedLevel)
         {
             return;
         }

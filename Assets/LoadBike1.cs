@@ -22,6 +22,7 @@ public class LoadBike1 : MonoBehaviour
     {
         if (text.IsActive())
         {
+            TalkToScript.completedLevel = true;
             Debug.Log("Starting dialogue complete");
             //startingdialoguecomplete = true;
             button.SetActive(true);
