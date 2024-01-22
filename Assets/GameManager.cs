@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        SnappedObjectManager.snappedCounts.Clear();
         InitializeObjects();
     }
 

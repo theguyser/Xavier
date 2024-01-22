@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SnappedObjectManager
 {
     public static Dictionary<string, int> snappedCounts = new Dictionary<string, int>();
+    
+    
 
+    
     public static void RegisterAssetType(string assetType)
     {
         if (!snappedCounts.ContainsKey(assetType))
