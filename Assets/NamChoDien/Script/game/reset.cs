@@ -9,11 +9,12 @@ public class reset : MonoBehaviour
     Scene currentScene;
     private void Start()
     {
-        currentScene = SceneManager.GetActiveScene();
-        currentSceneName = currentScene.name;
+        
     }
     public void Reset()
-  {
-    SceneManager.LoadScene(currentSceneName);
-  }
+    {
+        currentScene = SceneManager.GetActiveScene();
+        currentSceneName = currentScene.name;
+        SceneManager.LoadScene(currentSceneName);
+    }
 }

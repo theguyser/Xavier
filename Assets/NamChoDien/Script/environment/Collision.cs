@@ -7,18 +7,13 @@ public class Collision : MonoBehaviour
 {
     public GameObject thePlayer;
     public GameObject runAnim;
-    public GameObject Button;
-    public GameObject GameOverText;
+    
     public static bool isCollided = false;
     private void Start()
     {
         isCollided = false;
         thePlayer = GameObject.Find("Player");
         runAnim = GameObject.Find("RunningAnimation");
-        //Button = GameObject.Find("Reset Button");
-        //GameOverText = GameObject.Find("Game Over");
-        
-        //StartCoroutine(Wait());
         
     }
 

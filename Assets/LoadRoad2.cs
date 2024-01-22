@@ -15,7 +15,6 @@ public class LoadRoad2 : MonoBehaviour
     public void LoadRoad2Dialogue()
     {
         SceneManager.LoadScene("Road Level 2 Start Dialogue");
-
     }
     private void Start()
     {
@@ -26,18 +25,28 @@ public class LoadRoad2 : MonoBehaviour
     }
     private void Update()
     {
-        if (Winner.completedLevel)
-        {
-            //Debug.Log("Starting dialogue complete");
-            //startingdialoguecomplete = true;
-            text.SetActive(true);
-            button.SetActive(true);
-        }
         if (Collision.isCollided)
         {
             TryAgain.SetActive(true);
             reset.SetActive(true);
         }
+        else
+        {
+            TryAgain.SetActive(false); 
+            reset.SetActive(false);
+        }
+        
+        if (Winner.completedLevel)
+        {
+            text.SetActive(true);
+            button.SetActive(true);
+        }
+        else
+        {
+            text.SetActive(false);
+            button.SetActive(false);
+        }
+        
 
     }
 }

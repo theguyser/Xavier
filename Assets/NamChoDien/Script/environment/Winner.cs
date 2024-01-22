@@ -7,7 +7,10 @@ public class Winner : MonoBehaviour
     public GameObject thePlayer;
     public GameObject charModel;
     public bool completedLevel = false;
-    
+    private void Start()
+    {
+        completedLevel = false;
+    }
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))

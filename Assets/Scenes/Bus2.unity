@@ -8032,9 +8032,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hearts:
-  - {fileID: 701818766727449982}
-  - {fileID: 8176619464550024671}
   - {fileID: 2768481806257912145}
+  - {fileID: 8176619464550024671}
+  - {fileID: 701818766727449982}
   gameOver: {fileID: 3921153675247020892}
   restartButton: {fileID: 7664633893440364989}
 --- !u!4 &1294538618
@@ -14263,7 +14263,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 645367541}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: ButtonTopPressed
+        m_MethodName: ButtonBottomPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
