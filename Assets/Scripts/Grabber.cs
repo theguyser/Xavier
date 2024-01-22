@@ -62,7 +62,7 @@ public class Grabber : MonoBehaviour
     {
         isDragging = true;
         dragSound.Play();
-        if (this.name == "Select Speed bump" || this.name == "OraCar"|| this.name == "RedCar")
+        if (this.name == "Select Speed bump" || this.name == "OraCar"|| this.name == "RedCar"||this.name == "Bus"||this.name == "Ambulance")
         {
             transform.rotation = new Quaternion(0f, 0f, 0f, 1f);
         }
