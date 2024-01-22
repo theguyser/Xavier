@@ -10,6 +10,7 @@ public class BackToTitleScreen : MonoBehaviour
     public GameObject reset;
     public Winner winner;
     public GameObject text;
+    public GameObject TryAgain;
     public void LoadTitleScreen()
     {
         SceneManager.LoadScene("Start Screen");
@@ -17,8 +18,10 @@ public class BackToTitleScreen : MonoBehaviour
     }
     void Start()
     {
+        text.SetActive(false);
         reset.SetActive(false);
         button.SetActive(false);
+        TryAgain.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,6 +32,12 @@ public class BackToTitleScreen : MonoBehaviour
             text.SetActive(true);
             reset.SetActive(false);
             button.SetActive(true);
+        }
+
+        if (Collision.isCollided)
+        {
+            TryAgain.SetActive(true);
+            reset.SetActive(true);
         }
     }
 }

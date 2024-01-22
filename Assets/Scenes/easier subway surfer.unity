@@ -3355,6 +3355,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 314118149}
     m_Modifications:
+    - target: {fileID: 598496154172631731, guid: c968c0b4b25fde3478771cea28789e51,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3921153676194400530, guid: c968c0b4b25fde3478771cea28789e51,
         type: 3}
       propertyPath: m_Name
@@ -14907,6 +14912,7 @@ MonoBehaviour:
   reset: {fileID: 180820999}
   winner: {fileID: 64084784}
   text: {fileID: 1821123196}
+  TryAgain: {fileID: 314118148}
 --- !u!4 &1814192848
 Transform:
   m_ObjectHideFlags: 0

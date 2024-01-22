@@ -9,14 +9,16 @@ public class Collision : MonoBehaviour
     public GameObject runAnim;
     public GameObject Button;
     public GameObject GameOverText;
+    public static bool isCollided = false;
     private void Start()
     {
+        isCollided = false;
         thePlayer = GameObject.Find("Player");
         runAnim = GameObject.Find("RunningAnimation");
-        Button = GameObject.Find("Reset Button");
-        GameOverText = GameObject.Find("Game Over");
+        //Button = GameObject.Find("Reset Button");
+        //GameOverText = GameObject.Find("Game Over");
         
-        StartCoroutine(Wait());
+        //StartCoroutine(Wait());
         
     }
 
@@ -24,6 +26,7 @@ public class Collision : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            isCollided = true;
             // Log the name of the colliding object for debugging
             Debug.Log("Collision detected with: " + other.name);
 
@@ -41,8 +44,9 @@ public class Collision : MonoBehaviour
 
             //Run falling down animation
             runAnim.GetComponent<Animator>().Play("Stumble Backwards");
-            Button.SetActive(true);
-            GameOverText.SetActive(true);
+            //Button.SetActive(true);
+            //GameOverText.SetActive(true);
+            
             //Run game over scene
         }
 
@@ -50,10 +54,5 @@ public class Collision : MonoBehaviour
     }
 
 
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(0.1f);
-        Button.SetActive(false);
-        GameOverText.SetActive(false);
-    }   
+       
 }

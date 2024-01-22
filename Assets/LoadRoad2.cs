@@ -10,6 +10,8 @@ public class LoadRoad2 : MonoBehaviour
     public GameObject button;
     public Winner Winner;
     public GameObject text;
+    public GameObject TryAgain;
+    public GameObject reset;
     public void LoadRoad2Dialogue()
     {
         SceneManager.LoadScene("Road Level 2 Start Dialogue");
@@ -17,7 +19,10 @@ public class LoadRoad2 : MonoBehaviour
     }
     private void Start()
     {
+        text.SetActive(false);
+        reset.SetActive(false);
         button.SetActive(false);
+        TryAgain.SetActive(false);
     }
     private void Update()
     {
@@ -27,6 +32,11 @@ public class LoadRoad2 : MonoBehaviour
             //startingdialoguecomplete = true;
             text.SetActive(true);
             button.SetActive(true);
+        }
+        if (Collision.isCollided)
+        {
+            TryAgain.SetActive(true);
+            reset.SetActive(true);
         }
 
     }
