@@ -14,8 +14,8 @@ Running to a destination
 Xavier will become an informed citizen on how mobility affects everyone and learn independence.
 
 The game was made thanks to:
-- Lan for being the Team Leader and coding the game with me
-- Jun Ly for writing the narrative
-- Nam for working on 3D Models and prototype running level
-- Phuong Anh for 2D Sprites and Backgrounds
+- Lam Hoang Lan​ for being the Team Leader and coding the game with me
+- Le Cat Tuong (Jun Ly) for writing the narrative
+- Nguyen Huynh Nam for working on 3D Models and prototype running level
+- Tran Phuong Anh for 2D Sprites and Backgrounds
 - Myself for coding and bug-testing the majority of the game
